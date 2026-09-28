@@ -1,0 +1,58 @@
+name: Analyze Live Overwatch Matches
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/matches/**"
+      - "analyze_live_matches.py"
+      - ".github/workflows/live-match-analysis.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: overwatch-live-analysis
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Analyze live matches
+        run: python analyze_live_matches.py
+
+      - name: Commit analysis
+        run: |
+          git config user.name "ow-live-analysis"
+          git config user.email "ow-live-analysis@users.noreply.github.com"
+          git add data/analysis/live_matches.json
+          if git diff --cached --quiet; then
+            echo "No analysis changes"
+            exit 0
+          fi
+          git commit -m "Update live Overwatch analysis"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git fetch origin main
+            if ! git rebase -X theirs origin/main; then
+              git rebase --abort || true
+              exit 1
+            fi
+          done
+          exit 1
