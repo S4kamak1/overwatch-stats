@@ -6,7 +6,38 @@
   "is_public": true,
   "platform": "pc",
   "gamemode": "competitive",
-  "fetched_at": "2026-09-28T14:43:33.057575+00:00",
+  "fetched_at": "2026-09-28T14:51:05.426526+00:00",
+  "refresh_retry_used": true,
+  "overfast_response_headers": {
+    "summary": {
+      "server": "nginx",
+      "date": "Mon, 28 Sep 2026 14:51:04 GMT",
+      "content-type": "application/json",
+      "content-length": "1904",
+      "connection": "close",
+      "vary": "Accept-Encoding",
+      "x-cache-ttl": "600",
+      "age": "438",
+      "cache-control": "public, max-age=600",
+      "x-cache-status": "hit",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000"
+    },
+    "stats": {
+      "server": "nginx",
+      "date": "Mon, 28 Sep 2026 14:51:05 GMT",
+      "content-type": "application/json",
+      "content-length": "7635",
+      "connection": "close",
+      "vary": "Accept-Encoding",
+      "x-cache-ttl": "600",
+      "age": "439",
+      "cache-control": "public, max-age=600",
+      "x-cache-status": "hit",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000"
+    }
+  },
   "resolved_player": {
     "player_id": "S4kamak1-1198",
     "name": "S4kamak1",
