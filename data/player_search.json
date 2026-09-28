@@ -1,0 +1,16 @@
+{
+  "total": 1,
+  "results": [
+    {
+      "player_id": "S4kamak1-1198",
+      "name": "S4kamak1",
+      "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/16df2a2f17781bca9180e2dd6c75a28878afc6f72e4f33f866f1abbdc9922d88.png",
+      "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/aa9d905ab1cba0974c81a2dbc8dd40aa6cc6e1003db7fe6c681b262e87a69783.png",
+      "title": "Data Broker",
+      "career_url": "https://overfast-api.tekrop.fr/players/S4kamak1-1198",
+      "blizzard_id": "c10aa78bbe7090fca4a126a9dc%7C767070bb727f16005745b4aeb6300857",
+      "last_updated_at": 1790594912,
+      "is_public": true
+    }
+  ]
+}
