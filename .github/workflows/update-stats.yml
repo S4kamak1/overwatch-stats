@@ -27,8 +27,11 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - name: Checkout repository
+      - name: Checkout latest main
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -60,4 +63,21 @@ jobs:
           fi
 
           git commit -m "Update Overwatch stats"
-          git push
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "Push attempt $attempt failed; rebasing onto latest main..."
+            git fetch origin main
+
+            if ! git rebase -X theirs origin/main; then
+              git rebase --abort || true
+              echo "Rebase failed"
+              exit 1
+            fi
+          done
+
+          echo "Push failed after 3 attempts"
+          exit 1
