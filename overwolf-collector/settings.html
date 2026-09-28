@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OW Match Collector Setup</title>
+  <style>
+    body { font-family: sans-serif; margin: 24px; background: #171717; color: #eee; }
+    label { display: block; margin-top: 16px; }
+    input { width: 100%; box-sizing: border-box; padding: 10px; margin-top: 6px; }
+    button { margin-top: 18px; padding: 10px 18px; }
+    #status { margin-top: 14px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h2>Overwatch Match Collector</h2>
+  <p>クラウド送信先とトークンを一度だけ設定します。</p>
+  <label>Cloud endpoint
+    <input id="endpoint" placeholder="https://your-project.vercel.app/api/ingest">
+  </label>
+  <label>Ingest token
+    <input id="token" type="password" autocomplete="off">
+  </label>
+  <button id="save">保存して接続テスト</button>
+  <div id="status"></div>
+  <script src="settings.js"></script>
+</body>
+</html>
