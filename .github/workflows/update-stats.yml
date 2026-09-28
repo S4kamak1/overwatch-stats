@@ -12,14 +12,19 @@ on:
       - ".github/workflows/update-stats.yml"
 
   schedule:
-    - cron: "7,22,37,52 * * * *"
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
 
+concurrency:
+  group: overwatch-stats
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout repository
@@ -40,8 +45,7 @@ jobs:
         run: python fetch_stats.py
 
       - name: Track match deltas
-        run: |
-          python track_matches.py /tmp/ow_previous.json data/latest.json
+        run: python track_matches.py /tmp/ow_previous.json data/latest.json
 
       - name: Commit updated stats
         run: |
