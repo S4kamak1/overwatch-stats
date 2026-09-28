@@ -3,6 +3,14 @@ name: Update Overwatch Stats
 on:
   workflow_dispatch:
 
+  push:
+    branches:
+      - main
+    paths:
+      - "fetch_stats.py"
+      - "track_matches.py"
+      - ".github/workflows/update-stats.yml"
+
   schedule:
     - cron: "7,22,37,52 * * * *"
 
@@ -33,7 +41,7 @@ jobs:
 
       - name: Track match deltas
         run: |
-          python track_matches.py             /tmp/ow_previous.json             data/latest.json
+          python track_matches.py /tmp/ow_previous.json data/latest.json
 
       - name: Commit updated stats
         run: |
