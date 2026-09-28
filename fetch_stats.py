@@ -1,6 +1,7 @@
 import json
-import urllib.request
+import time
 import urllib.parse
+import urllib.request
 from urllib.error import HTTPError, URLError
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,35 +17,61 @@ BASE = "https://overfast-api.tekrop.fr"
 PLATFORM = "pc"
 GAMEMODE = "competitive"
 
-USER_AGENT = "S4kamak1-OW-Stats/1.0"
+USER_AGENT = "S4kamak1-OW-Stats/2.0"
+
+# OverFast serves stale player data while refreshing it in the background.
+# Its stale API response is short-lived, so wait long enough for the worker
+# to refresh the Blizzard profile before doing the second pass.
+REFRESH_WAIT_SECONDS = 70
 
 
 # =========================
 # HTTP
 # =========================
 
-def fetch_json(url):
+def fetch_json(url, *, cache_control=None):
     print(f"GET {url}")
+
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "application/json",
+    }
+
+    if cache_control:
+        headers["Cache-Control"] = cache_control
 
     req = urllib.request.Request(
         url,
-        headers={
-            "User-Agent": USER_AGENT,
-            "Accept": "application/json",
-        },
+        headers=headers,
     )
 
     try:
         with urllib.request.urlopen(
             req,
-            timeout=30,
+            timeout=45,
         ) as response:
             charset = response.headers.get_content_charset() or "utf-8"
             body = response.read().decode(charset)
 
+            response_headers = {
+                key.lower(): value
+                for key, value in response.headers.items()
+            }
+
             print(f"HTTP {response.status}")
 
-            return json.loads(body)
+            age = response_headers.get("age")
+            cache_ttl = response_headers.get("x-cache-ttl")
+            cache_header = response_headers.get("cache-control")
+
+            if age is not None:
+                print(f"Age: {age}")
+            if cache_ttl is not None:
+                print(f"X-Cache-TTL: {cache_ttl}")
+            if cache_header is not None:
+                print(f"Cache-Control: {cache_header}")
+
+            return json.loads(body), response_headers
 
     except HTTPError as e:
         try:
@@ -57,7 +84,7 @@ def fetch_json(url):
 
         raise RuntimeError(
             "\n"
-            f"HTTP request failed\n"
+            "HTTP request failed\n"
             f"Status: {e.code}\n"
             f"URL: {url}\n"
             f"Response:\n{body}"
@@ -66,7 +93,7 @@ def fetch_json(url):
     except URLError as e:
         raise RuntimeError(
             "\n"
-            f"Network request failed\n"
+            "Network request failed\n"
             f"URL: {url}\n"
             f"Reason: {e.reason}"
         ) from e
@@ -74,10 +101,27 @@ def fetch_json(url):
     except json.JSONDecodeError as e:
         raise RuntimeError(
             "\n"
-            f"Invalid JSON response\n"
+            "Invalid JSON response\n"
             f"URL: {url}\n"
             f"Error: {e}"
         ) from e
+
+
+def read_json(path):
+    if not path.exists():
+        return None
+
+    try:
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"WARNING: Could not read {path}: {e}")
+        return None
+
+
+def add_cache_buster(url):
+    separator = "&" if "?" in url else "?"
+    return f"{url}{separator}_ts={time.time_ns()}"
 
 
 # =========================
@@ -95,14 +139,10 @@ def search_player():
     print()
     print("=== Searching player ===")
 
-    search = fetch_json(search_url)
-
+    search, _ = fetch_json(search_url)
     results = search.get("results", [])
 
-    print(
-        f"Search returned "
-        f"{len(results)} result(s)"
-    )
+    print(f"Search returned {len(results)} result(s)")
 
     if not results:
         raise RuntimeError(
@@ -115,25 +155,21 @@ def search_player():
             "- Blizzard/OverFast is temporarily unable to resolve the player"
         )
 
-    # Display candidates in Actions log
     for index, player in enumerate(results):
         print(
             f"[{index}] "
             f"name={player.get('name')} "
             f"player_id={player.get('player_id')} "
-            f"blizzard_id={player.get('blizzard_id')} "
-            f"is_public={player.get('is_public')}"
+            f"is_public={player.get('is_public')} "
+            f"last_updated_at={player.get('last_updated_at')}"
         )
 
-    # First preference: exact player_id match
     for player in results:
         if player.get("player_id") == PLAYER:
             print()
             print("Exact BattleTag/player_id match found.")
             return player, search
 
-    # Second preference:
-    # exact match ignoring capitalization
     for player in results:
         player_id = player.get("player_id")
 
@@ -142,37 +178,21 @@ def search_player():
             and player_id.lower() == PLAYER.lower()
         ):
             print()
-            print(
-                "Case-insensitive "
-                "BattleTag/player_id match found."
-            )
+            print("Case-insensitive BattleTag/player_id match found.")
             return player, search
 
-    # Third preference:
-    # username portion match
     expected_name = PLAYER.rsplit("-", 1)[0]
 
     name_matches = [
         player
         for player in results
-        if player.get("name", "").lower()
-        == expected_name.lower()
+        if player.get("name", "").lower() == expected_name.lower()
     ]
 
     if len(name_matches) == 1:
         print()
-        print(
-            "One matching username found. "
-            "Using that result."
-        )
+        print("One matching username found. Using that result.")
         return name_matches[0], search
-
-    # Do NOT silently choose the wrong account.
-    print()
-    print(
-        "Could not uniquely identify "
-        "the requested BattleTag."
-    )
 
     raise RuntimeError(
         "\n"
@@ -183,44 +203,10 @@ def search_player():
 
 
 # =========================
-# Main
+# OverFast player fetch
 # =========================
 
-def main():
-    now = datetime.now(timezone.utc)
-
-    print("===================================")
-    print("Overwatch Stats Collector")
-    print("===================================")
-    print(f"Requested player: {PLAYER}")
-    print(f"Platform: {PLATFORM}")
-    print(f"Gamemode: {GAMEMODE}")
-
-    resolved, search_response = search_player()
-
-    player_id = resolved.get("player_id")
-    blizzard_id = resolved.get("blizzard_id")
-    is_public = resolved.get("is_public")
-
-    if not player_id:
-        raise RuntimeError(
-            "Search result did not contain player_id"
-        )
-
-    print()
-    print("=== Resolved player ===")
-    print(f"Name: {resolved.get('name')}")
-    print(f"Player ID: {player_id}")
-    print(f"Blizzard ID: {blizzard_id}")
-    print(f"Public profile: {is_public}")
-
-    if is_public is False:
-        print()
-        print(
-            "WARNING: Blizzard reports that "
-            "this career profile is private."
-        )
-
+def build_player_urls(player_id):
     encoded_player_id = urllib.parse.quote(
         player_id,
         safe="-|%",
@@ -242,13 +228,153 @@ def main():
         f"?{stats_query}"
     )
 
+    return summary_url, stats_url
+
+
+def fetch_player_data(summary_url, stats_url, *, bust_cache=False):
+    if bust_cache:
+        summary_url = add_cache_buster(summary_url)
+        stats_url = add_cache_buster(stats_url)
+
     print()
     print("=== Fetching summary ===")
-    summary = fetch_json(summary_url)
+    summary, summary_headers = fetch_json(
+        summary_url,
+        cache_control="no-cache" if bust_cache else None,
+    )
 
     print()
     print("=== Fetching competitive stats ===")
-    stats = fetch_json(stats_url)
+    stats, stats_headers = fetch_json(
+        stats_url,
+        cache_control="no-cache" if bust_cache else None,
+    )
+
+    return summary, stats, {
+        "summary": summary_headers,
+        "stats": stats_headers,
+    }
+
+
+def games_played(snapshot):
+    try:
+        return int(snapshot["stats"]["general"]["games_played"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def should_retry(previous, first_result):
+    if previous is None:
+        return False
+
+    previous_games = games_played(previous)
+    current_games = games_played(first_result)
+
+    if previous_games is None or current_games is None:
+        return False
+
+    # If the cumulative total has not advanced, the first response may be
+    # OverFast's stale-while-revalidate response. A second pass after the
+    # short stale window gives its background worker time to refresh Blizzard.
+    return current_games <= previous_games
+
+
+# =========================
+# Main
+# =========================
+
+def main():
+    now = datetime.now(timezone.utc)
+
+    print("===================================")
+    print("Overwatch Stats Collector")
+    print("===================================")
+    print(f"Requested player: {PLAYER}")
+    print(f"Platform: {PLATFORM}")
+    print(f"Gamemode: {GAMEMODE}")
+
+    data_dir = Path("data")
+    history_dir = data_dir / "history"
+    latest_file = data_dir / "latest.json"
+
+    previous = read_json(latest_file)
+
+    resolved, search_response = search_player()
+
+    player_id = resolved.get("player_id")
+    blizzard_id = resolved.get("blizzard_id")
+    is_public = resolved.get("is_public")
+
+    if not player_id:
+        raise RuntimeError("Search result did not contain player_id")
+
+    print()
+    print("=== Resolved player ===")
+    print(f"Name: {resolved.get('name')}")
+    print(f"Player ID: {player_id}")
+    print(f"Public profile: {is_public}")
+    print(f"Search last_updated_at: {resolved.get('last_updated_at')}")
+
+    if is_public is False:
+        print()
+        print(
+            "WARNING: Blizzard reports that "
+            "this career profile is private."
+        )
+
+    summary_url, stats_url = build_player_urls(player_id)
+
+    summary, stats, response_headers = fetch_player_data(
+        summary_url,
+        stats_url,
+    )
+
+    first_result = {
+        "stats": stats,
+    }
+
+    refresh_retry_used = False
+
+    if should_retry(previous, first_result):
+        previous_games = games_played(previous)
+        current_games = games_played(first_result)
+
+        print()
+        print("===================================")
+        print("POSSIBLE STALE OVERFAST RESPONSE")
+        print("===================================")
+        print(f"Previous games: {previous_games}")
+        print(f"First-pass games: {current_games}")
+        print(
+            "Waiting for OverFast background refresh "
+            f"({REFRESH_WAIT_SECONDS}s)..."
+        )
+
+        time.sleep(REFRESH_WAIT_SECONDS)
+
+        print()
+        print("=== Refresh retry ===")
+
+        retry_summary, retry_stats, retry_headers = fetch_player_data(
+            summary_url,
+            stats_url,
+            bust_cache=True,
+        )
+
+        retry_games = None
+        try:
+            retry_games = int(
+                retry_stats["general"]["games_played"]
+            )
+        except (KeyError, TypeError, ValueError):
+            pass
+
+        print(f"Retry games: {retry_games}")
+
+        summary = retry_summary
+        stats = retry_stats
+        response_headers = retry_headers
+        refresh_retry_used = True
 
     result = {
         "requested_player": PLAYER,
@@ -258,14 +384,13 @@ def main():
         "is_public": is_public,
         "platform": PLATFORM,
         "gamemode": GAMEMODE,
-        "fetched_at": now.isoformat(),
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "refresh_retry_used": refresh_retry_used,
+        "overfast_response_headers": response_headers,
         "resolved_player": resolved,
         "summary": summary,
         "stats": stats,
     }
-
-    data_dir = Path("data")
-    history_dir = data_dir / "history"
 
     data_dir.mkdir(
         parents=True,
@@ -277,8 +402,6 @@ def main():
         exist_ok=True,
     )
 
-    latest_file = data_dir / "latest.json"
-
     with latest_file.open(
         "w",
         encoding="utf-8",
@@ -289,6 +412,7 @@ def main():
             ensure_ascii=False,
             indent=2,
         )
+        f.write("\n")
 
     history_file = (
         history_dir
@@ -305,8 +429,8 @@ def main():
             ensure_ascii=False,
             indent=2,
         )
+        f.write("\n")
 
-    # Debug/search result also preserved
     with (
         data_dir / "player_search.json"
     ).open(
@@ -319,6 +443,7 @@ def main():
             ensure_ascii=False,
             indent=2,
         )
+        f.write("\n")
 
     print()
     print("===================================")
@@ -326,6 +451,8 @@ def main():
     print("===================================")
     print(f"Latest: {latest_file}")
     print(f"History: {history_file}")
+    print(f"Refresh retry used: {refresh_retry_used}")
+    print(f"Final games played: {games_played(result)}")
 
 
 if __name__ == "__main__":
