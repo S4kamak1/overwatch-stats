@@ -39,3 +39,11 @@ normalized match JSON at match end. The same endpoint already supports
 
 Once configured, OW2 launch starts the collector through Overwolf. No game restart,
 local Python process, Git clone, or manual upload is needed.
+
+
+## Important Overwolf development requirement
+
+Overwolf currently requires a developer-whitelisted account to load unpacked or
+unreleased apps. This custom collector should only be tested when the Overwolf
+account is already authorized for development. The cloud ingest endpoint can
+remain in place regardless of which approved/public match collector is used.
