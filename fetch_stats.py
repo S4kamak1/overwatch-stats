@@ -13,6 +13,7 @@ from pathlib import Path
 
 PLAYER = "S4kamak1-1198"
 BASE = "https://overfast-api.tekrop.fr"
+BLIZZARD_BASE = "https://overwatch.blizzard.com"
 
 PLATFORM = "pc"
 GAMEMODE = "competitive"
@@ -122,6 +123,80 @@ def read_json(path):
 def add_cache_buster(url):
     separator = "&" if "?" in url else "?"
     return f"{url}{separator}_ts={time.time_ns()}"
+
+
+# =========================
+# Blizzard upstream probe
+# =========================
+
+def normalize_blizzard_id(value):
+    if not isinstance(value, str):
+        return None
+    return urllib.parse.unquote(value).replace("|", "%7C")
+
+
+def probe_blizzard_upstream(expected_name, expected_blizzard_id):
+    encoded_name = urllib.parse.quote(expected_name, safe="")
+    url = (
+        f"{BLIZZARD_BASE}/en-us/search/account-by-name/"
+        f"{encoded_name}/"
+    )
+
+    print()
+    print("=== Direct Blizzard freshness probe ===")
+
+    try:
+        payload, _ = fetch_json(
+            add_cache_buster(url),
+            cache_control="no-cache",
+        )
+    except Exception as exc:
+        print(f"WARNING: Blizzard freshness probe failed: {exc}")
+        return None
+
+    if not isinstance(payload, list):
+        print("WARNING: Unexpected Blizzard search payload.")
+        return None
+
+    expected_id = normalize_blizzard_id(expected_blizzard_id)
+
+    candidates = [
+        player
+        for player in payload
+        if player.get("name") == expected_name
+        and player.get("isPublic") is True
+    ]
+
+    matched = None
+
+    if expected_id:
+        for player in candidates:
+            if normalize_blizzard_id(player.get("url")) == expected_id:
+                matched = player
+                break
+
+    if matched is None and len(candidates) == 1:
+        matched = candidates[0]
+
+    if matched is None:
+        print(
+            "WARNING: Could not uniquely match the target "
+            "in Blizzard search results."
+        )
+        return None
+
+    result = {
+        "name": matched.get("name"),
+        "is_public": matched.get("isPublic"),
+        "last_updated_at": matched.get("lastUpdated"),
+    }
+
+    print(
+        "Blizzard direct last_updated_at: "
+        f"{result['last_updated_at']}"
+    )
+
+    return result
 
 
 # =========================
@@ -322,6 +397,27 @@ def main():
             "this career profile is private."
         )
 
+    blizzard_probe = probe_blizzard_upstream(
+        resolved.get("name"),
+        blizzard_id,
+    )
+
+    overfast_last_updated = resolved.get("last_updated_at")
+    blizzard_last_updated = (
+        blizzard_probe.get("last_updated_at")
+        if blizzard_probe
+        else None
+    )
+
+    upstream_newer = (
+        isinstance(overfast_last_updated, (int, float))
+        and isinstance(blizzard_last_updated, (int, float))
+        and blizzard_last_updated > overfast_last_updated
+    )
+
+    print()
+    print(f"Blizzard newer than OverFast search: {upstream_newer}")
+
     summary_url, stats_url = build_player_urls(player_id)
 
     summary, stats, response_headers = fetch_player_data(
@@ -335,7 +431,9 @@ def main():
 
     refresh_retry_used = False
 
-    if should_retry(previous, first_result):
+    if should_retry(previous, first_result) and (
+        upstream_newer or blizzard_probe is None
+    ):
         previous_games = games_played(previous)
         current_games = games_played(first_result)
 
@@ -386,6 +484,8 @@ def main():
         "gamemode": GAMEMODE,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
         "refresh_retry_used": refresh_retry_used,
+        "blizzard_probe": blizzard_probe,
+        "blizzard_upstream_newer": upstream_newer,
         "overfast_response_headers": response_headers,
         "resolved_player": resolved,
         "summary": summary,
@@ -452,6 +552,7 @@ def main():
     print(f"Latest: {latest_file}")
     print(f"History: {history_file}")
     print(f"Refresh retry used: {refresh_retry_used}")
+    print(f"Blizzard upstream newer: {upstream_newer}")
     print(f"Final games played: {games_played(result)}")
 
 
