@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "17 * * * *"
+    - cron: "7,22,37,52 * * * *"
 
 permissions:
   contents: write
@@ -22,8 +22,18 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Preserve previous stats
+        run: |
+          if [ -f data/latest.json ]; then
+            cp data/latest.json /tmp/ow_previous.json
+          fi
+
       - name: Fetch Overwatch stats
         run: python fetch_stats.py
+
+      - name: Track match deltas
+        run: |
+          python track_matches.py             /tmp/ow_previous.json             data/latest.json
 
       - name: Commit updated stats
         run: |
