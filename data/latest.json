@@ -6,32 +6,38 @@
   "is_public": true,
   "platform": "pc",
   "gamemode": "competitive",
-  "fetched_at": "2026-09-28T14:51:05.426526+00:00",
-  "refresh_retry_used": true,
+  "fetched_at": "2026-09-28T14:54:12.330649+00:00",
+  "refresh_retry_used": false,
+  "blizzard_probe": {
+    "name": "S4kamak1",
+    "is_public": true,
+    "last_updated_at": 1790594912
+  },
+  "blizzard_upstream_newer": false,
   "overfast_response_headers": {
     "summary": {
       "server": "nginx",
-      "date": "Mon, 28 Sep 2026 14:51:04 GMT",
+      "date": "Mon, 28 Sep 2026 14:54:11 GMT",
       "content-type": "application/json",
       "content-length": "1904",
       "connection": "close",
       "vary": "Accept-Encoding",
-      "x-cache-ttl": "600",
-      "age": "438",
-      "cache-control": "public, max-age=600",
+      "age": "625",
+      "cache-control": "public, max-age=3600",
       "x-cache-status": "hit",
+      "x-cache-ttl": "341",
       "access-control-allow-origin": "*",
       "strict-transport-security": "max-age=63072000"
     },
     "stats": {
       "server": "nginx",
-      "date": "Mon, 28 Sep 2026 14:51:05 GMT",
+      "date": "Mon, 28 Sep 2026 14:54:12 GMT",
       "content-type": "application/json",
       "content-length": "7635",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "439",
+      "age": "626",
       "cache-control": "public, max-age=600",
       "x-cache-status": "hit",
       "access-control-allow-origin": "*",
@@ -60,7 +66,6 @@
     },
     "competitive": {
       "pc": {
-        "season": 24,
         "tank": {
           "division": "silver",
           "tier": 3,
@@ -82,7 +87,8 @@
           "rank_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_SilverTier.305e60dca5e95356ced59825426844cc7cdb4948.png",
           "tier_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/TierDivision_2.0e5d1cfda796f7b4362ef2ffa8a1053c20afa5af.png"
         },
-        "open": null
+        "open": null,
+        "season": 24
       },
       "console": null
     },
