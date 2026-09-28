@@ -1,0 +1,23 @@
+name: Package Overwolf Collector
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "overwolf-collector/**"
+      - ".github/workflows/package-overwolf.yml"
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create package
+        run: zip -r overwolf-collector.zip overwolf-collector
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: overwolf-collector
+          path: overwolf-collector.zip
