@@ -5,6 +5,7 @@ module.exports = async function handler(req, res) {
   res.end(JSON.stringify({
     ok: true,
     service: "overwatch-cloud-ingest",
+    version: "2026-09-29-env-refresh-1",
     github_storage_configured: Boolean(process.env.GITHUB_TOKEN),
     ingest_auth_configured: Boolean(process.env.OW_INGEST_TOKEN),
     repository: process.env.GITHUB_REPO || "S4kamak1/overwatch-stats",
