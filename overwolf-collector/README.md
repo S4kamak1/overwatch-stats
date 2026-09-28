@@ -1,32 +1,33 @@
 # Overwatch 2 live collector
 
-This folder is a minimal Overwolf development app for collecting Overwatch 2
-Game Events Provider data.
+This is the local real-time layer for per-match Overwatch analysis.
 
-## Local test
+## One-time setup
 
 1. Install Overwolf.
-2. Update/clone this repository on the gaming PC.
-3. Run `start_live_collector.bat` from the repository root.
-4. In Overwolf's developer tools, load the `overwolf-collector` folder as an unpacked extension.
-5. Start Overwatch 2 and play one competitive match.
-6. Keep the bridge window open until the match has ended.
-7. Run `inspect_live_events.bat`.
+2. Pull the latest version of this repository onto the gaming PC.
+3. Load the `overwolf-collector` folder once as an unpacked/development extension in Overwolf.
+4. Run `setup_live_collector.bat` once.
+5. Confirm the bridge health check succeeds.
 
-Raw events stay local in:
+After that, Windows logon starts the bridge automatically. The Overwolf
+extension is targeted to Overwatch 2 and is configured to launch with the game.
 
-```
-data/live/overwolf-events.jsonl
-```
+## Automated flow
 
-The privacy-safe diagnostic is written to:
+Windows logon -> local bridge starts -> OW2 starts -> Overwolf events are
+captured -> normalized match JSONs under `data/matches/` are automatically
+committed and pushed -> GitHub Actions refreshes live analysis.
 
-```
-data/live/event-diagnostic.json
-```
+## Privacy
 
-`data/live/` is ignored by Git, so live event values are not uploaded to the
-public repository.
+Raw Overwolf event data stays only under `data/live/` and is ignored by Git.
+Only normalized per-match files under `data/matches/` are eligible for automatic
+GitHub sync.
 
-Attach `event-diagnostic.json` to ChatGPT. Its event/key structure is enough
-to build the next stage: one normalized JSON record per match.
+## Current remaining step
+
+Transport, Windows autostart, Git sync and GitHub-side analysis are automated.
+One real Overwatch match still needs to be observed once so the exact GEP payload
+can be mapped into a stable one-match JSON schema. After that parser is added,
+normal play is enough; no game restart or manual upload is required.
