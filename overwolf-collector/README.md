@@ -6,27 +6,27 @@ Game Events Provider data.
 ## Local test
 
 1. Install Overwolf.
-2. Start `start_live_collector.bat` from the repository root.
-3. In Overwolf's developer options, load this `overwolf-collector` folder as an unpacked extension.
-4. Start Overwatch 2 and play one competitive match.
-5. Keep the bridge window open.
-6. After the match, run:
+2. Update/clone this repository on the gaming PC.
+3. Run `start_live_collector.bat` from the repository root.
+4. In Overwolf's developer tools, load the `overwolf-collector` folder as an unpacked extension.
+5. Start Overwatch 2 and play one competitive match.
+6. Keep the bridge window open until the match has ended.
+7. Run `inspect_live_events.bat`.
 
-```
-python inspect_live_events.py
-```
-
-Raw events are written to:
+Raw events stay local in:
 
 ```
 data/live/overwolf-events.jsonl
 ```
 
-A compact diagnostic is written to:
+The privacy-safe diagnostic is written to:
 
 ```
 data/live/event-diagnostic.json
 ```
 
-The next implementation step uses that real payload shape to produce one
-normalized JSON record per match.
+`data/live/` is ignored by Git, so live event values are not uploaded to the
+public repository.
+
+Attach `event-diagnostic.json` to ChatGPT. Its event/key structure is enough
+to build the next stage: one normalized JSON record per match.
