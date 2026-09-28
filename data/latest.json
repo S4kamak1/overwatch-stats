@@ -6,7 +6,7 @@
   "is_public": true,
   "platform": "pc",
   "gamemode": "competitive",
-  "fetched_at": "2026-09-28T15:19:19.700696+00:00",
+  "fetched_at": "2026-09-28T20:49:52.079307+00:00",
   "refresh_retry_used": false,
   "blizzard_probe": {
     "name": "S4kamak1",
@@ -17,29 +17,29 @@
   "overfast_response_headers": {
     "summary": {
       "server": "nginx",
-      "date": "Mon, 28 Sep 2026 15:19:19 GMT",
+      "date": "Mon, 28 Sep 2026 20:49:51 GMT",
       "content-type": "application/json",
       "content-length": "1904",
       "connection": "close",
       "vary": "Accept-Encoding",
-      "age": "277",
-      "cache-control": "public, max-age=3600",
-      "x-cache-status": "hit",
-      "x-cache-ttl": "358",
+      "x-cache-ttl": "600",
+      "age": "20105",
+      "cache-control": "public, max-age=600, stale-while-revalidate=300",
+      "x-cache-status": "stale",
       "access-control-allow-origin": "*",
       "strict-transport-security": "max-age=63072000"
     },
     "stats": {
       "server": "nginx",
-      "date": "Mon, 28 Sep 2026 15:19:19 GMT",
+      "date": "Mon, 28 Sep 2026 20:49:52 GMT",
       "content-type": "application/json",
-      "content-length": "7624",
+      "content-length": "7632",
       "connection": "close",
       "vary": "Accept-Encoding",
-      "age": "277",
-      "cache-control": "public, max-age=3600",
-      "x-cache-status": "hit",
-      "x-cache-ttl": "358",
+      "x-cache-ttl": "600",
+      "age": "20109",
+      "cache-control": "public, max-age=600, stale-while-revalidate=300",
+      "x-cache-status": "stale",
       "access-control-allow-origin": "*",
       "strict-transport-security": "max-age=63072000"
     }
@@ -66,6 +66,7 @@
     },
     "competitive": {
       "pc": {
+        "season": 24,
         "tank": {
           "division": "silver",
           "tier": 3,
@@ -87,8 +88,7 @@
           "rank_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_SilverTier.305e60dca5e95356ced59825426844cc7cdb4948.png",
           "tier_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/TierDivision_1.10f427bf8f2f16171ce550a90c29626b438f6efd.png"
         },
-        "open": null,
-        "season": 24
+        "open": null
       },
       "console": null
     },
@@ -118,6 +118,28 @@
       }
     },
     "roles": {
+      "tank": {
+        "games_played": 113,
+        "games_won": 50,
+        "games_lost": 63,
+        "time_played": 69772,
+        "winrate": 44.25,
+        "kda": 2.98,
+        "total": {
+          "eliminations": 1944,
+          "assists": 196,
+          "deaths": 718,
+          "damage": 1354036,
+          "healing": 37186
+        },
+        "average": {
+          "eliminations": 16.72,
+          "assists": 1.69,
+          "deaths": 6.17,
+          "damage": 11643.95,
+          "healing": 319.78
+        }
+      },
       "damage": {
         "games_played": 24,
         "games_won": 12,
@@ -160,28 +182,6 @@
           "deaths": 5.8,
           "damage": 4707.77,
           "healing": 8379.3
-        }
-      },
-      "tank": {
-        "games_played": 113,
-        "games_won": 50,
-        "games_lost": 63,
-        "time_played": 69772,
-        "winrate": 44.25,
-        "kda": 2.98,
-        "total": {
-          "eliminations": 1944,
-          "assists": 196,
-          "deaths": 718,
-          "damage": 1354036,
-          "healing": 37186
-        },
-        "average": {
-          "eliminations": 16.72,
-          "assists": 1.69,
-          "deaths": 6.17,
-          "damage": 11643.95,
-          "healing": 319.78
         }
       }
     },
@@ -235,7 +235,7 @@
         "games_won": 0,
         "games_lost": 0,
         "time_played": 247,
-        "winrate": 0,
+        "winrate": 0.0,
         "kda": 1.8,
         "total": {
           "eliminations": 6,
@@ -301,7 +301,7 @@
         "games_won": 0,
         "games_lost": 0,
         "time_played": 454,
-        "winrate": 0,
+        "winrate": 0.0,
         "kda": 0.33,
         "total": {
           "eliminations": 2,
@@ -543,7 +543,7 @@
         "games_won": 0,
         "games_lost": 0,
         "time_played": 57,
-        "winrate": 0,
+        "winrate": 0.0,
         "kda": 0.0,
         "total": {
           "eliminations": 0,
@@ -609,7 +609,7 @@
         "games_won": 0,
         "games_lost": 0,
         "time_played": 211,
-        "winrate": 0,
+        "winrate": 0.0,
         "kda": 0.33,
         "total": {
           "eliminations": 1,
