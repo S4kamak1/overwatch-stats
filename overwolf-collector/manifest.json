@@ -4,10 +4,10 @@
   "permissions": ["GameInfo"],
   "meta": {
     "name": "S4kamak1 Overwatch Match Collector",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "minimum-overwolf-version": "0.220.0.1",
     "author": "S4kamak1",
-    "description": "Collects Overwatch 2 game events for per-match analysis."
+    "description": "Collects privacy-safe Overwatch 2 match event structure and sends it directly to the cloud."
   },
   "data": {
     "game_targeting": {
@@ -20,15 +20,20 @@
         "file": "background.html",
         "is_background_page": true,
         "desktop_only": true
+      },
+      "settings": {
+        "file": "settings.html",
+        "native_window": true,
+        "desktop_only": true,
+        "resizable": false,
+        "size": { "width": 520, "height": 420 }
       }
     },
     "game_events": [10844],
     "launch_events": [
       {
         "event": "GameLaunch",
-        "event_data": {
-          "game_ids": [10844]
-        },
+        "event_data": { "game_ids": [10844] },
         "start_minimized": true
       }
     ]
