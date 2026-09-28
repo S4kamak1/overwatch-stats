@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Overwatch Stats Ingest</title>
+  <style>
+    body{font-family:system-ui,sans-serif;max-width:720px;margin:48px auto;padding:0 20px;background:#111;color:#eee}
+    .card{background:#1b1b1b;border:1px solid #333;border-radius:14px;padding:22px}
+    .ok{color:#75d88b}.bad{color:#ff8b8b}code{background:#222;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Overwatch Stats Ingest</h1>
+    <p>クラウド受信口の状態を確認しています。</p>
+    <p id="status">Checking…</p>
+    <pre id="detail"></pre>
+  </div>
+  <script>
+    fetch('/api/health')
+      .then(r => r.json())
+      .then(data => {
+        const ready = data.ok && data.ingest_auth_configured;
+        document.getElementById('status').innerHTML = ready
+          ? '<span class="ok">受信準備OK</span>'
+          : '<span class="bad">環境変数の設定が必要です</span>';
+        document.getElementById('detail').textContent =
+          JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById('status').innerHTML =
+          '<span class="bad">/api/health に接続できません</span>';
+        document.getElementById('detail').textContent = String(err);
+      });
+  </script>
+</body>
+</html>
