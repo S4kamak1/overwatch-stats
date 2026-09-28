@@ -117,15 +117,31 @@ module.exports = async function handler(req, res) {
         diagnostic: body.diagnostic || {},
         privacy_note: "Contains event names, counts and key/type shapes only; no raw game values.",
       };
-      await putJsonFile(
-        "data/cloud-diagnostic.json",
-        diagnostic,
-        "Update Overwatch cloud event diagnostic"
-      );
-      return json(res, 200, { ok: true, stored: "diagnostic" });
+      if (process.env.GITHUB_TOKEN) {
+        await putJsonFile(
+          "data/cloud-diagnostic.json",
+          diagnostic,
+          "Update Overwatch cloud event diagnostic"
+        );
+        return json(res, 200, { ok: true, stored: "diagnostic" });
+      }
+
+      console.log("OW_DIAGNOSTIC", JSON.stringify(diagnostic));
+      return json(res, 200, {
+        ok: true,
+        stored: "runtime_log",
+        note: "GITHUB_TOKEN is not configured; diagnostic was logged only."
+      });
     }
 
     if (body.kind === "normalized_match") {
+      if (!process.env.GITHUB_TOKEN) {
+        return json(res, 503, {
+          ok: false,
+          error: "github_storage_not_configured"
+        });
+      }
+
       const match = body.match;
       if (!match || typeof match !== "object") {
         return json(res, 400, { ok: false, error: "missing_match" });
