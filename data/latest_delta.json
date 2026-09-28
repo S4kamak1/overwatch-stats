@@ -1,0 +1,29 @@
+{
+  "event_id": "s24-24:g256-256:w120-120:l136-136",
+  "from_fetched_at": "2026-09-28T11:36:37.904817+00:00",
+  "to_fetched_at": "2026-09-28T12:20:19.187056+00:00",
+  "season_from": 24,
+  "season_to": 24,
+  "status": "no_change",
+  "result": "no_game",
+  "primary_role": null,
+  "primary_hero": null,
+  "heroes_used": [],
+  "general": {
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "time_played": 0,
+    "total": {
+      "eliminations": 0,
+      "assists": 0,
+      "deaths": 0,
+      "damage": 0,
+      "healing": 0
+    },
+    "kda": null,
+    "per_10_minutes": {}
+  },
+  "roles": {},
+  "heroes": {}
+}

@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-28T12:20:22.490300+00:00",
+  "current_season": 24,
+  "single_games_tracked": 0,
+  "wins": {
+    "games": 0,
+    "average": {}
+  },
+  "losses": {
+    "games": 0,
+    "average": {}
+  },
+  "primary_heroes": {},
+  "primary_roles": {},
+  "notes": [
+    "Single-game records are inferred from differences between cumulative OverFast snapshots.",
+    "Only intervals with exactly one new competitive game are used for direct win/loss averages.",
+    "Intervals with multiple games are preserved but excluded from single-game averages.",
+    "Primary hero is inferred from the largest increase in hero time played during the interval."
+  ]
+}
