@@ -1,0 +1,23 @@
+name: Package OverLooker Bridge
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "overlooker-bridge/**"
+      - ".github/workflows/package-overlooker-bridge.yml"
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create package
+        run: zip -r overlooker-bridge.zip overlooker-bridge
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: overlooker-bridge
+          path: overlooker-bridge.zip
