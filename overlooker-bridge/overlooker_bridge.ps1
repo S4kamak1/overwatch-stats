@@ -8,6 +8,7 @@ $LogPath = Join-Path $ConfigDir "bridge.log"
 $TaskName = "OWStats-OverLooker-Bridge"
 $RecordingRoot = Join-Path $HOME ".overlooker\recordings"
 $DefaultEndpoint = "https://overwatch-stats-ingest.vercel.app/api/ingest"
+$ScriptSelf = $PSCommandPath
 
 function Write-BridgeLog([string]$Message) {
     New-Item -ItemType Directory -Force -Path $ConfigDir | Out-Null
@@ -115,10 +116,16 @@ function Analyze-Json([string]$Path) {
 }
 
 function Load-State {
+    $out = @{}
     if (Test-Path $StatePath) {
-        try { return (Get-Content $StatePath -Raw | ConvertFrom-Json -AsHashtable) } catch {}
+        try {
+            $obj = Get-Content $StatePath -Raw | ConvertFrom-Json
+            foreach ($p in $obj.PSObject.Properties) {
+                $out[$p.Name] = [string]$p.Value
+            }
+        } catch {}
     }
-    return @{}
+    return $out
 }
 
 function Save-State([hashtable]$State) {
@@ -146,7 +153,7 @@ function Send-Diagnostic([string]$Path, $Analysis) {
 
 function Install-Bridge {
     Ensure-Config
-    $self = $MyInvocation.MyCommand.Path
+    $self = $ScriptSelf
     if (-not $self) { throw "Cannot determine script path." }
     $powershell = (Get-Command powershell.exe).Source
     $args = "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$self`""
