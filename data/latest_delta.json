@@ -1,111 +1,29 @@
 {
-  "event_id": "s24-24:g264-266:w125-127:l139-139",
-  "from_fetched_at": "2026-09-29T12:53:05.610669+00:00",
-  "to_fetched_at": "2026-09-29T18:22:34.921074+00:00",
+  "event_id": "s24-24:g266-266:w127-127:l139-139",
+  "from_fetched_at": "2026-09-29T18:22:34.921074+00:00",
+  "to_fetched_at": "2026-09-29T22:27:17.531260+00:00",
   "season_from": 24,
   "season_to": 24,
-  "status": "multi_game",
-  "result": "all_wins",
-  "primary_role": "support",
-  "primary_hero": "illari",
-  "heroes_used": [
-    {
-      "hero": "illari",
-      "time_played": 865,
-      "share_percent": 77.6
-    },
-    {
-      "hero": "moira",
-      "time_played": 249,
-      "share_percent": 22.4
-    }
-  ],
+  "status": "no_change",
+  "result": "no_game",
+  "primary_role": null,
+  "primary_hero": null,
+  "heroes_used": [],
   "general": {
-    "games_played": 2,
-    "games_won": 2,
+    "games_played": 0,
+    "games_won": 0,
     "games_lost": 0,
-    "time_played": 1114,
+    "time_played": 0,
     "total": {
-      "eliminations": 31,
-      "assists": 6,
-      "deaths": 12,
-      "damage": 14018,
-      "healing": 15131
+      "eliminations": 0,
+      "assists": 0,
+      "deaths": 0,
+      "damage": 0,
+      "healing": 0
     },
-    "kda": 3.08,
-    "per_10_minutes": {
-      "eliminations": 16.7,
-      "assists": 3.23,
-      "deaths": 6.46,
-      "damage": 7550.09,
-      "healing": 8149.55
-    }
+    "kda": null,
+    "per_10_minutes": {}
   },
-  "roles": {
-    "support": {
-      "games_played": 2,
-      "games_won": 2,
-      "games_lost": 0,
-      "time_played": 1114,
-      "total": {
-        "eliminations": 31,
-        "assists": 6,
-        "deaths": 12,
-        "damage": 14018,
-        "healing": 15131
-      },
-      "kda": 3.08,
-      "per_10_minutes": {
-        "eliminations": 16.7,
-        "assists": 3.23,
-        "deaths": 6.46,
-        "damage": 7550.09,
-        "healing": 8149.55
-      }
-    }
-  },
-  "heroes": {
-    "illari": {
-      "games_played": 1,
-      "games_won": 1,
-      "games_lost": 0,
-      "time_played": 865,
-      "total": {
-        "eliminations": 24,
-        "assists": 6,
-        "deaths": 10,
-        "damage": 11024,
-        "healing": 10625
-      },
-      "kda": 3.0,
-      "per_10_minutes": {
-        "eliminations": 16.65,
-        "assists": 4.16,
-        "deaths": 6.94,
-        "damage": 7646.71,
-        "healing": 7369.94
-      }
-    },
-    "moira": {
-      "games_played": 1,
-      "games_won": 1,
-      "games_lost": 0,
-      "time_played": 249,
-      "total": {
-        "eliminations": 7,
-        "assists": 0,
-        "deaths": 2,
-        "damage": 2994,
-        "healing": 4506
-      },
-      "kda": 3.5,
-      "per_10_minutes": {
-        "eliminations": 16.87,
-        "assists": 0.0,
-        "deaths": 4.82,
-        "damage": 7214.46,
-        "healing": 10857.83
-      }
-    }
-  }
+  "roles": {},
+  "heroes": {}
 }
