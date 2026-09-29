@@ -134,6 +134,32 @@ module.exports = async function handler(req, res) {
       });
     }
 
+    if (body.kind === "overlooker_recording_diagnostic") {
+      const diagnostic = {
+        source: "overlooker-recording-bridge",
+        server_received_at: new Date().toISOString(),
+        client_received_at: body.received_at || null,
+        diagnostic: body.diagnostic || {},
+        privacy_note: "Contains file metadata, event counts and key/type shapes only; raw recording values are not stored.",
+      };
+
+      if (!process.env.GITHUB_TOKEN) {
+        console.log("OVERLOOKER_DIAGNOSTIC", JSON.stringify(diagnostic));
+        return json(res, 200, {
+          ok: true,
+          stored: "runtime_log",
+          note: "GITHUB_TOKEN is not configured; diagnostic was logged only."
+        });
+      }
+
+      await putJsonFile(
+        "data/overlooker-diagnostic.json",
+        diagnostic,
+        "Update OverLooker recording diagnostic"
+      );
+      return json(res, 200, { ok: true, stored: "overlooker_diagnostic" });
+    }
+
     if (body.kind === "normalized_match") {
       if (!process.env.GITHUB_TOKEN) {
         return json(res, 503, {
