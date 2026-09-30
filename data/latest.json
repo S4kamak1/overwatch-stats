@@ -6,7 +6,7 @@
   "is_public": true,
   "platform": "pc",
   "gamemode": "competitive",
-  "fetched_at": "2026-09-30T06:55:47.216302+00:00",
+  "fetched_at": "2026-09-30T13:11:55.063275+00:00",
   "refresh_retry_used": false,
   "blizzard_probe": {
     "name": "S4kamak1",
@@ -17,13 +17,13 @@
   "overfast_response_headers": {
     "summary": {
       "server": "nginx",
-      "date": "Wed, 30 Sep 2026 06:55:45 GMT",
+      "date": "Wed, 30 Sep 2026 13:11:54 GMT",
       "content-type": "application/json",
       "content-length": "1904",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "19920",
+      "age": "22567",
       "cache-control": "public, max-age=600, stale-while-revalidate=300",
       "x-cache-status": "stale",
       "access-control-allow-origin": "*",
@@ -31,15 +31,14 @@
     },
     "stats": {
       "server": "nginx",
-      "date": "Wed, 30 Sep 2026 06:55:47 GMT",
+      "date": "Wed, 30 Sep 2026 13:11:55 GMT",
       "content-type": "application/json",
       "content-length": "7631",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "19922",
-      "cache-control": "public, max-age=600, stale-while-revalidate=300",
-      "x-cache-status": "stale",
+      "cache-control": "public, max-age=600",
+      "x-cache-status": "hit",
       "access-control-allow-origin": "*",
       "strict-transport-security": "max-age=63072000"
     }
