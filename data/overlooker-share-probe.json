@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-10-03T09:39:18.333781+00:00",
+  "match_id": "52b337bf-c871-48d9-b8c6-67c035826ebf",
+  "url": "https://overlooker.app/matches/52b337bf-c871-48d9-b8c6-67c035826ebf",
+  "upstream": {
+    "status": 200,
+    "final_url": "https://overlooker.app/matches/52b337bf-c871-48d9-b8c6-67c035826ebf",
+    "content_type": "text/html",
+    "content_length": 42345,
+    "title": "Watchpoint: Gibraltar — VICTORY — OverLooker"
+  },
+  "page_signals": {
+    "next_data": false,
+    "svelte_or_sveltekit": false,
+    "react_root": true,
+    "application_json_scripts": 0,
+    "json_script_summaries": [],
+    "script_ids": [
+      "30ac55e2-6f38-454d-9ac8-bac1f505e4e5"
+    ],
+    "script_srcs": [
+      "https://umami.overlooker.app/replay.js",
+      "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+    ]
+  },
+  "markers": {
+    "victory": true,
+    "watchpoint_gibraltar": true,
+    "s4kamak1": true,
+    "illari": true,
+    "match_id": true
+  },
+  "network_hints": {
+    "absolute_urls": [
+      "https://overlooker.app/matches/52b337bf-c871-48d9-b8c6-67c035826ebf"
+    ],
+    "path_hints": [
+      "/perks/illari/rapid_construction.png",
+      "/assets/match-BpMa0pko.js",
+      "/assets/match-DLe0iHAE.css",
+      "/perks/illari/rapid_construction.png\\"
+    ]
+  },
+  "privacy_note": "Stores structural/page hints only; full public match HTML is not committed."
+}
