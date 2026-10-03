@@ -143,25 +143,45 @@ function Get-LocalPlayerContainer([string]$Line) {
 
 function Get-DirectObjectSummary([string]$Container) {
     if (-not $Container) { return [ordered]@{present=$false; entries=0; numeric_values=0; numeric_sum=0; array_values=0; object_values=0} }
-    $body=$Container
     $entryCount=0; $numericCount=0; $numericSum=0.0; $arrayCount=0; $objectCount=0
     $patterns=@('"[^"\r\n]+"\s*[:=]\s*','(?<![A-Za-z0-9_])[A-Za-z_][A-Za-z0-9_.-]*\s*[:=]\s*')
     $seen=@{}
     foreach ($pattern in $patterns) {
-        foreach ($m in [regex]::Matches($body,$pattern)) {
-            if ((Get-BracketDepth $body $m.Index) -ne 1) { continue }
+        foreach ($m in [regex]::Matches($Container,$pattern)) {
+            if ((Get-BracketDepth $Container $m.Index) -ne 1) { continue }
             if ($seen.ContainsKey([string]$m.Index)) { continue }
             $seen[[string]$m.Index]=$true; $entryCount++
             $i=$m.Index+$m.Length
-            while ($i -lt $body.Length -and [char]::IsWhiteSpace($body[$i])) { $i++ }
-            if ($i -ge $body.Length) { continue }
-            if ($body[$i] -eq '[') { $arrayCount++; continue }
-            if ($body[$i] -eq '{' -or $body[$i] -eq '(') { $objectCount++; continue }
-            $v=Convert-TokenValue (Read-Token $body $i)
+            while ($i -lt $Container.Length -and [char]::IsWhiteSpace($Container[$i])) { $i++ }
+            if ($i -ge $Container.Length) { continue }
+            if ($Container[$i] -eq '[') { $arrayCount++; continue }
+            if ($Container[$i] -eq '{' -or $Container[$i] -eq '(') { $objectCount++; continue }
+            $v=Convert-TokenValue (Read-Token $Container $i)
             if ($v -is [double] -or $v -is [int] -or $v -is [long] -or $v -is [decimal]) { $numericCount++; $numericSum += [double]$v }
         }
     }
     return [ordered]@{present=$true; entries=$entryCount; numeric_values=$numericCount; numeric_sum=[Math]::Round($numericSum,3); array_values=$arrayCount; object_values=$objectCount}
+}
+
+function Get-AnonymousNumericLeafSummary([string]$Container) {
+    if (-not $Container) { return [ordered]@{present=$false; numeric_leaf_count=0; numeric_leaf_sum=0; numeric_leaf_values=@()} }
+    $values = New-Object System.Collections.ArrayList
+    $patterns=@('"[^"\r\n]+"\s*[:=]\s*','(?<![A-Za-z0-9_])[A-Za-z_][A-Za-z0-9_.-]*\s*[:=]\s*')
+    $seen=@{}
+    foreach ($pattern in $patterns) {
+        foreach ($m in [regex]::Matches($Container,$pattern)) {
+            if ($seen.ContainsKey([string]$m.Index)) { continue }
+            $seen[[string]$m.Index]=$true
+            $i=$m.Index+$m.Length
+            while ($i -lt $Container.Length -and [char]::IsWhiteSpace($Container[$i])) { $i++ }
+            if ($i -ge $Container.Length) { continue }
+            if ($Container[$i] -eq '[' -or $Container[$i] -eq '{' -or $Container[$i] -eq '(') { continue }
+            $v=Convert-TokenValue (Read-Token $Container $i)
+            if ($v -is [double] -or $v -is [int] -or $v -is [long] -or $v -is [decimal]) { [void]$values.Add([double]$v) }
+        }
+    }
+    $sum=0.0; foreach($v in $values){$sum += [double]$v}
+    return [ordered]@{present=$true; numeric_leaf_count=$values.Count; numeric_leaf_sum=[Math]::Round($sum,3); numeric_leaf_values=@($values | Sort-Object)}
 }
 
 $latest=$null
@@ -182,6 +202,7 @@ $local=Get-LocalPlayerContainer $latest
 if (-not $local) { throw "Local player object not found." }
 $stats=Get-FieldContainer $local "stats"
 $kills=Get-FieldContainer $local "kills"
+$eContainer=if($stats){Get-FieldContainer $stats "e"}else{$null}
 
 function CandidateValues([string[]]$Names) {
     $rows=@()
@@ -198,12 +219,15 @@ function CandidateValues([string[]]$Names) {
 $out=[ordered]@{
     local_only=$true
     stats_candidates=[ordered]@{
-        e=if($stats){@((Get-AllFieldEntries $stats "e")|ForEach-Object{$_.Value})}else{@()}
         a=if($stats){@((Get-AllFieldEntries $stats "a")|ForEach-Object{$_.Value})}else{@()}
         d=if($stats){@((Get-AllFieldEntries $stats "d")|ForEach-Object{$_.Value})}else{@()}
         dmg=if($stats){@((Get-AllFieldEntries $stats "dmg")|ForEach-Object{$_.Value})}else{@()}
         heal=if($stats){@((Get-AllFieldEntries $stats "heal")|ForEach-Object{$_.Value})}else{@()}
         mit=if($stats){@((Get-AllFieldEntries $stats "mit")|ForEach-Object{$_.Value})}else{@()}
+    }
+    eliminations_e_object=[ordered]@{
+        direct=(Get-DirectObjectSummary $eContainer)
+        recursive_numeric=(Get-AnonymousNumericLeafSummary $eContainer)
     }
     kills_object=(Get-DirectObjectSummary $kills)
     heal_candidates=@(CandidateValues @("heal","healing","healed"))
@@ -214,4 +238,4 @@ Write-Host ""
 Write-Host "Local-player score-source diagnostic completed."
 $out | ConvertTo-Json -Depth 8
 Write-Host ""
-Write-Host "Only the local player's numeric stat candidates and anonymous container counts are shown. Nothing is uploaded."
+Write-Host "The eliminations container is shown only as anonymous numeric counts/sums. Nothing is uploaded."
