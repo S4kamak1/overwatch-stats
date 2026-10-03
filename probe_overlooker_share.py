@@ -2,11 +2,15 @@ import json
 import re
 import urllib.request
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 
 MATCH_ID = "52b337bf-c871-48d9-b8c6-67c035826ebf"
 URL = f"https://overlooker.app/matches/{MATCH_ID}"
 OUT = Path("data/overlooker-share-probe.json")
+TARGET_PLAYER = "S4kamak1"
+TARGET_HERO = "Illari"
+TARGET_MAP = "Watchpoint: Gibraltar"
 
 
 def uniq(items):
@@ -19,10 +23,60 @@ def uniq(items):
     return out
 
 
+class VisibleTextParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.hidden = 0
+        self.tokens = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() in {"script", "style", "noscript"}:
+            self.hidden += 1
+
+    def handle_endtag(self, tag):
+        if tag.lower() in {"script", "style", "noscript"} and self.hidden:
+            self.hidden -= 1
+
+    def handle_data(self, data):
+        if self.hidden:
+            return
+        text = re.sub(r"\s+", " ", data).strip()
+        if text:
+            self.tokens.append(text)
+
+
+def context_after(tokens, needle, count):
+    needle_lower = needle.lower()
+    for i, token in enumerate(tokens):
+        if token.lower() == needle_lower:
+            return tokens[i : i + count]
+    return []
+
+
+def script_diagnostics(html):
+    scripts = re.findall(r"<script([^>]*)>([\s\S]*?)</script>", html, re.I)
+    result = []
+    for attrs, body in scripts[:30]:
+        src_match = re.search(r"\bsrc=[\"']([^\"']+)", attrs, re.I)
+        id_match = re.search(r"\bid=[\"']([^\"']+)", attrs, re.I)
+        type_match = re.search(r"\btype=[\"']([^\"']+)", attrs, re.I)
+        keys = uniq(re.findall(r"[\"']([A-Za-z_][A-Za-z0-9_]{1,40})[\"']\s*:", body))[:40]
+        result.append(
+            {
+                "src": src_match.group(1) if src_match else None,
+                "id": id_match.group(1) if id_match else None,
+                "type": type_match.group(1) if type_match else None,
+                "inline_length": 0 if src_match else len(body.strip()),
+                "object_keys": keys,
+            }
+        )
+    return result
+
+
 req = urllib.request.Request(
     URL,
     headers={
-        "User-Agent": "OWStatsShareProbe/1.0",
+        "User-Agent": "OWStatsShareProbe/1.1",
         "Accept": "text/html,application/xhtml+xml",
     },
 )
@@ -59,15 +113,22 @@ for raw in json_scripts[:20]:
         summary["valid_json"] = False
     json_summaries.append(summary)
 
-# Look for likely data/API hints without storing the full page body.
-absolute_urls = uniq(
-    re.findall(r"https://[^\"'<>\\\s]+", html, re.I)
-)[:100]
+parser = VisibleTextParser()
+parser.feed(html)
+visible_tokens = parser.tokens
+
+# These contexts are deliberately short enough to stay inside the user's own
+# scoreboard row / hero summary and avoid committing neighboring player names.
+target_player_context = context_after(visible_tokens, TARGET_PLAYER, 7)
+target_hero_context = context_after(visible_tokens, TARGET_HERO, 10)
+map_context = context_after(visible_tokens, TARGET_MAP, 5)
+
+absolute_urls = uniq(re.findall(r"https://[^\"'<>\\\s]+", html, re.I))[:100]
 api_hints = [
-    url for url in absolute_urls
+    url
+    for url in absolute_urls
     if any(token in url.lower() for token in ("api", "match", "graphql", "supabase", "firebase"))
 ][:50]
-
 path_hints = uniq(
     re.findall(r"[\"'](/[^\"']*(?:api|match|graphql)[^\"']*)[\"']", html, re.I)
 )[:50]
@@ -91,19 +152,25 @@ result = {
         "json_script_summaries": json_summaries,
         "script_ids": script_ids,
         "script_srcs": script_srcs,
+        "script_diagnostics": script_diagnostics(html),
     },
     "markers": {
         "victory": "victory" in lower,
-        "watchpoint_gibraltar": "watchpoint: gibraltar" in lower,
-        "s4kamak1": "s4kamak1" in lower,
-        "illari": "illari" in lower,
+        "watchpoint_gibraltar": TARGET_MAP.lower() in lower,
+        "s4kamak1": TARGET_PLAYER.lower() in lower,
+        "illari": TARGET_HERO.lower() in lower,
         "match_id": MATCH_ID.lower() in lower,
+    },
+    "privacy_safe_context": {
+        "target_player": target_player_context,
+        "target_hero": target_hero_context,
+        "map": map_context,
     },
     "network_hints": {
         "absolute_urls": api_hints,
         "path_hints": path_hints,
     },
-    "privacy_note": "Stores structural/page hints only; full public match HTML is not committed.",
+    "privacy_note": "Stores only the user's own short visible-text contexts and structural/page hints; full public match HTML is not committed.",
 }
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
