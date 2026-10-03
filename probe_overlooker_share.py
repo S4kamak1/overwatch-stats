@@ -73,10 +73,32 @@ def script_diagnostics(html):
     return result
 
 
+def nearby_hero_hints(raw_html, player):
+    lower_html = raw_html.lower()
+    pos = lower_html.find(player.lower())
+    if pos < 0:
+        return {"perk_heroes": [], "hero_paths": []}
+
+    window = raw_html[max(0, pos - 1800) : min(len(raw_html), pos + 1800)]
+    perk_heroes = uniq(
+        slug.lower()
+        for slug in re.findall(r"/perks/([a-z0-9_-]+)/", window, re.I)
+    )
+    hero_paths = uniq(
+        slug.lower()
+        for slug in re.findall(
+            r"/(?:heroes?|portraits|hero-portraits)/([a-z0-9_-]+)(?:[/.])",
+            window,
+            re.I,
+        )
+    )
+    return {"perk_heroes": perk_heroes, "hero_paths": hero_paths}
+
+
 req = urllib.request.Request(
     URL,
     headers={
-        "User-Agent": "OWStatsShareProbe/1.1",
+        "User-Agent": "OWStatsShareProbe/1.2",
         "Accept": "text/html,application/xhtml+xml",
     },
 )
@@ -117,11 +139,10 @@ parser = VisibleTextParser()
 parser.feed(html)
 visible_tokens = parser.tokens
 
-# These contexts are deliberately short enough to stay inside the user's own
-# scoreboard row / hero summary and avoid committing neighboring player names.
 target_player_context = context_after(visible_tokens, TARGET_PLAYER, 7)
 target_hero_context = context_after(visible_tokens, TARGET_HERO, 10)
 map_context = context_after(visible_tokens, TARGET_MAP, 5)
+hero_hints = nearby_hero_hints(html, TARGET_PLAYER)
 
 absolute_urls = uniq(re.findall(r"https://[^\"'<>\\\s]+", html, re.I))[:100]
 api_hints = [
@@ -165,12 +186,13 @@ result = {
         "target_player": target_player_context,
         "target_hero": target_hero_context,
         "map": map_context,
+        "near_target_hero_hints": hero_hints,
     },
     "network_hints": {
         "absolute_urls": api_hints,
         "path_hints": path_hints,
     },
-    "privacy_note": "Stores only the user's own short visible-text contexts and structural/page hints; full public match HTML is not committed.",
+    "privacy_note": "Stores only the user's own short visible-text contexts, nearby hero asset slugs, and structural/page hints; full public match HTML is not committed.",
 }
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
