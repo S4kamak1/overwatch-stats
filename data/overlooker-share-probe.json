@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T09:39:18.333781+00:00",
+  "generated_at": "2026-10-03T09:40:56.042595+00:00",
   "match_id": "52b337bf-c871-48d9-b8c6-67c035826ebf",
   "url": "https://overlooker.app/matches/52b337bf-c871-48d9-b8c6-67c035826ebf",
   "upstream": {
@@ -21,6 +21,92 @@
     "script_srcs": [
       "https://umami.overlooker.app/replay.js",
       "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+    ],
+    "script_diagnostics": [
+      {
+        "src": "https://umami.overlooker.app/replay.js",
+        "id": "30ac55e2-6f38-454d-9ac8-bac1f505e4e5",
+        "type": null,
+        "inline_length": 0,
+        "object_keys": []
+      },
+      {
+        "src": null,
+        "id": null,
+        "type": null,
+        "inline_length": 592,
+        "object_keys": []
+      },
+      {
+        "src": null,
+        "id": null,
+        "type": null,
+        "inline_length": 555,
+        "object_keys": [
+          "basename",
+          "future",
+          "unstable_optimizeDeps",
+          "v8_passThroughRequests",
+          "unstable_trailingSlashAwareDataRequests",
+          "unstable_previewServerPrerendering",
+          "v8_middleware",
+          "v8_splitRouteModules",
+          "v8_viteEnvironmentApi",
+          "routeDiscovery",
+          "mode",
+          "manifestPath",
+          "ssr",
+          "isSpaMode"
+        ]
+      },
+      {
+        "src": null,
+        "id": null,
+        "type": "module",
+        "inline_length": 2710,
+        "object_keys": [
+          "entry",
+          "module",
+          "imports",
+          "css",
+          "routes",
+          "root",
+          "id",
+          "path",
+          "hasAction",
+          "hasLoader",
+          "hasClientAction",
+          "hasClientLoader",
+          "hasClientMiddleware",
+          "hasDefaultExport",
+          "hasErrorBoundary",
+          "parentId",
+          "index",
+          "url",
+          "version"
+        ]
+      },
+      {
+        "src": null,
+        "id": null,
+        "type": null,
+        "inline_length": 18839,
+        "object_keys": []
+      },
+      {
+        "src": null,
+        "id": null,
+        "type": null,
+        "inline_length": 53,
+        "object_keys": []
+      },
+      {
+        "src": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+        "id": null,
+        "type": "module",
+        "inline_length": 0,
+        "object_keys": []
+      }
     ]
   },
   "markers": {
@@ -29,6 +115,25 @@
     "s4kamak1": true,
     "illari": true,
     "match_id": true
+  },
+  "privacy_safe_context": {
+    "target_player": [
+      "S4kamak1",
+      "16",
+      "12",
+      "3",
+      "5,527",
+      "6,448",
+      "0"
+    ],
+    "target_hero": [],
+    "map": [
+      "Watchpoint: Gibraltar",
+      "ESCORT",
+      "Attack",
+      "10:50",
+      "Player"
+    ]
   },
   "network_hints": {
     "absolute_urls": [
@@ -41,5 +146,5 @@
       "/perks/illari/rapid_construction.png\\"
     ]
   },
-  "privacy_note": "Stores structural/page hints only; full public match HTML is not committed."
+  "privacy_note": "Stores only the user's own short visible-text contexts and structural/page hints; full public match HTML is not committed."
 }
