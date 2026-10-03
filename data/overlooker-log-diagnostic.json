@@ -1,0 +1,66 @@
+{
+  "source": "overlooker-local-log-probe",
+  "server_received_at": "2026-10-03T10:51:33.621Z",
+  "diagnostic": {
+    "generated_at": "2026-10-03T10:51:31.8142107Z",
+    "log_root_exists": true,
+    "files": [
+      {
+        "name": "2026-10-03_18-09-56.log",
+        "size_bytes": 2499384,
+        "modified_utc": "2026-10-03T10:51:21.0289209Z",
+        "lines_scanned": 5000,
+        "uuid_count": 3,
+        "unique_uuid_hashes": [
+          "be6bb256b9a10397",
+          "c97f287edb81cb34"
+        ],
+        "keyword_counts": {
+          "match": 56,
+          "complete": 4,
+          "upload": 1,
+          "saved": 14,
+          "share": 0,
+          "public": 0,
+          "private": 0,
+          "api": 2,
+          "graphql": 0,
+          "oauth": 0,
+          "scoreboard": 0,
+          "rank": 6,
+          "result": 5
+        },
+        "url_routes": [],
+        "json_key_sets": []
+      },
+      {
+        "name": "updater.log",
+        "size_bytes": 899,
+        "modified_utc": "2026-10-03T10:39:57.2226007Z",
+        "lines_scanned": 10,
+        "uuid_count": 1,
+        "unique_uuid_hashes": [
+          "055f42e80503dcc9"
+        ],
+        "keyword_counts": {
+          "match": 0,
+          "complete": 0,
+          "upload": 0,
+          "saved": 0,
+          "share": 0,
+          "public": 0,
+          "private": 0,
+          "api": 0,
+          "graphql": 0,
+          "oauth": 0,
+          "scoreboard": 0,
+          "rank": 0,
+          "result": 0
+        },
+        "url_routes": [],
+        "json_key_sets": []
+      }
+    ]
+  },
+  "privacy_note": "No raw OverLooker log lines, battletags, UUID values, query strings, tokens, or file contents are accepted or stored."
+}
