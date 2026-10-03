@@ -1,0 +1,41 @@
+{
+  "match_id": "52b337bf-c871-48d9-b8c6-67c035826ebf",
+  "source": "overlooker-share",
+  "source_url": "https://overlooker.app/matches/52b337bf-c871-48d9-b8c6-67c035826ebf",
+  "imported_at": "2026-10-03T09:42:46.230137+00:00",
+  "player": "S4kamak1",
+  "result": "win",
+  "map": "Watchpoint: Gibraltar",
+  "mode": "escort",
+  "side": "attack",
+  "duration": "10:50",
+  "duration_seconds": 650,
+  "role": "tank",
+  "primary_hero": "junker_queen",
+  "heroes": [
+    "junker_queen",
+    "soldier_76",
+    "tracer",
+    "ana",
+    "illari",
+    "moira",
+    "zenyatta"
+  ],
+  "stats": {
+    "eliminations": 16,
+    "assists": 12,
+    "deaths": 3,
+    "damage": 5527,
+    "healing": 6448,
+    "mitigation": 0
+  },
+  "kda": 9.33,
+  "per_10_minutes": {
+    "eliminations": 14.77,
+    "assists": 11.08,
+    "deaths": 2.77,
+    "damage": 5101.85,
+    "healing": 5952.0,
+    "mitigation": 0.0
+  }
+}
