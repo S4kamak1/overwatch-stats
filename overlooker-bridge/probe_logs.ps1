@@ -4,7 +4,7 @@ $ConfigDir = Join-Path $env:LOCALAPPDATA "OWStatsBridge"
 $ConfigPath = Join-Path $ConfigDir "log_probe_config.json"
 $OutputPath = Join-Path $ConfigDir "overlooker-log-diagnostic.json"
 $LogRoot = Join-Path $HOME ".overlooker\logs"
-$DefaultEndpoint = "https://overwatch-stats-ingest.vercel.app/api/overlooker-log-diagnostic"
+$Endpoint = "https://overwatch-stats-ingest.vercel.app/api/overlooker-log-diagnostic"
 $UuidPattern = '(?i)\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b'
 $UrlPattern = 'https?://[^\s"''<>]+'
 $Keywords = @(
@@ -14,16 +14,20 @@ $Keywords = @(
 
 function Ensure-Config {
     New-Item -ItemType Directory -Force -Path $ConfigDir | Out-Null
-    if (Test-Path $ConfigPath) { return }
 
-    $endpoint = Read-Host "Diagnostic endpoint [$DefaultEndpoint]"
-    if ([string]::IsNullOrWhiteSpace($endpoint)) { $endpoint = $DefaultEndpoint }
+    if (Test-Path $ConfigPath) {
+        try {
+            $existing = Get-Content $ConfigPath -Raw | ConvertFrom-Json
+            if ($existing.token) {
+                return
+            }
+        } catch {}
+    }
 
     $secure = Read-Host "OW_INGEST_TOKEN (hidden)" -AsSecureString
     $encrypted = ConvertFrom-SecureString $secure
 
     [ordered]@{
-        endpoint = $endpoint
         token = $encrypted
     } | ConvertTo-Json | Set-Content -Encoding UTF8 $ConfigPath
 }
@@ -33,7 +37,7 @@ function Get-Config {
     $secure = ConvertTo-SecureString ([string]$cfg.token)
     $credential = New-Object System.Management.Automation.PSCredential("ow", $secure)
     return [ordered]@{
-        endpoint = [string]$cfg.endpoint
+        endpoint = $Endpoint
         token = $credential.GetNetworkCredential().Password
     }
 }
