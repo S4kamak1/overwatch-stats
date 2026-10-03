@@ -61,15 +61,13 @@ def script_diagnostics(html):
         id_match = re.search(r"\bid=[\"']([^\"']+)", attrs, re.I)
         type_match = re.search(r"\btype=[\"']([^\"']+)", attrs, re.I)
         keys = uniq(re.findall(r"[\"']([A-Za-z_][A-Za-z0-9_]{1,40})[\"']\s*:", body))[:40]
-        result.append(
-            {
-                "src": src_match.group(1) if src_match else None,
-                "id": id_match.group(1) if id_match else None,
-                "type": type_match.group(1) if type_match else None,
-                "inline_length": 0 if src_match else len(body.strip()),
-                "object_keys": keys,
-            }
-        )
+        result.append({
+            "src": src_match.group(1) if src_match else None,
+            "id": id_match.group(1) if id_match else None,
+            "type": type_match.group(1) if type_match else None,
+            "inline_length": 0 if src_match else len(body.strip()),
+            "object_keys": keys,
+        })
     return result
 
 
@@ -77,28 +75,44 @@ def nearby_hero_hints(raw_html, player):
     lower_html = raw_html.lower()
     pos = lower_html.find(player.lower())
     if pos < 0:
-        return {"perk_heroes": [], "hero_paths": []}
+        return {"perk_occurrences": [], "hero_path_occurrences": []}
 
-    window = raw_html[max(0, pos - 1800) : min(len(raw_html), pos + 1800)]
-    perk_heroes = uniq(
-        slug.lower()
-        for slug in re.findall(r"/perks/([a-z0-9_-]+)/", window, re.I)
-    )
-    hero_paths = uniq(
-        slug.lower()
-        for slug in re.findall(
-            r"/(?:heroes?|portraits|hero-portraits)/([a-z0-9_-]+)(?:[/.])",
-            window,
-            re.I,
-        )
-    )
-    return {"perk_heroes": perk_heroes, "hero_paths": hero_paths}
+    start = max(0, pos - 2200)
+    end = min(len(raw_html), pos + 2200)
+    window = raw_html[start:end]
+    rel_player = pos - start
+
+    perk_occurrences = []
+    for match in re.finditer(r"/perks/([a-z0-9_-]+)/", window, re.I):
+        perk_occurrences.append({
+            "hero": match.group(1).lower(),
+            "offset": match.start() - rel_player,
+        })
+
+    hero_path_occurrences = []
+    for match in re.finditer(
+        r"/(?:heroes?|portraits|hero-portraits)/([a-z0-9_-]+)(?:[/.])",
+        window,
+        re.I,
+    ):
+        hero_path_occurrences.append({
+            "hero": match.group(1).lower(),
+            "offset": match.start() - rel_player,
+        })
+
+    perk_occurrences.sort(key=lambda item: abs(item["offset"]))
+    hero_path_occurrences.sort(key=lambda item: abs(item["offset"]))
+
+    return {
+        "perk_occurrences": perk_occurrences[:12],
+        "hero_path_occurrences": hero_path_occurrences[:12],
+    }
 
 
 req = urllib.request.Request(
     URL,
     headers={
-        "User-Agent": "OWStatsShareProbe/1.2",
+        "User-Agent": "OWStatsShareProbe/1.3",
         "Accept": "text/html,application/xhtml+xml",
     },
 )
@@ -110,7 +124,6 @@ with urllib.request.urlopen(req, timeout=20) as response:
     final_url = response.geturl()
 
 lower = html.lower()
-
 title_match = re.search(r"<title[^>]*>([\s\S]*?)</title>", html, re.I)
 script_srcs = uniq(re.findall(r"<script[^>]+src=[\"']([^\"']+)[\"'][^>]*>", html, re.I))[:50]
 script_ids = uniq(re.findall(r"<script[^>]+id=[\"']([^\"']+)[\"'][^>]*>", html, re.I))[:30]
@@ -146,8 +159,7 @@ hero_hints = nearby_hero_hints(html, TARGET_PLAYER)
 
 absolute_urls = uniq(re.findall(r"https://[^\"'<>\\\s]+", html, re.I))[:100]
 api_hints = [
-    url
-    for url in absolute_urls
+    url for url in absolute_urls
     if any(token in url.lower() for token in ("api", "match", "graphql", "supabase", "firebase"))
 ][:50]
 path_hints = uniq(
@@ -192,7 +204,7 @@ result = {
         "absolute_urls": api_hints,
         "path_hints": path_hints,
     },
-    "privacy_note": "Stores only the user's own short visible-text contexts, nearby hero asset slugs, and structural/page hints; full public match HTML is not committed.",
+    "privacy_note": "Stores only the user's own short visible-text contexts, relative hero asset offsets, and structural/page hints; full public match HTML is not committed.",
 }
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
