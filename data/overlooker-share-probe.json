@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T09:40:56.042595+00:00",
+  "generated_at": "2026-10-03T09:44:03.068538+00:00",
   "match_id": "52b337bf-c871-48d9-b8c6-67c035826ebf",
   "url": "https://overlooker.app/matches/52b337bf-c871-48d9-b8c6-67c035826ebf",
   "upstream": {
@@ -133,7 +133,14 @@
       "Attack",
       "10:50",
       "Player"
-    ]
+    ],
+    "near_target_hero_hints": {
+      "perk_heroes": [
+        "ana",
+        "illari"
+      ],
+      "hero_paths": []
+    }
   },
   "network_hints": {
     "absolute_urls": [
@@ -146,5 +153,5 @@
       "/perks/illari/rapid_construction.png\\"
     ]
   },
-  "privacy_note": "Stores only the user's own short visible-text contexts and structural/page hints; full public match HTML is not committed."
+  "privacy_note": "Stores only the user's own short visible-text contexts, nearby hero asset slugs, and structural/page hints; full public match HTML is not committed."
 }
