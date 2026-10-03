@@ -20,7 +20,14 @@ HERO_ROLES = {
     "junker_queen": "tank", "mauga": "tank", "orisa": "tank",
     "ramattra": "tank", "reinhardt": "tank", "roadhog": "tank",
     "sigma": "tank", "winston": "tank", "wrecking_ball": "tank",
-    "zarya": "tank",
+    "zarya": "tank", "domina": "tank",
+    "ashe": "damage", "bastion": "damage", "cassidy": "damage",
+    "echo": "damage", "emre": "damage", "freja": "damage",
+    "genji": "damage", "hanzo": "damage", "junkrat": "damage",
+    "mei": "damage", "pharah": "damage", "reaper": "damage",
+    "sojourn": "damage", "soldier_76": "damage", "sombra": "damage",
+    "symmetra": "damage", "torbjorn": "damage", "tracer": "damage",
+    "venture": "damage", "widowmaker": "damage",
 }
 
 
@@ -67,12 +74,30 @@ def uniq(items):
     return out
 
 
+def detect_player_heroes(raw_html, player):
+    lower_html = raw_html.lower()
+    player_pos = lower_html.find(player.lower())
+    if player_pos < 0:
+        return []
+
+    occurrences = []
+    for match in re.finditer(r"/perks/([a-z0-9_-]+)/", raw_html, re.I):
+        offset = match.start() - player_pos
+        # Perk icons for the player's scoreboard row appear immediately around
+        # the player's name. A tight window excludes adjacent team rows.
+        if abs(offset) <= 700:
+            occurrences.append((abs(offset), offset, match.group(1).lower()))
+
+    occurrences.sort(key=lambda item: (item[0], item[1]))
+    return uniq(item[2] for item in occurrences)
+
+
 def fetch_match_html(match_id):
     url = f"https://overlooker.app/matches/{match_id}"
     request = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "OWStatsShareImporter/1.0",
+            "User-Agent": "OWStatsShareImporter/1.1",
             "Accept": "text/html,application/xhtml+xml",
         },
     )
@@ -135,11 +160,7 @@ def parse_match(match_id, source_url, raw_html):
         if map_index + 3 < len(tokens):
             duration_text = tokens[map_index + 3]
 
-    hero_slugs = uniq(
-        [slug.lower() for slug in re.findall(r"/perks/([a-z0-9_-]+)/", raw_html, re.I)]
-        + [slug.lower() for slug in re.findall(r"/heroes?/([a-z0-9_-]+)(?:[/.])", raw_html, re.I)]
-    )
-    hero_slugs = [slug for slug in hero_slugs if slug not in {"icons", "role"}]
+    hero_slugs = detect_player_heroes(raw_html, PLAYER)
     primary_hero = hero_slugs[0] if hero_slugs else None
     role = HERO_ROLES.get(primary_hero)
 
@@ -167,6 +188,7 @@ def parse_match(match_id, source_url, raw_html):
         "role": role,
         "primary_hero": primary_hero,
         "heroes": hero_slugs,
+        "hero_detection": "nearest_perk_assets_to_player_row",
         "stats": stats,
         "kda": kda,
         "per_10_minutes": per_10,
