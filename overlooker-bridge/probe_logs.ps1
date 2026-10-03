@@ -12,24 +12,22 @@ $Keywords = @(
     "api", "graphql", "oauth", "scoreboard", "rank", "result"
 )
 
+function Save-TokenConfig {
+    New-Item -ItemType Directory -Force -Path $ConfigDir | Out-Null
+    $secure = Read-Host "OW_INGEST_TOKEN (hidden)" -AsSecureString
+    $encrypted = ConvertFrom-SecureString $secure
+    [ordered]@{ token = $encrypted } | ConvertTo-Json | Set-Content -Encoding UTF8 $ConfigPath
+}
+
 function Ensure-Config {
     New-Item -ItemType Directory -Force -Path $ConfigDir | Out-Null
-
     if (Test-Path $ConfigPath) {
         try {
             $existing = Get-Content $ConfigPath -Raw | ConvertFrom-Json
-            if ($existing.token) {
-                return
-            }
+            if ($existing.token) { return }
         } catch {}
     }
-
-    $secure = Read-Host "OW_INGEST_TOKEN (hidden)" -AsSecureString
-    $encrypted = ConvertFrom-SecureString $secure
-
-    [ordered]@{
-        token = $encrypted
-    } | ConvertTo-Json | Set-Content -Encoding UTF8 $ConfigPath
+    Save-TokenConfig
 }
 
 function Get-Config {
@@ -86,23 +84,19 @@ function Analyze-LogFile($File) {
 
     foreach ($lineObj in $lines) {
         $line = [string]$lineObj
-
         foreach ($match in [regex]::Matches($line, $UuidPattern)) {
             $uuidCount++
             Add-Unique $uuidHashes (Get-ShortHash $match.Value) 50
         }
-
         foreach ($keyword in $Keywords) {
             if ($line.IndexOf($keyword, [System.StringComparison]::OrdinalIgnoreCase) -ge 0) {
                 $keywordCounts[$keyword]++
             }
         }
-
         foreach ($urlMatch in [regex]::Matches($line, $UrlPattern)) {
             $route = Get-UrlRoute $urlMatch.Value
             Add-Unique $urlRoutes $route 80
         }
-
         $trimmed = $line.Trim()
         if ($trimmed.StartsWith("{") -and $trimmed.EndsWith("}")) {
             try {
@@ -135,15 +129,40 @@ function Analyze-LogFile($File) {
     }
 }
 
+function Send-Payload([string]$Json) {
+    for ($attempt = 1; $attempt -le 2; $attempt++) {
+        $cfg = Get-Config
+        try {
+            return Invoke-RestMethod `
+                -Uri $cfg.endpoint `
+                -Method Post `
+                -Headers @{ Authorization = ("Bearer " + $cfg.token) } `
+                -ContentType "application/json" `
+                -Body $Json
+        } catch {
+            $status = $null
+            try { $status = [int]$_.Exception.Response.StatusCode } catch {}
+            $message = [string]$_.Exception.Message
+            $isUnauthorized = ($status -eq 401) -or ($message -match '401') -or ($_.ErrorDetails.Message -match 'unauthorized')
+            if ($isUnauthorized -and $attempt -eq 1) {
+                Write-Host ""
+                Write-Host "Stored OW_INGEST_TOKEN was rejected. Please enter the current Vercel OW_INGEST_TOKEN again." -ForegroundColor Yellow
+                Remove-Item $ConfigPath -Force -ErrorAction SilentlyContinue
+                Save-TokenConfig
+                continue
+            }
+            throw
+        }
+    }
+}
+
 Ensure-Config
-$cfg = Get-Config
 $filesOut = @()
 
 if (Test-Path $LogRoot) {
     $files = @(Get-ChildItem $LogRoot -File -Recurse -ErrorAction SilentlyContinue |
         Sort-Object LastWriteTimeUtc -Descending |
         Select-Object -First 20)
-
     foreach ($file in $files) {
         $filesOut += Analyze-LogFile $file
     }
@@ -160,12 +179,7 @@ New-Item -ItemType Directory -Force -Path $ConfigDir | Out-Null
 $payload | ConvertTo-Json -Depth 20 | Set-Content -Encoding UTF8 $OutputPath
 
 $json = $payload | ConvertTo-Json -Depth 20 -Compress
-$response = Invoke-RestMethod `
-    -Uri $cfg.endpoint `
-    -Method Post `
-    -Headers @{ Authorization = ("Bearer " + $cfg.token) } `
-    -ContentType "application/json" `
-    -Body $json
+$response = Send-Payload $json
 
 Write-Host ""
 Write-Host "OverLooker log diagnostic completed."
