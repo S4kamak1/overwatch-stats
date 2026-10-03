@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-10-03T09:52:15.206056+00:00",
+  "asset_url": "https://overlooker.app/assets/match-BpMa0pko.js",
+  "upstream": {
+    "status": 200,
+    "content_type": "text/javascript",
+    "content_length": 11150
+  },
+  "route_or_string_hints": [
+    "matchMeta",
+    "Match not found — OverLooker",
+    "Match"
+  ],
+  "absolute_urls": [],
+  "path_hints": [],
+  "identifier_hints": [],
+  "signals": {
+    "contains_fetch": false,
+    "contains_graphql": false,
+    "contains_supabase": false,
+    "contains_share": false,
+    "contains_public": false,
+    "contains_private": false,
+    "contains_mcp": false
+  },
+  "privacy_note": "Only short route/string/identifier hints from a public JS bundle are stored; the bundle body is not committed."
+}
