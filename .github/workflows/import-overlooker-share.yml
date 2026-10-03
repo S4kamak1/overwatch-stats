@@ -2,11 +2,17 @@ name: Import OverLooker Share
 
 on:
   workflow_dispatch:
+    inputs:
+      match_id:
+        description: "OverLooker public match UUID"
+        required: false
+        default: "52b337bf-c871-48d9-b8c6-67c035826ebf"
   push:
     branches:
       - main
     paths:
       - "import_overlooker_share.py"
+      - "analyze_live_matches.py"
       - ".github/workflows/import-overlooker-share.yml"
 
 permissions:
@@ -34,18 +40,23 @@ jobs:
           python-version: "3.12"
 
       - name: Import public OverLooker match
-        run: python import_overlooker_share.py
+        env:
+          MATCH_ID: ${{ github.event.inputs.match_id || '52b337bf-c871-48d9-b8c6-67c035826ebf' }}
+        run: python import_overlooker_share.py "$MATCH_ID"
 
-      - name: Commit normalized match
+      - name: Analyze normalized matches
+        run: python analyze_live_matches.py
+
+      - name: Commit match and analysis
         run: |
           git config user.name "ow-overlooker-import"
           git config user.email "ow-overlooker-import@users.noreply.github.com"
-          git add data/matches/
+          git add data/matches/ data/analysis/live_matches.json
           if git diff --cached --quiet; then
-            echo "No match changes"
+            echo "No match or analysis changes"
             exit 0
           fi
-          git commit -m "Import OverLooker match"
+          git commit -m "Import and analyze OverLooker match"
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then
               exit 0
