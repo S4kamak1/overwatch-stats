@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T09:44:03.068538+00:00",
+  "generated_at": "2026-10-03T09:45:34.582732+00:00",
   "match_id": "52b337bf-c871-48d9-b8c6-67c035826ebf",
   "url": "https://overlooker.app/matches/52b337bf-c871-48d9-b8c6-67c035826ebf",
   "upstream": {
@@ -135,11 +135,33 @@
       "Player"
     ],
     "near_target_hero_hints": {
-      "perk_heroes": [
-        "ana",
-        "illari"
+      "perk_occurrences": [
+        {
+          "hero": "illari",
+          "offset": 90
+        },
+        {
+          "hero": "illari",
+          "offset": 228
+        },
+        {
+          "hero": "ana",
+          "offset": -1085
+        },
+        {
+          "hero": "ana",
+          "offset": -1206
+        },
+        {
+          "hero": "tracer",
+          "offset": -2032
+        },
+        {
+          "hero": "tracer",
+          "offset": -2162
+        }
       ],
-      "hero_paths": []
+      "hero_path_occurrences": []
     }
   },
   "network_hints": {
@@ -153,5 +175,5 @@
       "/perks/illari/rapid_construction.png\\"
     ]
   },
-  "privacy_note": "Stores only the user's own short visible-text contexts, nearby hero asset slugs, and structural/page hints; full public match HTML is not committed."
+  "privacy_note": "Stores only the user's own short visible-text contexts, relative hero asset offsets, and structural/page hints; full public match HTML is not committed."
 }
