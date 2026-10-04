@@ -200,10 +200,24 @@ def main():
     if not re.fullmatch(r"[0-9a-fA-F-]{36}", match_id):
         raise SystemExit("Invalid match id")
 
+    out = Path("data/matches") / f"{match_id}.json"
+    existing_match_type = None
+    if out.exists():
+        try:
+            existing = json.loads(out.read_text(encoding="utf-8"))
+            value = existing.get("match_type") if isinstance(existing, dict) else None
+            if isinstance(value, str) and value.strip():
+                existing_match_type = value.strip().lower()
+        except Exception:
+            pass
+
     source_url, raw_html = fetch_match_html(match_id)
     match = parse_match(match_id, source_url, raw_html)
+    # Public share pages do not reliably expose competitive vs unranked.
+    # Preserve a previously confirmed label instead of deleting it on scheduled re-imports.
+    if existing_match_type:
+        match["match_type"] = existing_match_type
 
-    out = Path("data/matches") / f"{match_id}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(match, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(match, ensure_ascii=False, indent=2))
