@@ -1,0 +1,36 @@
+{
+  "match_id": "ol-8725625f6148aaf9b98104b4",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-04T09:50:43.9919701Z",
+  "result": "win",
+  "map": "Antarctic Peninsula",
+  "mode": "Control",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 409579,
+  "duration_seconds": 409.58,
+  "role": "tank",
+  "primary_hero": "zarya",
+  "heroes": [
+    "zarya"
+  ],
+  "stats": {
+    "eliminations": 13,
+    "assists": 2,
+    "deaths": 1,
+    "damage": 6303,
+    "healing": 0,
+    "mitigation": 3225
+  },
+  "kda": 15,
+  "per_10_minutes": {
+    "eliminations": 19.04,
+    "assists": 2.93,
+    "deaths": 1.46,
+    "damage": 9234.78,
+    "healing": 0,
+    "mitigation": 4725.04
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-04T09:50:47.399Z"
+}
