@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-10-04T10:03:36.770938+00:00",
+  "generated_at": "2026-10-04T10:04:59.958156+00:00",
   "matches": 2,
   "results": {
     "win": 2
   },
   "match_types": {
-    "competitive": 2
+    "unranked": 1,
+    "competitive": 1
   },
   "heroes": {
     "illari": 1,
