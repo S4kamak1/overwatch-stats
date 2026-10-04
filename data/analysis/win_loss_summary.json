@@ -1,17 +1,46 @@
 {
-  "generated_at": "2026-10-03T23:00:48.510269+00:00",
+  "generated_at": "2026-10-04T02:34:07.588579+00:00",
   "current_season": 24,
-  "single_games_tracked": 0,
+  "single_games_tracked": 1,
   "wins": {
-    "games": 0,
-    "average": {}
+    "games": 1,
+    "average": {
+      "duration_seconds": 334.0,
+      "eliminations": 13.0,
+      "assists": 2.0,
+      "deaths": 1.0,
+      "damage": 6795.0,
+      "healing": 0.0,
+      "kda": 15.0,
+      "per_10_minutes": {
+        "eliminations": 23.35,
+        "assists": 3.59,
+        "deaths": 1.8,
+        "damage": 12206.59,
+        "healing": 0.0
+      }
+    }
   },
   "losses": {
     "games": 0,
     "average": {}
   },
-  "primary_heroes": {},
-  "primary_roles": {},
+  "primary_heroes": {
+    "zarya": {
+      "games": 1,
+      "wins": 1,
+      "losses": 0,
+      "winrate": 100.0
+    }
+  },
+  "primary_roles": {
+    "tank": {
+      "games": 1,
+      "wins": 1,
+      "losses": 0,
+      "winrate": 100.0
+    }
+  },
   "notes": [
     "Single-game records are inferred from differences between cumulative OverFast snapshots.",
     "Only intervals with exactly one new competitive game are used for direct win/loss averages.",

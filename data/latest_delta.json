@@ -1,29 +1,111 @@
 {
-  "event_id": "s24-24:g286-286:w143-143:l143-143",
-  "from_fetched_at": "2026-10-03T20:11:45.916759+00:00",
-  "to_fetched_at": "2026-10-03T23:00:48.466203+00:00",
+  "event_id": "s24-24:g286-287:w143-144:l143-143",
+  "from_fetched_at": "2026-10-03T23:00:48.466203+00:00",
+  "to_fetched_at": "2026-10-04T02:34:07.529679+00:00",
   "season_from": 24,
   "season_to": 24,
-  "status": "no_change",
-  "result": "no_game",
-  "primary_role": null,
-  "primary_hero": null,
-  "heroes_used": [],
+  "status": "single_game",
+  "result": "win",
+  "primary_role": "tank",
+  "primary_hero": "zarya",
+  "heroes_used": [
+    {
+      "hero": "zarya",
+      "time_played": 214,
+      "share_percent": 64.1
+    },
+    {
+      "hero": "ramattra",
+      "time_played": 120,
+      "share_percent": 35.9
+    }
+  ],
   "general": {
-    "games_played": 0,
-    "games_won": 0,
+    "games_played": 1,
+    "games_won": 1,
     "games_lost": 0,
-    "time_played": 0,
+    "time_played": 334,
     "total": {
-      "eliminations": 0,
-      "assists": 0,
-      "deaths": 0,
-      "damage": 0,
+      "eliminations": 13,
+      "assists": 2,
+      "deaths": 1,
+      "damage": 6795,
       "healing": 0
     },
-    "kda": null,
-    "per_10_minutes": {}
+    "kda": 15.0,
+    "per_10_minutes": {
+      "eliminations": 23.35,
+      "assists": 3.59,
+      "deaths": 1.8,
+      "damage": 12206.59,
+      "healing": 0.0
+    }
   },
-  "roles": {},
-  "heroes": {}
+  "roles": {
+    "tank": {
+      "games_played": 1,
+      "games_won": 1,
+      "games_lost": 0,
+      "time_played": 334,
+      "total": {
+        "eliminations": 13,
+        "assists": 2,
+        "deaths": 1,
+        "damage": 6795,
+        "healing": 0
+      },
+      "kda": 15.0,
+      "per_10_minutes": {
+        "eliminations": 23.35,
+        "assists": 3.59,
+        "deaths": 1.8,
+        "damage": 12206.59,
+        "healing": 0.0
+      }
+    }
+  },
+  "heroes": {
+    "zarya": {
+      "games_played": 1,
+      "games_won": 1,
+      "games_lost": 0,
+      "time_played": 214,
+      "total": {
+        "eliminations": 9,
+        "assists": 1,
+        "deaths": 1,
+        "damage": 4691,
+        "healing": 0
+      },
+      "kda": 10.0,
+      "per_10_minutes": {
+        "eliminations": 25.23,
+        "assists": 2.8,
+        "deaths": 2.8,
+        "damage": 13152.34,
+        "healing": 0.0
+      }
+    },
+    "ramattra": {
+      "games_played": 0,
+      "games_won": 0,
+      "games_lost": 0,
+      "time_played": 120,
+      "total": {
+        "eliminations": 4,
+        "assists": 1,
+        "deaths": 0,
+        "damage": 2104,
+        "healing": 0
+      },
+      "kda": null,
+      "per_10_minutes": {
+        "eliminations": 20.0,
+        "assists": 5.0,
+        "deaths": 0.0,
+        "damage": 10520.0,
+        "healing": 0.0
+      }
+    }
+  }
 }
