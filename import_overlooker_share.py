@@ -10,6 +10,9 @@ from pathlib import Path
 
 DEFAULT_MATCH_ID = "52b337bf-c871-48d9-b8c6-67c035826ebf"
 PLAYER = os.environ.get("OVERLOOKER_PLAYER", "S4kamak1")
+KNOWN_MATCH_TYPES = {
+    DEFAULT_MATCH_ID: "unranked",
+}
 
 HERO_ROLES = {
     "ana": "support", "baptiste": "support", "brigitte": "support",
@@ -214,9 +217,11 @@ def main():
     source_url, raw_html = fetch_match_html(match_id)
     match = parse_match(match_id, source_url, raw_html)
     # Public share pages do not reliably expose competitive vs unranked.
-    # Preserve a previously confirmed label instead of deleting it on scheduled re-imports.
-    if existing_match_type:
-        match["match_type"] = existing_match_type
+    # Keep an already-confirmed label, and retain the known legacy label for
+    # the original Gibraltar share import.
+    match_type = existing_match_type or KNOWN_MATCH_TYPES.get(match_id)
+    if match_type:
+        match["match_type"] = match_type
 
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(match, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
