@@ -5,6 +5,7 @@
   "result": "win",
   "map": "Antarctic Peninsula",
   "mode": "Control",
+  "match_type": "competitive",
   "queue_type": "ROLE_QUEUE",
   "side": "ally",
   "duration_ms": 409579,
