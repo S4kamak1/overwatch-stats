@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-10-04T10:01:12.067782+00:00",
+  "generated_at": "2026-10-04T10:02:36.270617+00:00",
   "matches": 2,
   "results": {
     "win": 2
   },
   "match_types": {
-    "unknown": 2
+    "competitive": 1,
+    "unknown": 1
   },
   "heroes": {
     "illari": 1,
@@ -20,7 +21,7 @@
       "match_id": "52b337bf-c871-48d9-b8c6-67c035826ebf",
       "source": "overlooker-share",
       "source_url": "https://overlooker.app/matches/52b337bf-c871-48d9-b8c6-67c035826ebf",
-      "imported_at": "2026-10-04T10:01:12.028666+00:00",
+      "imported_at": "2026-10-04T10:02:36.215428+00:00",
       "player": "S4kamak1",
       "result": "win",
       "map": "Watchpoint: Gibraltar",
@@ -51,6 +52,7 @@
         "healing": 5952.0,
         "mitigation": 0.0
       },
+      "match_type": "unranked",
       "_file": "52b337bf-c871-48d9-b8c6-67c035826ebf.json"
     },
     {
