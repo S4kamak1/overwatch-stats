@@ -8,6 +8,13 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0apply_competitive_stats_fix.ps1"
+if errorlevel 1 (
+  echo Failed to prepare competitive repeated-stats handling.
+  echo.
+  pause
+  exit /b 1
+)
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0overlooker_bridge_runtime.ps1" -PreviewLatest
 echo.
 pause
