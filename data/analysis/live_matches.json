@@ -1,8 +1,11 @@
 {
-  "generated_at": "2026-10-04T09:50:55.738838+00:00",
+  "generated_at": "2026-10-04T09:59:34.982856+00:00",
   "matches": 2,
   "results": {
     "win": 2
+  },
+  "match_types": {
+    "unknown": 2
   },
   "heroes": {
     "illari": 1,
@@ -88,5 +91,5 @@
       "_file": "ol-8725625f6148aaf9b98104b4.json"
     }
   ],
-  "note": "Schema remains tolerant until the first real Overwatch GEP match is mapped."
+  "note": "match_type separates competitive and unranked when available; unknown values are not guessed from queue_type."
 }
