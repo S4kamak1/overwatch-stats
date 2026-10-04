@@ -1,14 +1,16 @@
 {
-  "generated_at": "2026-10-03T09:48:30.814627+00:00",
-  "matches": 1,
+  "generated_at": "2026-10-04T09:50:55.738838+00:00",
+  "matches": 2,
   "results": {
-    "win": 1
+    "win": 2
   },
   "heroes": {
-    "illari": 1
+    "illari": 1,
+    "zarya": 1
   },
   "roles": {
-    "support": 1
+    "support": 1,
+    "tank": 1
   },
   "latest": [
     {
@@ -47,6 +49,43 @@
         "mitigation": 0.0
       },
       "_file": "52b337bf-c871-48d9-b8c6-67c035826ebf.json"
+    },
+    {
+      "match_id": "ol-8725625f6148aaf9b98104b4",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-04T09:50:43.9919701Z",
+      "result": "win",
+      "map": "Antarctic Peninsula",
+      "mode": "Control",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 409579,
+      "duration_seconds": 409.58,
+      "role": "tank",
+      "primary_hero": "zarya",
+      "heroes": [
+        "zarya"
+      ],
+      "stats": {
+        "eliminations": 13,
+        "assists": 2,
+        "deaths": 1,
+        "damage": 6303,
+        "healing": 0,
+        "mitigation": 3225
+      },
+      "kda": 15,
+      "per_10_minutes": {
+        "eliminations": 19.04,
+        "assists": 2.93,
+        "deaths": 1.46,
+        "damage": 9234.78,
+        "healing": 0,
+        "mitigation": 4725.04
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-04T09:50:47.399Z",
+      "_file": "ol-8725625f6148aaf9b98104b4.json"
     }
   ],
   "note": "Schema remains tolerant until the first real Overwatch GEP match is mapped."
