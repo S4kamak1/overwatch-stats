@@ -1,12 +1,11 @@
 {
-  "generated_at": "2026-10-04T10:02:36.270617+00:00",
+  "generated_at": "2026-10-04T10:03:36.770938+00:00",
   "matches": 2,
   "results": {
     "win": 2
   },
   "match_types": {
-    "competitive": 1,
-    "unknown": 1
+    "competitive": 2
   },
   "heroes": {
     "illari": 1,
@@ -62,6 +61,7 @@
       "result": "win",
       "map": "Antarctic Peninsula",
       "mode": "Control",
+      "match_type": "competitive",
       "queue_type": "ROLE_QUEUE",
       "side": "ally",
       "duration_ms": 409579,
