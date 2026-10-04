@@ -29,6 +29,13 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0apply_hidden_startup_patch.ps1"
+if errorlevel 1 (
+  echo Failed to prepare hidden startup launcher.
+  echo.
+  pause
+  exit /b 1
+)
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0apply_upgrade_safety.ps1"
 if errorlevel 1 (
   echo Failed to prepare upgrade-safe bridge runtime.
