@@ -22,6 +22,13 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0apply_utf8_log_patch.ps1"
+if errorlevel 1 (
+  echo Failed to prepare UTF-8 OverLooker log reading.
+  echo.
+  pause
+  exit /b 1
+)
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0apply_upgrade_safety.ps1"
 if errorlevel 1 (
   echo Failed to prepare upgrade-safe bridge runtime.
