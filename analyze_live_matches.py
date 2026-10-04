@@ -41,10 +41,11 @@ def normalize_match_type(value):
     value = value.strip().lower()
     if not value:
         return "unknown"
-    if any(token in value for token in ("competitive", "ranked", "comp")):
-        return "competitive"
+    # Check unranked first because the word "unranked" contains "ranked".
     if any(token in value for token in ("quickplay", "quick_play", "quick play", "unranked", "casual", "quick")):
         return "unranked"
+    if any(token in value for token in ("competitive", "ranked", "comp")):
+        return "competitive"
     return "unknown"
 
 
