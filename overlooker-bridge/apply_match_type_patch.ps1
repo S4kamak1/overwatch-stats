@@ -19,8 +19,9 @@ function Normalize-MatchType($Value) {
     $s = ([string]$Value).Trim().ToLowerInvariant()
     if (-not $s) { return "unknown" }
 
-    if ($s -match 'competitive|ranked|comp') { return "competitive" }
+    # Check unranked first because the literal word "unranked" contains "ranked".
     if ($s -match 'quick.?play|unranked|casual|quick') { return "unranked" }
+    if ($s -match 'competitive|ranked|comp') { return "competitive" }
     return "unknown"
 }
 
