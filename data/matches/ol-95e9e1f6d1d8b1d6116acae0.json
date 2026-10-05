@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-95e9e1f6d1d8b1d6116acae0",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-05T15:43:44.4993425Z",
+  "result": "win",
+  "map": "Rialto",
+  "mode": "Escort",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 690280,
+  "duration_seconds": 690.28,
+  "role": "tank",
+  "primary_hero": "ramattra",
+  "heroes": [
+    "ramattra"
+  ],
+  "stats": {
+    "eliminations": 18,
+    "assists": 4,
+    "deaths": 2,
+    "damage": 9541,
+    "healing": 591,
+    "mitigation": 6361
+  },
+  "kda": 11,
+  "per_10_minutes": {
+    "eliminations": 15.65,
+    "assists": 3.48,
+    "deaths": 1.74,
+    "damage": 8293.21,
+    "healing": 514.08,
+    "mitigation": 5529.84
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-05T15:43:45.638Z"
+}
