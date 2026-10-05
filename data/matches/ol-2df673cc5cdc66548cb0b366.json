@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-2df673cc5cdc66548cb0b366",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-05T16:38:40.4844835Z",
+  "result": "win",
+  "map": "Dorado",
+  "mode": "Escort",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 868894,
+  "duration_seconds": 868.89,
+  "role": "tank",
+  "primary_hero": "zarya",
+  "heroes": [
+    "zarya"
+  ],
+  "stats": {
+    "eliminations": 26,
+    "assists": 2,
+    "deaths": 7,
+    "damage": 17927,
+    "healing": 0,
+    "mitigation": 3749
+  },
+  "kda": 4,
+  "per_10_minutes": {
+    "eliminations": 17.95,
+    "assists": 1.38,
+    "deaths": 4.83,
+    "damage": 12379.19,
+    "healing": 0,
+    "mitigation": 2589.18
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-05T16:38:41.925Z"
+}
