@@ -1,20 +1,21 @@
 {
-  "generated_at": "2026-10-04T10:37:11.758683+00:00",
-  "matches": 3,
+  "generated_at": "2026-10-05T13:15:23.515479+00:00",
+  "matches": 4,
   "results": {
-    "win": 3
+    "win": 4
   },
   "match_types": {
     "unranked": 2,
-    "competitive": 1
+    "competitive": 2
   },
   "heroes": {
     "illari": 2,
+    "ramattra": 1,
     "zarya": 1
   },
   "roles": {
     "support": 2,
-    "tank": 1
+    "tank": 2
   },
   "latest": [
     {
@@ -54,6 +55,45 @@
       },
       "match_type": "unranked",
       "_file": "52b337bf-c871-48d9-b8c6-67c035826ebf.json"
+    },
+    {
+      "match_id": "ol-313dfdeffcb78687ef77a700",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-05T13:15:10.2434702Z",
+      "result": "win",
+      "map": "Colosseo",
+      "mode": "Push",
+      "game_type": "RANKED",
+      "match_type": "competitive",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 607262,
+      "duration_seconds": 607.26,
+      "role": "tank",
+      "primary_hero": "ramattra",
+      "heroes": [
+        "ramattra"
+      ],
+      "stats": {
+        "eliminations": 28,
+        "assists": 3,
+        "deaths": 7,
+        "damage": 14732,
+        "healing": 795,
+        "mitigation": 7327
+      },
+      "kda": 4.43,
+      "per_10_minutes": {
+        "eliminations": 27.67,
+        "assists": 2.96,
+        "deaths": 6.92,
+        "damage": 14556.12,
+        "healing": 785.86,
+        "mitigation": 7239.79
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-05T13:15:11.927Z",
+      "_file": "ol-313dfdeffcb78687ef77a700.json"
     },
     {
       "match_id": "ol-8725625f6148aaf9b98104b4",
