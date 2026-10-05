@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-c81dccdee7fb9d1c5110ec80",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-05T15:17:58.9352425Z",
+  "result": "loss",
+  "map": "Eichenwalde",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 1030077,
+  "duration_seconds": 1030.08,
+  "role": "tank",
+  "primary_hero": "d.va",
+  "heroes": [
+    "d.va"
+  ],
+  "stats": {
+    "eliminations": 9,
+    "assists": 1,
+    "deaths": 11,
+    "damage": 11758,
+    "healing": 0,
+    "mitigation": 16354
+  },
+  "kda": 0.91,
+  "per_10_minutes": {
+    "eliminations": 5.24,
+    "assists": 0.58,
+    "deaths": 6.41,
+    "damage": 6849.1,
+    "healing": 0,
+    "mitigation": 9526.12
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-05T15:17:59.975Z"
+}
