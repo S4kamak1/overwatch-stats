@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-10-05T14:14:20.312542+00:00",
-  "matches": 7,
+  "generated_at": "2026-10-05T14:27:18.226864+00:00",
+  "matches": 8,
   "results": {
-    "win": 6,
+    "win": 7,
     "loss": 1
   },
   "match_types": {
     "unranked": 2,
-    "competitive": 5
+    "competitive": 6
   },
   "heroes": {
+    "zarya": 3,
     "illari": 2,
     "ramattra": 2,
-    "zarya": 2,
     "orisa": 1
   },
   "roles": {
-    "tank": 5,
+    "tank": 6,
     "support": 2
   },
   "latest": [
@@ -251,6 +251,45 @@
       "privacy": "local-player-only",
       "cloud_received_at": "2026-10-04T09:50:47.399Z",
       "_file": "ol-8725625f6148aaf9b98104b4.json"
+    },
+    {
+      "match_id": "ol-b14517bbd0bf900fbd6de3fa",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-05T14:27:06.3897162Z",
+      "result": "win",
+      "map": "New Queen Street",
+      "mode": "Push",
+      "game_type": "RANKED",
+      "match_type": "competitive",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 641502,
+      "duration_seconds": 641.5,
+      "role": "tank",
+      "primary_hero": "zarya",
+      "heroes": [
+        "zarya"
+      ],
+      "stats": {
+        "eliminations": 18,
+        "assists": 1,
+        "deaths": 4,
+        "damage": 7674,
+        "healing": 0,
+        "mitigation": 3025
+      },
+      "kda": 4.75,
+      "per_10_minutes": {
+        "eliminations": 16.84,
+        "assists": 0.94,
+        "deaths": 3.74,
+        "damage": 7177.55,
+        "healing": 0,
+        "mitigation": 2829.99
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-05T14:27:07.590Z",
+      "_file": "ol-b14517bbd0bf900fbd6de3fa.json"
     },
     {
       "match_id": "ol-c8534e71185a81ede47dfcf4",
