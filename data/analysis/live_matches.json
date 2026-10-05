@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-10-05T14:27:18.226864+00:00",
-  "matches": 8,
+  "generated_at": "2026-10-05T14:39:29.495567+00:00",
+  "matches": 9,
   "results": {
-    "win": 7,
+    "win": 8,
     "loss": 1
   },
   "match_types": {
     "unranked": 2,
-    "competitive": 6
+    "competitive": 7
   },
   "heroes": {
     "zarya": 3,
     "illari": 2,
-    "ramattra": 2,
-    "orisa": 1
+    "orisa": 2,
+    "ramattra": 2
   },
   "roles": {
-    "tank": 6,
+    "tank": 7,
     "support": 2
   },
   "latest": [
@@ -57,6 +57,45 @@
       },
       "match_type": "unranked",
       "_file": "52b337bf-c871-48d9-b8c6-67c035826ebf.json"
+    },
+    {
+      "match_id": "ol-14670b59cc71ffdde2349402",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-05T14:39:17.8036010Z",
+      "result": "win",
+      "map": "Nepal",
+      "mode": "Control",
+      "game_type": "RANKED",
+      "match_type": "competitive",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 558322,
+      "duration_seconds": 558.32,
+      "role": "tank",
+      "primary_hero": "orisa",
+      "heroes": [
+        "orisa"
+      ],
+      "stats": {
+        "eliminations": 22,
+        "assists": 8,
+        "deaths": 3,
+        "damage": 10225,
+        "healing": 513,
+        "mitigation": 3443
+      },
+      "kda": 10,
+      "per_10_minutes": {
+        "eliminations": 23.64,
+        "assists": 8.6,
+        "deaths": 3.22,
+        "damage": 10988.61,
+        "healing": 551.81,
+        "mitigation": 3700.22
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-05T14:39:18.789Z",
+      "_file": "ol-14670b59cc71ffdde2349402.json"
     },
     {
       "match_id": "ol-313dfdeffcb78687ef77a700",
