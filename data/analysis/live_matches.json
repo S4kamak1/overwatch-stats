@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-10-05T14:39:29.495567+00:00",
-  "matches": 9,
+  "generated_at": "2026-10-05T14:58:53.721272+00:00",
+  "matches": 10,
   "results": {
     "win": 8,
-    "loss": 1
+    "loss": 2
   },
   "match_types": {
     "unranked": 2,
-    "competitive": 7
+    "competitive": 8
   },
   "heroes": {
-    "zarya": 3,
+    "zarya": 4,
     "illari": 2,
     "orisa": 2,
     "ramattra": 2
   },
   "roles": {
-    "tank": 7,
+    "tank": 8,
     "support": 2
   },
   "latest": [
@@ -368,6 +368,45 @@
       "privacy": "local-player-only",
       "cloud_received_at": "2026-10-04T10:32:57.684Z",
       "_file": "ol-c8534e71185a81ede47dfcf4.json"
+    },
+    {
+      "match_id": "ol-d489410266ad5f0be6ac166c",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-05T14:58:43.4039508Z",
+      "result": "loss",
+      "map": "Dorado",
+      "mode": "Escort",
+      "game_type": "RANKED",
+      "match_type": "competitive",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 1028521,
+      "duration_seconds": 1028.52,
+      "role": "tank",
+      "primary_hero": "zarya",
+      "heroes": [
+        "zarya"
+      ],
+      "stats": {
+        "eliminations": 25,
+        "assists": 4,
+        "deaths": 9,
+        "damage": 15156,
+        "healing": 993,
+        "mitigation": 14414
+      },
+      "kda": 3.22,
+      "per_10_minutes": {
+        "eliminations": 14.58,
+        "assists": 2.33,
+        "deaths": 5.25,
+        "damage": 8841.49,
+        "healing": 579.48,
+        "mitigation": 8409.05
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-05T14:58:44.432Z",
+      "_file": "ol-d489410266ad5f0be6ac166c.json"
     }
   ],
   "note": "match_type separates competitive and unranked when available; unknown values are not guessed from queue_type."
