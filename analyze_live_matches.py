@@ -5,6 +5,7 @@ from pathlib import Path
 
 MATCH_DIR = Path("data/matches")
 OUT = Path("data/analysis/live_matches.json")
+STAT_KEYS = ("eliminations", "assists", "deaths", "damage", "healing", "mitigation")
 
 
 def load_matches():
@@ -49,6 +50,120 @@ def normalize_match_type(value):
     return "unknown"
 
 
+def duration_seconds(match):
+    value = match.get("duration_seconds")
+    if isinstance(value, (int, float)) and value > 0:
+        return float(value)
+
+    value = match.get("duration_ms")
+    if isinstance(value, (int, float)) and value > 0:
+        return float(value) / 1000.0
+
+    value = match.get("duration")
+    if isinstance(value, str) and ":" in value:
+        try:
+            parts = [float(part) for part in value.split(":")]
+            if len(parts) == 2:
+                return parts[0] * 60 + parts[1]
+            if len(parts) == 3:
+                return parts[0] * 3600 + parts[1] * 60 + parts[2]
+        except ValueError:
+            pass
+    return 0.0
+
+
+def number(value):
+    if isinstance(value, bool):
+        return 0.0
+    if isinstance(value, (int, float)):
+        return float(value)
+    return 0.0
+
+
+def summarize_performance(matches):
+    total_duration = 0.0
+    totals = {key: 0.0 for key in STAT_KEYS}
+    usable_games = 0
+
+    for match in matches:
+        duration = duration_seconds(match)
+        if duration <= 0:
+            continue
+        stats = match.get("stats")
+        if not isinstance(stats, dict):
+            continue
+
+        usable_games += 1
+        total_duration += duration
+        for key in STAT_KEYS:
+            totals[key] += number(stats.get(key))
+
+    if total_duration <= 0:
+        return {
+            "games": len(matches),
+            "games_with_stats": 0,
+            "duration_seconds": 0,
+            "totals": {key: 0 for key in STAT_KEYS},
+            "per_10_minutes": {},
+            "kda": None,
+        }
+
+    per_10 = {
+        key: round(value * 600.0 / total_duration, 2)
+        for key, value in totals.items()
+    }
+    deaths = totals["deaths"]
+    kda = round((totals["eliminations"] + totals["assists"]) / deaths, 2) if deaths > 0 else None
+
+    def tidy(value):
+        rounded = round(value, 2)
+        return int(rounded) if rounded.is_integer() else rounded
+
+    return {
+        "games": len(matches),
+        "games_with_stats": usable_games,
+        "duration_seconds": round(total_duration, 2),
+        "totals": {key: tidy(value) for key, value in totals.items()},
+        "per_10_minutes": per_10,
+        "kda": kda,
+    }
+
+
+def build_win_loss_comparison(matches):
+    result = {}
+    for scope_name, scoped_matches in (
+        ("all", matches),
+        (
+            "competitive",
+            [
+                match
+                for match in matches
+                if normalize_match_type(match.get("match_type") or match.get("game_type")) == "competitive"
+            ],
+        ),
+    ):
+        wins = [match for match in scoped_matches if normalize_result(match.get("result")) == "win"]
+        losses = [match for match in scoped_matches if normalize_result(match.get("result")) == "loss"]
+        win_summary = summarize_performance(wins)
+        loss_summary = summarize_performance(losses)
+
+        win_per_10 = win_summary.get("per_10_minutes", {})
+        loss_per_10 = loss_summary.get("per_10_minutes", {})
+        differential = {}
+        if win_per_10 and loss_per_10:
+            differential = {
+                key: round(win_per_10.get(key, 0) - loss_per_10.get(key, 0), 2)
+                for key in STAT_KEYS
+            }
+
+        result[scope_name] = {
+            "wins": win_summary,
+            "losses": loss_summary,
+            "win_minus_loss_per_10_minutes": differential,
+        }
+    return result
+
+
 def main():
     matches = load_matches()
     results = Counter(normalize_result(m.get("result")) for m in matches)
@@ -73,8 +188,12 @@ def main():
         "match_types": dict(match_types),
         "heroes": dict(heroes.most_common()),
         "roles": dict(roles.most_common()),
+        "win_loss_comparison": build_win_loss_comparison(matches),
         "latest": matches[-20:],
-        "note": "match_type separates competitive and unranked when available; unknown values are not guessed from queue_type.",
+        "note": (
+            "match_type separates competitive and unranked when available; unknown values are not guessed from queue_type. "
+            "win_loss_comparison uses duration-weighted per-10-minute rates; win_minus_loss_per_10_minutes is positive when the metric is higher in wins."
+        ),
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
