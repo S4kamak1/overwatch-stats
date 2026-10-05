@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-10-05T16:01:28.457124+00:00",
-  "matches": 14,
+  "generated_at": "2026-10-05T16:18:16.211205+00:00",
+  "matches": 15,
   "results": {
-    "win": 10,
+    "win": 11,
     "loss": 4
   },
   "match_types": {
     "unranked": 2,
-    "competitive": 12
+    "competitive": 13
   },
   "heroes": {
-    "zarya": 6,
+    "zarya": 7,
     "ramattra": 3,
     "illari": 2,
     "orisa": 2,
     "d.va": 1
   },
   "roles": {
-    "tank": 12,
+    "tank": 13,
     "support": 2
   },
   "latest": [
@@ -331,6 +331,45 @@
       "privacy": "local-player-only",
       "cloud_received_at": "2026-10-05T13:34:27.301Z",
       "_file": "ol-757ad0675e7cee99892a3451.json"
+    },
+    {
+      "match_id": "ol-850790293ee2951cf8612c57",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-05T16:18:04.7575532Z",
+      "result": "win",
+      "map": "Busan",
+      "mode": "Control",
+      "game_type": "RANKED",
+      "match_type": "competitive",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 861409,
+      "duration_seconds": 861.41,
+      "role": "tank",
+      "primary_hero": "zarya",
+      "heroes": [
+        "zarya"
+      ],
+      "stats": {
+        "eliminations": 30,
+        "assists": 1,
+        "deaths": 7,
+        "damage": 15071,
+        "healing": 1363,
+        "mitigation": 3755
+      },
+      "kda": 4.43,
+      "per_10_minutes": {
+        "eliminations": 20.9,
+        "assists": 0.7,
+        "deaths": 4.88,
+        "damage": 10497.8,
+        "healing": 949.87,
+        "mitigation": 2615.77
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-05T16:18:05.955Z",
+      "_file": "ol-850790293ee2951cf8612c57.json"
     },
     {
       "match_id": "ol-8725625f6148aaf9b98104b4",
