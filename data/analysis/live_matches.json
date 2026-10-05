@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-10-05T15:28:21.810754+00:00",
-  "matches": 12,
+  "generated_at": "2026-10-05T15:43:55.557721+00:00",
+  "matches": 13,
   "results": {
-    "win": 8,
+    "win": 9,
     "loss": 4
   },
   "match_types": {
     "unranked": 2,
-    "competitive": 10
+    "competitive": 11
   },
   "heroes": {
     "zarya": 5,
+    "ramattra": 3,
     "illari": 2,
     "orisa": 2,
-    "ramattra": 2,
     "d.va": 1
   },
   "roles": {
-    "tank": 10,
+    "tank": 11,
     "support": 2
   },
   "latest": [
@@ -330,6 +330,45 @@
       "privacy": "local-player-only",
       "cloud_received_at": "2026-10-04T09:50:47.399Z",
       "_file": "ol-8725625f6148aaf9b98104b4.json"
+    },
+    {
+      "match_id": "ol-95e9e1f6d1d8b1d6116acae0",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-05T15:43:44.4993425Z",
+      "result": "win",
+      "map": "Rialto",
+      "mode": "Escort",
+      "game_type": "RANKED",
+      "match_type": "competitive",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 690280,
+      "duration_seconds": 690.28,
+      "role": "tank",
+      "primary_hero": "ramattra",
+      "heroes": [
+        "ramattra"
+      ],
+      "stats": {
+        "eliminations": 18,
+        "assists": 4,
+        "deaths": 2,
+        "damage": 9541,
+        "healing": 591,
+        "mitigation": 6361
+      },
+      "kda": 11,
+      "per_10_minutes": {
+        "eliminations": 15.65,
+        "assists": 3.48,
+        "deaths": 1.74,
+        "damage": 8293.21,
+        "healing": 514.08,
+        "mitigation": 5529.84
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-05T15:43:45.638Z",
+      "_file": "ol-95e9e1f6d1d8b1d6116acae0.json"
     },
     {
       "match_id": "ol-b14517bbd0bf900fbd6de3fa",
