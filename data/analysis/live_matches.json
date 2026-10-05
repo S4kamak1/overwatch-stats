@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T16:38:51.305576+00:00",
+  "generated_at": "2026-10-05T16:45:05.897054+00:00",
   "matches": 16,
   "results": {
     "win": 12,
@@ -19,6 +19,116 @@
   "roles": {
     "tank": 14,
     "support": 2
+  },
+  "win_loss_comparison": {
+    "all": {
+      "wins": {
+        "games": 12,
+        "games_with_stats": 12,
+        "duration_seconds": 8176.07,
+        "totals": {
+          "eliminations": 258,
+          "assists": 45,
+          "deaths": 55,
+          "damage": 140372,
+          "healing": 12785,
+          "mitigation": 58552
+        },
+        "per_10_minutes": {
+          "eliminations": 18.93,
+          "assists": 3.3,
+          "deaths": 4.04,
+          "damage": 10301.18,
+          "healing": 938.23,
+          "mitigation": 4296.83
+        },
+        "kda": 5.51
+      },
+      "losses": {
+        "games": 4,
+        "games_with_stats": 4,
+        "duration_seconds": 3032.27,
+        "totals": {
+          "eliminations": 50,
+          "assists": 9,
+          "deaths": 32,
+          "damage": 38622,
+          "healing": 1136,
+          "mitigation": 38237
+        },
+        "per_10_minutes": {
+          "eliminations": 9.89,
+          "assists": 1.78,
+          "deaths": 6.33,
+          "damage": 7642.2,
+          "healing": 224.78,
+          "mitigation": 7566.01
+        },
+        "kda": 1.84
+      },
+      "win_minus_loss_per_10_minutes": {
+        "eliminations": 9.04,
+        "assists": 1.52,
+        "deaths": -2.29,
+        "damage": 2658.98,
+        "healing": 713.45,
+        "mitigation": -3269.18
+      }
+    },
+    "competitive": {
+      "wins": {
+        "games": 10,
+        "games_with_stats": 10,
+        "duration_seconds": 7229.62,
+        "totals": {
+          "eliminations": 233,
+          "assists": 27,
+          "deaths": 51,
+          "damage": 131691,
+          "healing": 4009,
+          "mitigation": 58552
+        },
+        "per_10_minutes": {
+          "eliminations": 19.34,
+          "assists": 2.24,
+          "deaths": 4.23,
+          "damage": 10929.29,
+          "healing": 332.71,
+          "mitigation": 4859.34
+        },
+        "kda": 5.1
+      },
+      "losses": {
+        "games": 4,
+        "games_with_stats": 4,
+        "duration_seconds": 3032.27,
+        "totals": {
+          "eliminations": 50,
+          "assists": 9,
+          "deaths": 32,
+          "damage": 38622,
+          "healing": 1136,
+          "mitigation": 38237
+        },
+        "per_10_minutes": {
+          "eliminations": 9.89,
+          "assists": 1.78,
+          "deaths": 6.33,
+          "damage": 7642.2,
+          "healing": 224.78,
+          "mitigation": 7566.01
+        },
+        "kda": 1.84
+      },
+      "win_minus_loss_per_10_minutes": {
+        "eliminations": 9.45,
+        "assists": 0.46,
+        "deaths": -2.1,
+        "damage": 3287.09,
+        "healing": 107.93,
+        "mitigation": -2706.67
+      }
+    }
   },
   "latest": [
     {
@@ -644,5 +754,5 @@
       "_file": "ol-d489410266ad5f0be6ac166c.json"
     }
   ],
-  "note": "match_type separates competitive and unranked when available; unknown values are not guessed from queue_type."
+  "note": "match_type separates competitive and unranked when available; unknown values are not guessed from queue_type. win_loss_comparison uses duration-weighted per-10-minute rates; win_minus_loss_per_10_minutes is positive when the metric is higher in wins."
 }
