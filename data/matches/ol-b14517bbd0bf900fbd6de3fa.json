@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-b14517bbd0bf900fbd6de3fa",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-05T14:27:06.3897162Z",
+  "result": "win",
+  "map": "New Queen Street",
+  "mode": "Push",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 641502,
+  "duration_seconds": 641.5,
+  "role": "tank",
+  "primary_hero": "zarya",
+  "heroes": [
+    "zarya"
+  ],
+  "stats": {
+    "eliminations": 18,
+    "assists": 1,
+    "deaths": 4,
+    "damage": 7674,
+    "healing": 0,
+    "mitigation": 3025
+  },
+  "kda": 4.75,
+  "per_10_minutes": {
+    "eliminations": 16.84,
+    "assists": 0.94,
+    "deaths": 3.74,
+    "damage": 7177.55,
+    "healing": 0,
+    "mitigation": 2829.99
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-05T14:27:07.590Z"
+}
