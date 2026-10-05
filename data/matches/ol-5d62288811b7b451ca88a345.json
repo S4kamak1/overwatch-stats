@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-5d62288811b7b451ca88a345",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-05T16:01:15.4502567Z",
+  "result": "win",
+  "map": "Nepal",
+  "mode": "Control",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 867612,
+  "duration_seconds": 867.61,
+  "role": "tank",
+  "primary_hero": "zarya",
+  "heroes": [
+    "zarya"
+  ],
+  "stats": {
+    "eliminations": 19,
+    "assists": 2,
+    "deaths": 7,
+    "damage": 13615,
+    "healing": 218,
+    "mitigation": 8960
+  },
+  "kda": 3,
+  "per_10_minutes": {
+    "eliminations": 13.14,
+    "assists": 1.38,
+    "deaths": 4.84,
+    "damage": 9415.98,
+    "healing": 150.76,
+    "mitigation": 6196.75
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-05T16:01:16.566Z"
+}
