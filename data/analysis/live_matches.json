@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-10-05T14:00:30.303399+00:00",
-  "matches": 6,
+  "generated_at": "2026-10-05T14:14:20.312542+00:00",
+  "matches": 7,
   "results": {
-    "win": 5,
+    "win": 6,
     "loss": 1
   },
   "match_types": {
     "unranked": 2,
-    "competitive": 4
+    "competitive": 5
   },
   "heroes": {
     "illari": 2,
+    "ramattra": 2,
     "zarya": 2,
-    "ramattra": 1,
     "orisa": 1
   },
   "roles": {
-    "tank": 4,
+    "tank": 5,
     "support": 2
   },
   "latest": [
@@ -96,6 +96,45 @@
       "privacy": "local-player-only",
       "cloud_received_at": "2026-10-05T13:15:11.927Z",
       "_file": "ol-313dfdeffcb78687ef77a700.json"
+    },
+    {
+      "match_id": "ol-3676a7aed9ac6ca16177be67",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-05T14:14:08.2946958Z",
+      "result": "win",
+      "map": "Runasapi",
+      "mode": "Push",
+      "game_type": "RANKED",
+      "match_type": "competitive",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 695269,
+      "duration_seconds": 695.27,
+      "role": "tank",
+      "primary_hero": "ramattra",
+      "heroes": [
+        "ramattra"
+      ],
+      "stats": {
+        "eliminations": 21,
+        "assists": 3,
+        "deaths": 7,
+        "damage": 11726,
+        "healing": 529,
+        "mitigation": 10554
+      },
+      "kda": 3.43,
+      "per_10_minutes": {
+        "eliminations": 18.12,
+        "assists": 2.59,
+        "deaths": 6.04,
+        "damage": 10119.34,
+        "healing": 457.02,
+        "mitigation": 9107.84
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-05T14:14:09.608Z",
+      "_file": "ol-3676a7aed9ac6ca16177be67.json"
     },
     {
       "match_id": "ol-39e4bc4ea370a92ba444dc5e",
