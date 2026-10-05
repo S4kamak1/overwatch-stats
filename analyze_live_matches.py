@@ -6,13 +6,37 @@ from pathlib import Path
 MATCH_DIR = Path("data/matches")
 OUT = Path("data/analysis/live_matches.json")
 STAT_KEYS = ("eliminations", "assists", "deaths", "damage", "healing", "mitigation")
+RECENT_WINDOWS = (5, 10, 20)
+
+
+def parse_timestamp(value):
+    if not isinstance(value, str) or not value.strip():
+        return None
+    text = value.strip()
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+    try:
+        dt = datetime.fromisoformat(text)
+    except ValueError:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
+
+
+def match_timestamp(match):
+    for key in ("captured_at", "cloud_received_at", "imported_at", "ended_at", "started_at"):
+        dt = parse_timestamp(match.get(key))
+        if dt is not None:
+            return dt
+    return datetime.min.replace(tzinfo=timezone.utc)
 
 
 def load_matches():
     if not MATCH_DIR.exists():
         return []
     rows = []
-    for path in sorted(MATCH_DIR.glob("*.json")):
+    for path in MATCH_DIR.glob("*.json"):
         try:
             row = json.loads(path.read_text(encoding="utf-8"))
         except Exception:
@@ -20,6 +44,7 @@ def load_matches():
         if isinstance(row, dict):
             row["_file"] = path.name
             rows.append(row)
+    rows.sort(key=lambda row: (match_timestamp(row), row.get("_file", "")))
     return rows
 
 
@@ -55,6 +80,12 @@ def primary_hero(match):
     if isinstance(value, str) and value.strip():
         return value.strip().lower()
     return "unknown"
+
+
+def clean_label(value, fallback="unknown"):
+    if isinstance(value, str) and value.strip():
+        return value.strip()
+    return fallback
 
 
 def duration_seconds(match):
@@ -136,6 +167,18 @@ def summarize_performance(matches):
     }
 
 
+def summarize_results(matches):
+    counts = Counter(normalize_result(match.get("result")) for match in matches)
+    wins = counts.get("win", 0)
+    losses = counts.get("loss", 0)
+    decided = wins + losses
+    return {
+        "games": len(matches),
+        "results": dict(counts),
+        "decided_winrate_percent": round(wins * 100.0 / decided, 1) if decided else None,
+    }
+
+
 def compare_wins_and_losses(matches):
     wins = [match for match in matches if normalize_result(match.get("result")) == "win"]
     losses = [match for match in matches if normalize_result(match.get("result")) == "loss"]
@@ -158,61 +201,104 @@ def compare_wins_and_losses(matches):
     }
 
 
+def competitive_matches(matches):
+    return [
+        match
+        for match in matches
+        if normalize_match_type(match.get("match_type") or match.get("game_type")) == "competitive"
+    ]
+
+
 def build_win_loss_comparison(matches):
-    result = {}
+    return {
+        "all": compare_wins_and_losses(matches),
+        "competitive": compare_wins_and_losses(competitive_matches(matches)),
+    }
+
+
+def build_group_breakdown(matches, key_func):
+    grouped = {}
+    for match in matches:
+        key = key_func(match)
+        if key == "unknown":
+            continue
+        grouped.setdefault(key, []).append(match)
+
+    rows = {}
+    ordered = sorted(grouped, key=lambda key: (-len(grouped[key]), key.lower()))
+    for key in ordered:
+        group_matches = grouped[key]
+        rows[key] = {
+            **summarize_results(group_matches),
+            "overall": summarize_performance(group_matches),
+            **compare_wins_and_losses(group_matches),
+        }
+    return rows
+
+
+def build_scoped_breakdown(matches, key_func):
+    return {
+        "all": build_group_breakdown(matches, key_func),
+        "competitive": build_group_breakdown(competitive_matches(matches), key_func),
+    }
+
+
+def build_hero_map_breakdown(matches):
+    output = {}
     for scope_name, scoped_matches in (
         ("all", matches),
-        (
-            "competitive",
-            [
-                match
-                for match in matches
-                if normalize_match_type(match.get("match_type") or match.get("game_type")) == "competitive"
-            ],
-        ),
+        ("competitive", competitive_matches(matches)),
     ):
-        result[scope_name] = compare_wins_and_losses(scoped_matches)
-    return result
-
-
-def build_hero_win_loss_comparison(matches):
-    scopes = {
-        "all": matches,
-        "competitive": [
-            match
-            for match in matches
-            if normalize_match_type(match.get("match_type") or match.get("game_type")) == "competitive"
-        ],
-    }
-    output = {}
-
-    for scope_name, scoped_matches in scopes.items():
         grouped = {}
         for match in scoped_matches:
             hero = primary_hero(match)
-            if hero == "unknown":
+            map_name = clean_label(match.get("map"))
+            if hero == "unknown" or map_name == "unknown":
                 continue
-            grouped.setdefault(hero, []).append(match)
+            grouped.setdefault(hero, {}).setdefault(map_name, []).append(match)
 
         hero_rows = {}
-        ordered_heroes = sorted(grouped, key=lambda hero: (-len(grouped[hero]), hero))
-        for hero in ordered_heroes:
-            hero_matches = grouped[hero]
-            result_counts = Counter(normalize_result(match.get("result")) for match in hero_matches)
-            wins = result_counts.get("win", 0)
-            losses = result_counts.get("loss", 0)
-            decided = wins + losses
-            hero_rows[hero] = {
-                "games": len(hero_matches),
-                "results": dict(result_counts),
-                "decided_winrate_percent": round(wins * 100.0 / decided, 1) if decided else None,
-                "overall": summarize_performance(hero_matches),
-                **compare_wins_and_losses(hero_matches),
-            }
-
+        for hero in sorted(grouped, key=lambda h: (-sum(len(v) for v in grouped[h].values()), h)):
+            map_rows = {}
+            for map_name in sorted(grouped[hero], key=lambda m: (-len(grouped[hero][m]), m.lower())):
+                group_matches = grouped[hero][map_name]
+                map_rows[map_name] = {
+                    **summarize_results(group_matches),
+                    "overall": summarize_performance(group_matches),
+                    **compare_wins_and_losses(group_matches),
+                }
+            hero_rows[hero] = map_rows
         output[scope_name] = hero_rows
-
     return output
+
+
+def build_recent_form(matches):
+    comp = competitive_matches(matches)
+    output = {}
+    for window in RECENT_WINDOWS:
+        recent = comp[-window:]
+        output[str(window)] = {
+            **summarize_results(recent),
+            "overall": summarize_performance(recent),
+            **compare_wins_and_losses(recent),
+            "match_ids": [match.get("match_id") for match in recent if match.get("match_id")],
+        }
+    return output
+
+
+def build_data_quality(matches):
+    return {
+        "total_matches": len(matches),
+        "unknown_result": sum(normalize_result(match.get("result")) == "unknown" for match in matches),
+        "unknown_match_type": sum(
+            normalize_match_type(match.get("match_type") or match.get("game_type")) == "unknown"
+            for match in matches
+        ),
+        "unknown_hero": sum(primary_hero(match) == "unknown" for match in matches),
+        "unknown_map": sum(clean_label(match.get("map")) == "unknown" for match in matches),
+        "missing_or_zero_duration": sum(duration_seconds(match) <= 0 for match in matches),
+        "missing_stats": sum(not isinstance(match.get("stats"), dict) for match in matches),
+    }
 
 
 def main():
@@ -224,13 +310,23 @@ def main():
     )
     heroes = Counter()
     roles = Counter()
+    maps = Counter()
+    modes = Counter()
+
     for match in matches:
         hero = primary_hero(match)
-        role = match.get("role") or match.get("primary_role")
+        role = clean_label(match.get("role") or match.get("primary_role"))
+        map_name = clean_label(match.get("map"))
+        mode_name = clean_label(match.get("mode"))
+
         if hero != "unknown":
             heroes[hero] += 1
-        if isinstance(role, str) and role:
+        if role != "unknown":
             roles[role.lower()] += 1
+        if map_name != "unknown":
+            maps[map_name] += 1
+        if mode_name != "unknown":
+            modes[mode_name] += 1
 
     out = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -239,13 +335,21 @@ def main():
         "match_types": dict(match_types),
         "heroes": dict(heroes.most_common()),
         "roles": dict(roles.most_common()),
+        "maps": dict(maps.most_common()),
+        "modes": dict(modes.most_common()),
+        "data_quality": build_data_quality(matches),
         "win_loss_comparison": build_win_loss_comparison(matches),
-        "hero_win_loss_comparison": build_hero_win_loss_comparison(matches),
+        "hero_win_loss_comparison": build_scoped_breakdown(matches, primary_hero),
+        "map_win_loss_comparison": build_scoped_breakdown(matches, lambda match: clean_label(match.get("map"))),
+        "mode_win_loss_comparison": build_scoped_breakdown(matches, lambda match: clean_label(match.get("mode"))),
+        "hero_map_comparison": build_hero_map_breakdown(matches),
+        "recent_competitive_form": build_recent_form(matches),
         "latest": matches[-20:],
         "note": (
+            "Matches are sorted chronologically using captured_at/cloud_received_at/imported_at before recent-form analysis. "
             "match_type separates competitive and unranked when available; unknown values are not guessed from queue_type. "
-            "win/loss comparisons use duration-weighted per-10-minute rates; win_minus_loss_per_10_minutes is positive when the metric is higher in wins. "
-            "hero_win_loss_comparison groups matches by primary hero, and decided_winrate_percent excludes draws and unknown results."
+            "All performance comparisons use duration-weighted per-10-minute rates. "
+            "Hero, map, mode, hero-by-map, recent competitive form, and data-quality summaries are regenerated automatically whenever a match is added."
         ),
     }
 
