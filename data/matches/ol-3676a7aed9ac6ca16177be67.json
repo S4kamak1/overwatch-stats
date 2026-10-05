@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-3676a7aed9ac6ca16177be67",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-05T14:14:08.2946958Z",
+  "result": "win",
+  "map": "Runasapi",
+  "mode": "Push",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 695269,
+  "duration_seconds": 695.27,
+  "role": "tank",
+  "primary_hero": "ramattra",
+  "heroes": [
+    "ramattra"
+  ],
+  "stats": {
+    "eliminations": 21,
+    "assists": 3,
+    "deaths": 7,
+    "damage": 11726,
+    "healing": 529,
+    "mitigation": 10554
+  },
+  "kda": 3.43,
+  "per_10_minutes": {
+    "eliminations": 18.12,
+    "assists": 2.59,
+    "deaths": 6.04,
+    "damage": 10119.34,
+    "healing": 457.02,
+    "mitigation": 9107.84
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-05T14:14:09.608Z"
+}
