@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-35dc29ff16d54196d3e4b4cd",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T14:26:43.4450078Z",
+  "result": "loss",
+  "map": "Nepal",
+  "mode": "Control",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 819357,
+  "duration_seconds": 819.36,
+  "role": "support",
+  "primary_hero": "moira",
+  "heroes": [
+    "moira"
+  ],
+  "stats": {
+    "eliminations": 15,
+    "assists": 11,
+    "deaths": 8,
+    "damage": 5858,
+    "healing": 9155,
+    "mitigation": 0
+  },
+  "kda": 3.25,
+  "per_10_minutes": {
+    "eliminations": 10.98,
+    "assists": 8.06,
+    "deaths": 5.86,
+    "damage": 4290.36,
+    "healing": 6704.61,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T14:26:44.866Z"
+}
