@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-b4b4b267a82f1fa3e85931ab",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T16:31:44.8856538Z",
+  "result": "loss",
+  "map": "Esperan�a",
+  "mode": "Push",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 663999,
+  "duration_seconds": 664,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 12,
+    "assists": 6,
+    "deaths": 3,
+    "damage": 4703,
+    "healing": 5812,
+    "mitigation": 0
+  },
+  "kda": 6,
+  "per_10_minutes": {
+    "eliminations": 10.84,
+    "assists": 5.42,
+    "deaths": 2.71,
+    "damage": 4250.48,
+    "healing": 5252.46,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T16:31:46.654Z"
+}
