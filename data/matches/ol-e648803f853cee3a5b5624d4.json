@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-e648803f853cee3a5b5624d4",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T15:36:39.0548647Z",
+  "result": "loss",
+  "map": "Runasapi",
+  "mode": "Push",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 625227,
+  "duration_seconds": 625.23,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 5,
+    "assists": 4,
+    "deaths": 5,
+    "damage": 2456,
+    "healing": 5346,
+    "mitigation": 0
+  },
+  "kda": 1.8,
+  "per_10_minutes": {
+    "eliminations": 4.8,
+    "assists": 3.84,
+    "deaths": 4.8,
+    "damage": 2357.17,
+    "healing": 5130.95,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T15:36:40.524Z"
+}
