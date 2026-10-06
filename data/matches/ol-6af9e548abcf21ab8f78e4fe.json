@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-6af9e548abcf21ab8f78e4fe",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T16:43:19.3666120Z",
+  "result": "win",
+  "map": "New Junk City",
+  "mode": "Flashpoint",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 448892,
+  "duration_seconds": 448.89,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 14,
+    "assists": 5,
+    "deaths": 2,
+    "damage": 3401,
+    "healing": 4483,
+    "mitigation": 0
+  },
+  "kda": 9.5,
+  "per_10_minutes": {
+    "eliminations": 18.71,
+    "assists": 6.68,
+    "deaths": 2.67,
+    "damage": 4546.43,
+    "healing": 5993.28,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T16:43:20.795Z"
+}
