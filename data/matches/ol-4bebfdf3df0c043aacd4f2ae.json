@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-4bebfdf3df0c043aacd4f2ae",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T15:06:24.7575142Z",
+  "result": "win",
+  "map": "Midtown",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 1134392,
+  "duration_seconds": 1134.39,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 24,
+    "assists": 22,
+    "deaths": 5,
+    "damage": 7946,
+    "healing": 14662,
+    "mitigation": 0
+  },
+  "kda": 9.2,
+  "per_10_minutes": {
+    "eliminations": 12.69,
+    "assists": 11.64,
+    "deaths": 2.64,
+    "damage": 4203.09,
+    "healing": 7755.41,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T15:06:26.441Z"
+}
