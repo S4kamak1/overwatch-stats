@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-14f7e95cc666e7684f46b6b3",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T17:35:43.3989671Z",
+  "result": "win",
+  "map": "Junkertown",
+  "mode": "Escort",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 684927,
+  "duration_seconds": 684.93,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 24,
+    "assists": 20,
+    "deaths": 5,
+    "damage": 5356,
+    "healing": 7478,
+    "mitigation": 0
+  },
+  "kda": 8.8,
+  "per_10_minutes": {
+    "eliminations": 21.02,
+    "assists": 17.52,
+    "deaths": 4.38,
+    "damage": 4692.36,
+    "healing": 6551.63,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T17:35:45.165Z"
+}
