@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-220ffd5d5e2cdf01107fa310",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T15:22:52.5982714Z",
+  "result": "loss",
+  "map": "Lijiang Tower",
+  "mode": "Control",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 785714,
+  "duration_seconds": 785.71,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 18,
+    "assists": 11,
+    "deaths": 7,
+    "damage": 6232,
+    "healing": 6678,
+    "mitigation": 0
+  },
+  "kda": 4.14,
+  "per_10_minutes": {
+    "eliminations": 13.75,
+    "assists": 8.4,
+    "deaths": 5.35,
+    "damage": 4759.26,
+    "healing": 5099.57,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T15:22:54.224Z"
+}
