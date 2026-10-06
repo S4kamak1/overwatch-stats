@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-45dfa3321b53ab639114c8d8",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T14:08:43.2562338Z",
+  "result": "win",
+  "map": "Route 66",
+  "mode": "Escort",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 1099041,
+  "duration_seconds": 1099.04,
+  "role": "damage",
+  "primary_hero": "soldier: 76",
+  "heroes": [
+    "soldier: 76"
+  ],
+  "stats": {
+    "eliminations": 29,
+    "assists": 3,
+    "deaths": 11,
+    "damage": 13481,
+    "healing": 440,
+    "mitigation": 0
+  },
+  "kda": 2.91,
+  "per_10_minutes": {
+    "eliminations": 15.83,
+    "assists": 1.64,
+    "deaths": 6.01,
+    "damage": 7360.18,
+    "healing": 240.52,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T14:08:46.117Z"
+}
