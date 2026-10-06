@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-a9d22ade060a43ec2411ce18",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T17:57:12.2035749Z",
+  "result": "win",
+  "map": "Havana",
+  "mode": "Escort",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 1118072,
+  "duration_seconds": 1118.07,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 25,
+    "assists": 21,
+    "deaths": 13,
+    "damage": 9091,
+    "healing": 12283,
+    "mitigation": 0
+  },
+  "kda": 3.54,
+  "per_10_minutes": {
+    "eliminations": 13.42,
+    "assists": 11.27,
+    "deaths": 6.98,
+    "damage": 4878.81,
+    "healing": 6591.9,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T17:57:13.953Z"
+}
