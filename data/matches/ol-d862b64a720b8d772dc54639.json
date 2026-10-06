@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-d862b64a720b8d772dc54639",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T15:48:49.1139053Z",
+  "result": "loss",
+  "map": "Nepal",
+  "mode": "Control",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 436783,
+  "duration_seconds": 436.78,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 6,
+    "assists": 3,
+    "deaths": 3,
+    "damage": 2673,
+    "healing": 5453,
+    "mitigation": 0
+  },
+  "kda": 3,
+  "per_10_minutes": {
+    "eliminations": 8.24,
+    "assists": 4.12,
+    "deaths": 4.12,
+    "damage": 3672.26,
+    "healing": 7491.02,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T15:48:50.529Z"
+}
