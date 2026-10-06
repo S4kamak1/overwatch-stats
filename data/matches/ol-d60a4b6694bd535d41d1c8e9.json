@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-d60a4b6694bd535d41d1c8e9",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-06T17:10:51.0099330Z",
+  "result": "win",
+  "map": "Eichenwalde",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 1380883,
+  "duration_seconds": 1380.88,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 28,
+    "assists": 23,
+    "deaths": 7,
+    "damage": 10236,
+    "healing": 13878,
+    "mitigation": 0
+  },
+  "kda": 7.29,
+  "per_10_minutes": {
+    "eliminations": 12.17,
+    "assists": 9.99,
+    "deaths": 3.04,
+    "damage": 4447.85,
+    "healing": 6030.36,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-06T17:10:52.593Z"
+}
