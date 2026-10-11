@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-1bfb01fdaee0a0fa25d51d27",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-11T21:09:56.5660215Z",
+  "result": "loss",
+  "map": "Suravasa",
+  "mode": "Flashpoint",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 424121,
+  "duration_seconds": 424.12,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 2,
+    "assists": 6,
+    "deaths": 8,
+    "damage": 1632,
+    "healing": 3160,
+    "mitigation": 0
+  },
+  "kda": 1,
+  "per_10_minutes": {
+    "eliminations": 2.83,
+    "assists": 8.49,
+    "deaths": 11.32,
+    "damage": 2309.41,
+    "healing": 4471.7,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-11T21:09:56.390Z"
+}
