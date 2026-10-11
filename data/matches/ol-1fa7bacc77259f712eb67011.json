@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-1fa7bacc77259f712eb67011",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-11T22:52:55.4673157Z",
+  "result": "win",
+  "map": "Midtown",
+  "mode": "Escort",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 1106484,
+  "duration_seconds": 1106.48,
+  "role": "support",
+  "primary_hero": "moira",
+  "heroes": [
+    "moira"
+  ],
+  "stats": {
+    "eliminations": 23,
+    "assists": 18,
+    "deaths": 8,
+    "damage": 10241,
+    "healing": 13467,
+    "mitigation": 0
+  },
+  "kda": 5.12,
+  "per_10_minutes": {
+    "eliminations": 12.47,
+    "assists": 9.76,
+    "deaths": 4.34,
+    "damage": 5553.59,
+    "healing": 7303.02,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-11T22:52:55.090Z"
+}
