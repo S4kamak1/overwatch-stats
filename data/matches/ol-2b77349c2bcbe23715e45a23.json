@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-2b77349c2bcbe23715e45a23",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-11T22:31:10.8077050Z",
+  "result": "win",
+  "map": "Midtown",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 647236,
+  "duration_seconds": 647.24,
+  "role": "damage",
+  "primary_hero": "widowmaker",
+  "heroes": [
+    "widowmaker"
+  ],
+  "stats": {
+    "eliminations": 17,
+    "assists": 1,
+    "deaths": 6,
+    "damage": 8546,
+    "healing": 0,
+    "mitigation": 0
+  },
+  "kda": 3,
+  "per_10_minutes": {
+    "eliminations": 15.76,
+    "assists": 0.93,
+    "deaths": 5.56,
+    "damage": 7922.89,
+    "healing": 0,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-11T22:31:10.477Z"
+}
