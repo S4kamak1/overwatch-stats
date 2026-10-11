@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-9a6b20b051de14a0e0cf3190",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-11T21:47:12.5352380Z",
+  "result": "win",
+  "map": "King's Row",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 813768,
+  "duration_seconds": 813.77,
+  "role": "damage",
+  "primary_hero": "widowmaker",
+  "heroes": [
+    "widowmaker"
+  ],
+  "stats": {
+    "eliminations": 10,
+    "assists": 0,
+    "deaths": 7,
+    "damage": 7235,
+    "healing": 1289,
+    "mitigation": 0
+  },
+  "kda": 1.43,
+  "per_10_minutes": {
+    "eliminations": 7.37,
+    "assists": 0,
+    "deaths": 5.16,
+    "damage": 5335.13,
+    "healing": 950.65,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-11T21:47:12.201Z"
+}
