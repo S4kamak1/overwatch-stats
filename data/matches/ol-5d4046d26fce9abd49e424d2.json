@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-5d4046d26fce9abd49e424d2",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-11T21:58:48.9593396Z",
+  "result": "loss",
+  "map": "Rialto",
+  "mode": "Escort",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 423708,
+  "duration_seconds": 423.71,
+  "role": "damage",
+  "primary_hero": "cassidy",
+  "heroes": [
+    "cassidy"
+  ],
+  "stats": {
+    "eliminations": 8,
+    "assists": 0,
+    "deaths": 2,
+    "damage": 3503,
+    "healing": 0,
+    "mitigation": 43
+  },
+  "kda": 4,
+  "per_10_minutes": {
+    "eliminations": 11.33,
+    "assists": 0,
+    "deaths": 2.83,
+    "damage": 4960.51,
+    "healing": 0,
+    "mitigation": 61.59
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-11T21:58:48.527Z"
+}
