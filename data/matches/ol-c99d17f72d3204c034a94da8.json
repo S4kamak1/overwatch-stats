@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-c99d17f72d3204c034a94da8",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-11T21:00:37.9601356Z",
+  "result": "loss",
+  "map": "Para�so",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 1171292,
+  "duration_seconds": 1171.29,
+  "role": "support",
+  "primary_hero": "illari",
+  "heroes": [
+    "illari"
+  ],
+  "stats": {
+    "eliminations": 17,
+    "assists": 7,
+    "deaths": 8,
+    "damage": 7470,
+    "healing": 10325,
+    "mitigation": 0
+  },
+  "kda": 3,
+  "per_10_minutes": {
+    "eliminations": 8.71,
+    "assists": 3.59,
+    "deaths": 4.1,
+    "damage": 3827.01,
+    "healing": 5289.03,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-11T21:00:38.862Z"
+}
