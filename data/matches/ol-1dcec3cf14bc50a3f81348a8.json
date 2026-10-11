@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-1dcec3cf14bc50a3f81348a8",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-11T22:17:10.9072636Z",
+  "result": "loss",
+  "map": "Rialto",
+  "mode": "Escort",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 867256,
+  "duration_seconds": 867.26,
+  "role": "damage",
+  "primary_hero": "ashe",
+  "heroes": [
+    "ashe"
+  ],
+  "stats": {
+    "eliminations": 14,
+    "assists": 2,
+    "deaths": 5,
+    "damage": 9963,
+    "healing": 0,
+    "mitigation": 0
+  },
+  "kda": 3.2,
+  "per_10_minutes": {
+    "eliminations": 9.69,
+    "assists": 1.38,
+    "deaths": 3.46,
+    "damage": 6893.27,
+    "healing": 0,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-11T22:17:10.678Z"
+}
