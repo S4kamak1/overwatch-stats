@@ -6,24 +6,24 @@
   "is_public": true,
   "platform": "pc",
   "gamemode": "competitive",
-  "fetched_at": "2026-10-12T01:19:43.221139+00:00",
+  "fetched_at": "2026-10-12T07:34:02.493757+00:00",
   "refresh_retry_used": false,
   "blizzard_probe": {
     "name": "S4kamak1",
     "is_public": true,
-    "last_updated_at": 1791767540
+    "last_updated_at": 1791785186
   },
   "blizzard_upstream_newer": false,
   "overfast_response_headers": {
     "summary": {
       "server": "nginx",
-      "date": "Mon, 12 Oct 2026 01:19:42 GMT",
+      "date": "Mon, 12 Oct 2026 07:34:01 GMT",
       "content-type": "application/json",
       "content-length": "1896",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "11156",
+      "age": "22456",
       "cache-control": "public, max-age=600, stale-while-revalidate=300",
       "x-cache-status": "stale",
       "access-control-allow-origin": "*",
@@ -31,7 +31,7 @@
     },
     "stats": {
       "server": "nginx",
-      "date": "Mon, 12 Oct 2026 01:19:43 GMT",
+      "date": "Mon, 12 Oct 2026 07:34:02 GMT",
       "content-type": "application/json",
       "content-length": "4131",
       "connection": "close",
@@ -52,7 +52,7 @@
     "title": "Data Broker",
     "career_url": "https://overfast-api.tekrop.fr/players/S4kamak1-1198",
     "blizzard_id": "c10aa78bbe7090fca4a126a9dc%7C767070bb727f16005745b4aeb6300857",
-    "last_updated_at": 1791767540,
+    "last_updated_at": 1791785186,
     "is_public": true
   },
   "summary": {
@@ -92,7 +92,7 @@
       },
       "console": null
     },
-    "last_updated_at": 1791767540
+    "last_updated_at": 1791785186
   },
   "stats": {
     "general": {
