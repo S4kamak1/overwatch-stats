@@ -6,24 +6,24 @@
   "is_public": true,
   "platform": "pc",
   "gamemode": "competitive",
-  "fetched_at": "2026-10-11T22:13:44.704976+00:00",
+  "fetched_at": "2026-10-12T01:19:43.221139+00:00",
   "refresh_retry_used": false,
   "blizzard_probe": {
     "name": "S4kamak1",
     "is_public": true,
-    "last_updated_at": 1791734234
+    "last_updated_at": 1791767540
   },
   "blizzard_upstream_newer": false,
   "overfast_response_headers": {
     "summary": {
       "server": "nginx",
-      "date": "Sun, 11 Oct 2026 22:13:43 GMT",
+      "date": "Mon, 12 Oct 2026 01:19:42 GMT",
       "content-type": "application/json",
       "content-length": "1896",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "13583",
+      "age": "11156",
       "cache-control": "public, max-age=600, stale-while-revalidate=300",
       "x-cache-status": "stale",
       "access-control-allow-origin": "*",
@@ -31,12 +31,13 @@
     },
     "stats": {
       "server": "nginx",
-      "date": "Sun, 11 Oct 2026 22:13:44 GMT",
+      "date": "Mon, 12 Oct 2026 01:19:43 GMT",
       "content-type": "application/json",
-      "content-length": "1664",
+      "content-length": "4131",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
+      "age": "1",
       "cache-control": "public, max-age=600",
       "x-cache-status": "hit",
       "access-control-allow-origin": "*",
@@ -51,7 +52,7 @@
     "title": "Data Broker",
     "career_url": "https://overfast-api.tekrop.fr/players/S4kamak1-1198",
     "blizzard_id": "c10aa78bbe7090fca4a126a9dc%7C767070bb727f16005745b4aeb6300857",
-    "last_updated_at": 1791734234,
+    "last_updated_at": 1791767540,
     "is_public": true
   },
   "summary": {
@@ -75,10 +76,10 @@
         },
         "damage": {
           "division": "gold",
-          "tier": 4,
+          "tier": 3,
           "role_icon": "https://static.playoverwatch.com/images/pages/career/icons/role/offense.0f3b26f08388747909719cb6f8940d0b4683039e.svg#icon",
           "rank_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_GoldTier.8d40eab551020b46a84002019dd98714149ed5e2.png",
-          "tier_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/TierDivision_4.a86ba72795dcef9e04b6346163d3369eec13393f.png"
+          "tier_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/TierDivision_3.e9d892e479ca14e5543e71762459d11674504ed0.png"
         },
         "support": {
           "division": "gold",
@@ -91,142 +92,340 @@
       },
       "console": null
     },
-    "last_updated_at": 1791734234
+    "last_updated_at": 1791767540
   },
   "stats": {
     "general": {
-      "games_played": 2,
-      "games_won": 2,
-      "games_lost": 0,
-      "time_played": 1033,
-      "winrate": 100.0,
-      "kda": 9.33,
+      "games_played": 11,
+      "games_won": 6,
+      "games_lost": 5,
+      "time_played": 7016,
+      "winrate": 54.55,
+      "kda": 2.76,
       "total": {
-        "eliminations": 27,
-        "assists": 1,
-        "deaths": 3,
-        "damage": 11980,
-        "healing": 4567
+        "eliminations": 155,
+        "assists": 8,
+        "deaths": 59,
+        "damage": 90621,
+        "healing": 51305
       },
       "average": {
-        "eliminations": 15.68,
-        "assists": 0.58,
-        "deaths": 1.74,
-        "damage": 6958.37,
-        "healing": 2652.66
+        "eliminations": 13.26,
+        "assists": 0.68,
+        "deaths": 5.05,
+        "damage": 7749.8,
+        "healing": 4387.54
       }
     },
     "roles": {
       "damage": {
-        "games_played": 1,
-        "games_won": 1,
-        "games_lost": 0,
-        "time_played": 620,
-        "winrate": 100.0,
-        "kda": 9.5,
+        "games_played": 5,
+        "games_won": 3,
+        "games_lost": 2,
+        "time_played": 2831,
+        "winrate": 60.0,
+        "kda": 3.09,
         "total": {
-          "eliminations": 19,
+          "eliminations": 68,
           "assists": 0,
-          "deaths": 2,
-          "damage": 6006,
-          "healing": 0
+          "deaths": 22,
+          "damage": 44215,
+          "healing": 1289
         },
         "average": {
-          "eliminations": 18.39,
+          "eliminations": 14.41,
           "assists": 0.0,
-          "deaths": 1.94,
-          "damage": 5812.26,
-          "healing": 0.0
+          "deaths": 4.66,
+          "damage": 9370.89,
+          "healing": 273.19
         }
       },
       "support": {
-        "games_played": 1,
-        "games_won": 1,
-        "games_lost": 0,
-        "time_played": 413,
-        "winrate": 100.0,
-        "kda": 9.0,
+        "games_played": 6,
+        "games_won": 3,
+        "games_lost": 3,
+        "time_played": 4185,
+        "winrate": 50.0,
+        "kda": 2.57,
         "total": {
-          "eliminations": 8,
-          "assists": 1,
-          "deaths": 1,
-          "damage": 5974,
-          "healing": 4567
+          "eliminations": 87,
+          "assists": 8,
+          "deaths": 37,
+          "damage": 46406,
+          "healing": 50016
         },
         "average": {
-          "eliminations": 11.62,
-          "assists": 1.45,
-          "deaths": 1.45,
-          "damage": 8678.93,
-          "healing": 6634.87
+          "eliminations": 12.47,
+          "assists": 1.15,
+          "deaths": 5.3,
+          "damage": 6653.19,
+          "healing": 7170.75
         }
       }
     },
     "heroes": {
-      "ashe": {
-        "games_played": 1,
-        "games_won": 1,
+      "ana": {
+        "games_played": 0,
+        "games_won": 0,
         "games_lost": 0,
-        "time_played": 620,
-        "winrate": 100.0,
-        "kda": 9.5,
+        "time_played": 232,
+        "winrate": 0.0,
+        "kda": 0.0,
         "total": {
-          "eliminations": 19,
+          "eliminations": 0,
           "assists": 0,
-          "deaths": 2,
-          "damage": 6006,
+          "deaths": 3,
+          "damage": 1826,
+          "healing": 2274
+        },
+        "average": {
+          "eliminations": 0.0,
+          "assists": 0.0,
+          "deaths": 7.76,
+          "damage": 4722.41,
+          "healing": 5881.03
+        }
+      },
+      "ashe": {
+        "games_played": 3,
+        "games_won": 2,
+        "games_lost": 1,
+        "time_played": 1587,
+        "winrate": 66.67,
+        "kda": 3.78,
+        "total": {
+          "eliminations": 34,
+          "assists": 0,
+          "deaths": 9,
+          "damage": 22269,
           "healing": 0
         },
         "average": {
-          "eliminations": 18.39,
+          "eliminations": 12.85,
           "assists": 0.0,
-          "deaths": 1.94,
-          "damage": 5812.26,
+          "deaths": 3.4,
+          "damage": 8419.28,
+          "healing": 0.0
+        }
+      },
+      "cassidy": {
+        "games_played": 0,
+        "games_won": 0,
+        "games_lost": 0,
+        "time_played": 45,
+        "winrate": 0.0,
+        "kda": 0.0,
+        "total": {
+          "eliminations": 0,
+          "assists": 0,
+          "deaths": 1,
+          "damage": 626,
+          "healing": 0
+        },
+        "average": {
+          "eliminations": 0.0,
+          "assists": 0.0,
+          "deaths": 13.33,
+          "damage": 8346.67,
+          "healing": 0.0
+        }
+      },
+      "hanzo": {
+        "games_played": 0,
+        "games_won": 0,
+        "games_lost": 0,
+        "time_played": 47,
+        "winrate": 0.0,
+        "kda": 0.0,
+        "total": {
+          "eliminations": 0,
+          "assists": 0,
+          "deaths": 1,
+          "damage": 1152,
+          "healing": 0
+        },
+        "average": {
+          "eliminations": 0.0,
+          "assists": 0.0,
+          "deaths": 12.77,
+          "damage": 14706.38,
           "healing": 0.0
         }
       },
       "illari": {
-        "games_played": 1,
-        "games_won": 1,
-        "games_lost": 0,
-        "time_played": 240,
-        "winrate": 100.0,
-        "kda": 0.0,
+        "games_played": 2,
+        "games_won": 0,
+        "games_lost": 2,
+        "time_played": 1665,
+        "winrate": 0.0,
+        "kda": 2.5,
         "total": {
-          "eliminations": 7,
-          "assists": 1,
-          "deaths": 0,
-          "damage": 4101,
-          "healing": 1972
+          "eliminations": 27,
+          "assists": 3,
+          "deaths": 12,
+          "damage": 16316,
+          "healing": 17691
         },
         "average": {
-          "eliminations": 17.5,
-          "assists": 2.5,
-          "deaths": 0.0,
-          "damage": 10252.5,
-          "healing": 4930.0
+          "eliminations": 9.73,
+          "assists": 1.08,
+          "deaths": 4.32,
+          "damage": 5879.64,
+          "healing": 6375.14
         }
       },
-      "moira": {
+      "kiriko": {
         "games_played": 0,
         "games_won": 0,
         "games_lost": 0,
-        "time_played": 173,
+        "time_played": 38,
         "winrate": 0.0,
-        "kda": 1.0,
+        "kda": 0.0,
         "total": {
-          "eliminations": 1,
+          "eliminations": 0,
           "assists": 0,
           "deaths": 1,
-          "damage": 1873,
-          "healing": 2595
+          "damage": 0,
+          "healing": 353
         },
         "average": {
-          "eliminations": 3.47,
+          "eliminations": 0.0,
           "assists": 0.0,
-          "deaths": 3.47,
-          "damage": 6495.95,
-          "healing": 9000.0
+          "deaths": 15.79,
+          "damage": 0.0,
+          "healing": 5573.68
+        }
+      },
+      "moira": {
+        "games_played": 3,
+        "games_won": 3,
+        "games_lost": 0,
+        "time_played": 1984,
+        "winrate": 100.0,
+        "kda": 3.62,
+        "total": {
+          "eliminations": 58,
+          "assists": 0,
+          "deaths": 16,
+          "damage": 26572,
+          "healing": 27232
+        },
+        "average": {
+          "eliminations": 17.54,
+          "assists": 0.0,
+          "deaths": 4.84,
+          "damage": 8035.89,
+          "healing": 8235.48
+        }
+      },
+      "reaper": {
+        "games_played": 0,
+        "games_won": 0,
+        "games_lost": 0,
+        "time_played": 328,
+        "winrate": 0.0,
+        "kda": 0.8,
+        "total": {
+          "eliminations": 4,
+          "assists": 0,
+          "deaths": 5,
+          "damage": 5234,
+          "healing": 1071
+        },
+        "average": {
+          "eliminations": 7.32,
+          "assists": 0.0,
+          "deaths": 9.15,
+          "damage": 9574.39,
+          "healing": 1959.15
+        }
+      },
+      "sojourn": {
+        "games_played": 1,
+        "games_won": 1,
+        "games_lost": 0,
+        "time_played": 429,
+        "winrate": 100.0,
+        "kda": 4.0,
+        "total": {
+          "eliminations": 16,
+          "assists": 0,
+          "deaths": 4,
+          "damage": 9452,
+          "healing": 0
+        },
+        "average": {
+          "eliminations": 22.38,
+          "assists": 0.0,
+          "deaths": 5.59,
+          "damage": 13219.58,
+          "healing": 0.0
+        }
+      },
+      "soldier-76": {
+        "games_played": 0,
+        "games_won": 0,
+        "games_lost": 0,
+        "time_played": 172,
+        "winrate": 0.0,
+        "kda": 0.0,
+        "total": {
+          "eliminations": 4,
+          "assists": 0,
+          "deaths": 0,
+          "damage": 1720,
+          "healing": 218
+        },
+        "average": {
+          "eliminations": 13.95,
+          "assists": 0.0,
+          "deaths": 0.0,
+          "damage": 6000.0,
+          "healing": 760.47
+        }
+      },
+      "widowmaker": {
+        "games_played": 1,
+        "games_won": 0,
+        "games_lost": 1,
+        "time_played": 223,
+        "winrate": 0.0,
+        "kda": 5.0,
+        "total": {
+          "eliminations": 10,
+          "assists": 0,
+          "deaths": 2,
+          "damage": 3762,
+          "healing": 0
+        },
+        "average": {
+          "eliminations": 26.91,
+          "assists": 0.0,
+          "deaths": 5.38,
+          "damage": 10121.97,
+          "healing": 0.0
+        }
+      },
+      "zenyatta": {
+        "games_played": 1,
+        "games_won": 0,
+        "games_lost": 1,
+        "time_played": 266,
+        "winrate": 0.0,
+        "kda": 1.4,
+        "total": {
+          "eliminations": 2,
+          "assists": 5,
+          "deaths": 5,
+          "damage": 1692,
+          "healing": 2466
+        },
+        "average": {
+          "eliminations": 4.51,
+          "assists": 11.28,
+          "deaths": 11.28,
+          "damage": 3816.54,
+          "healing": 5562.41
         }
       }
     }
