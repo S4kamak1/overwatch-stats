@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-c36e34ce03517fa24226ebb9",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T12:03:40.5352386Z",
+  "result": "win",
+  "map": "Rialto",
+  "mode": "Escort",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 623364,
+  "duration_seconds": 623.36,
+  "role": "support",
+  "primary_hero": "doctrine",
+  "heroes": [
+    "doctrine"
+  ],
+  "stats": {
+    "eliminations": 18,
+    "assists": 13,
+    "deaths": 3,
+    "damage": 6055,
+    "healing": 7500,
+    "mitigation": 0
+  },
+  "kda": 10.33,
+  "per_10_minutes": {
+    "eliminations": 17.33,
+    "assists": 12.51,
+    "deaths": 2.89,
+    "damage": 5828.71,
+    "healing": 7218.93,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T12:03:40.383Z"
+}
