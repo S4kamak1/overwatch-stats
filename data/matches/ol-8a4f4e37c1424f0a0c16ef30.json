@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-8a4f4e37c1424f0a0c16ef30",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T12:55:29.1460871Z",
+  "result": "win",
+  "map": "Watchpoint: Gibraltar",
+  "mode": "Escort",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 547495,
+  "duration_seconds": 547.5,
+  "role": "damage",
+  "primary_hero": "ashe",
+  "heroes": [
+    "ashe"
+  ],
+  "stats": {
+    "eliminations": 10,
+    "assists": 2,
+    "deaths": 5,
+    "damage": 3972,
+    "healing": 0,
+    "mitigation": 0
+  },
+  "kda": 2.4,
+  "per_10_minutes": {
+    "eliminations": 10.96,
+    "assists": 2.19,
+    "deaths": 5.48,
+    "damage": 4352.96,
+    "healing": 0,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T12:55:28.962Z"
+}
