@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-9aeb86dfc2d52caf02965bf6",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T11:09:55.9042908Z",
+  "result": "loss",
+  "map": "Para�so",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 731834,
+  "duration_seconds": 731.83,
+  "role": "damage",
+  "primary_hero": "soldier: 76",
+  "heroes": [
+    "soldier: 76"
+  ],
+  "stats": {
+    "eliminations": 13,
+    "assists": 0,
+    "deaths": 9,
+    "damage": 7928,
+    "healing": 368,
+    "mitigation": 0
+  },
+  "kda": 1.44,
+  "per_10_minutes": {
+    "eliminations": 10.66,
+    "assists": 0,
+    "deaths": 7.38,
+    "damage": 6500.32,
+    "healing": 302.48,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T11:09:56.860Z"
+}
