@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-4aa6b09291ca6486a6a21d9d",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T13:43:25.0592051Z",
+  "result": "win",
+  "map": "Ilios",
+  "mode": "Control",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 510612,
+  "duration_seconds": 510.61,
+  "role": "support",
+  "primary_hero": "moira",
+  "heroes": [
+    "moira"
+  ],
+  "stats": {
+    "eliminations": 15,
+    "assists": 14,
+    "deaths": 2,
+    "damage": 4179,
+    "healing": 5104,
+    "mitigation": 0
+  },
+  "kda": 14.5,
+  "per_10_minutes": {
+    "eliminations": 17.63,
+    "assists": 16.45,
+    "deaths": 2.35,
+    "damage": 4911.2,
+    "healing": 5997.99,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T13:43:25.152Z"
+}
