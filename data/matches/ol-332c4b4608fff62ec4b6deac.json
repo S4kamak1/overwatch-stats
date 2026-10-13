@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-332c4b4608fff62ec4b6deac",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T11:30:23.3453579Z",
+  "result": "win",
+  "map": "Runasapi",
+  "mode": "Push",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 688824,
+  "duration_seconds": 688.82,
+  "role": "damage",
+  "primary_hero": "ashe",
+  "heroes": [
+    "ashe"
+  ],
+  "stats": {
+    "eliminations": 25,
+    "assists": 0,
+    "deaths": 9,
+    "damage": 10124,
+    "healing": 2492,
+    "mitigation": 0
+  },
+  "kda": 2.78,
+  "per_10_minutes": {
+    "eliminations": 21.78,
+    "assists": 0,
+    "deaths": 7.84,
+    "damage": 8818.6,
+    "healing": 2171.01,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T11:30:23.396Z"
+}
