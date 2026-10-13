@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-326333fe8a903986359264fd",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T14:50:51.1486289Z",
+  "result": "loss",
+  "map": "Esperan�a",
+  "mode": "Escort",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 682863,
+  "duration_seconds": 682.86,
+  "role": "support",
+  "primary_hero": "doctrine",
+  "heroes": [
+    "doctrine"
+  ],
+  "stats": {
+    "eliminations": 17,
+    "assists": 12,
+    "deaths": 3,
+    "damage": 5900,
+    "healing": 8650,
+    "mitigation": 1014
+  },
+  "kda": 9.67,
+  "per_10_minutes": {
+    "eliminations": 14.94,
+    "assists": 10.54,
+    "deaths": 2.64,
+    "damage": 5184.28,
+    "healing": 7601.13,
+    "mitigation": 891.12
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T14:50:51.086Z"
+}
