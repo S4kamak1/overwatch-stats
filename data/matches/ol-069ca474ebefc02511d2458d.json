@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-069ca474ebefc02511d2458d",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T12:35:37.4852844Z",
+  "result": "loss",
+  "map": "Neon Junction",
+  "mode": "Escort",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 476356,
+  "duration_seconds": 476.36,
+  "role": "support",
+  "primary_hero": "kiriko",
+  "heroes": [
+    "kiriko"
+  ],
+  "stats": {
+    "eliminations": 3,
+    "assists": 4,
+    "deaths": 4,
+    "damage": 1769,
+    "healing": 3705,
+    "mitigation": 0
+  },
+  "kda": 1.75,
+  "per_10_minutes": {
+    "eliminations": 3.78,
+    "assists": 5.04,
+    "deaths": 5.04,
+    "damage": 2228.17,
+    "healing": 4667.7,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T12:35:37.309Z"
+}
