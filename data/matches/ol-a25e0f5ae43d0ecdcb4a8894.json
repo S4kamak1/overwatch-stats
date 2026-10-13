@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-a25e0f5ae43d0ecdcb4a8894",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T12:26:05.5516384Z",
+  "result": "loss",
+  "map": "Neon Junction",
+  "mode": "Hybrid",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 556751,
+  "duration_seconds": 556.75,
+  "role": "damage",
+  "primary_hero": "ashe",
+  "heroes": [
+    "ashe"
+  ],
+  "stats": {
+    "eliminations": 6,
+    "assists": 0,
+    "deaths": 6,
+    "damage": 5475,
+    "healing": 237,
+    "mitigation": 0
+  },
+  "kda": 1,
+  "per_10_minutes": {
+    "eliminations": 6.47,
+    "assists": 0,
+    "deaths": 6.47,
+    "damage": 5900.82,
+    "healing": 256.3,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T12:26:05.381Z"
+}
