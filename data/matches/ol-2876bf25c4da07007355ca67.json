@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-2876bf25c4da07007355ca67",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T14:23:56.3477499Z",
+  "result": "win",
+  "map": "Nepal",
+  "mode": "Control",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 436128,
+  "duration_seconds": 436.13,
+  "role": "support",
+  "primary_hero": "doctrine",
+  "heroes": [
+    "doctrine"
+  ],
+  "stats": {
+    "eliminations": 14,
+    "assists": 23,
+    "deaths": 0,
+    "damage": 2486,
+    "healing": 6252,
+    "mitigation": 325
+  },
+  "kda": 37,
+  "per_10_minutes": {
+    "eliminations": 19.26,
+    "assists": 31.64,
+    "deaths": 0,
+    "damage": 3420.87,
+    "healing": 8601.41,
+    "mitigation": 447.46
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T14:23:56.484Z"
+}
