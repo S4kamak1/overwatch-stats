@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-f6a44ed975ad42043d07ab2b",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T13:09:01.5506879Z",
+  "result": "loss",
+  "map": "Hollywood Halloween",
+  "mode": "Hybrid",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 671534,
+  "duration_seconds": 671.53,
+  "role": "support",
+  "primary_hero": "kiriko",
+  "heroes": [
+    "kiriko"
+  ],
+  "stats": {
+    "eliminations": 14,
+    "assists": 17,
+    "deaths": 2,
+    "damage": 3448,
+    "healing": 7849,
+    "mitigation": 0
+  },
+  "kda": 15.5,
+  "per_10_minutes": {
+    "eliminations": 12.51,
+    "assists": 15.19,
+    "deaths": 1.79,
+    "damage": 3080.79,
+    "healing": 7013.59,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T13:09:01.529Z"
+}
