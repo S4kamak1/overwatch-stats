@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-5fefbbd1e0d355c7e73dab91",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T11:50:48.6984215Z",
+  "result": "loss",
+  "map": "Colosseo",
+  "mode": "Push",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 659833,
+  "duration_seconds": 659.83,
+  "role": "damage",
+  "primary_hero": "ashe",
+  "heroes": [
+    "ashe"
+  ],
+  "stats": {
+    "eliminations": 15,
+    "assists": 0,
+    "deaths": 8,
+    "damage": 9170,
+    "healing": 338,
+    "mitigation": 0
+  },
+  "kda": 1.88,
+  "per_10_minutes": {
+    "eliminations": 13.64,
+    "assists": 0,
+    "deaths": 7.27,
+    "damage": 8338.82,
+    "healing": 307.58,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T11:50:48.701Z"
+}
