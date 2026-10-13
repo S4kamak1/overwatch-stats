@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-5fe5bf92e8aea9fe683969f2",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T14:05:09.1813260Z",
+  "result": "win",
+  "map": "Rialto",
+  "mode": "Escort",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 525441,
+  "duration_seconds": 525.44,
+  "role": "damage",
+  "primary_hero": "widowmaker",
+  "heroes": [
+    "widowmaker"
+  ],
+  "stats": {
+    "eliminations": 21,
+    "assists": 8,
+    "deaths": 2,
+    "damage": 7015,
+    "healing": 0,
+    "mitigation": 0
+  },
+  "kda": 14.5,
+  "per_10_minutes": {
+    "eliminations": 23.98,
+    "assists": 9.14,
+    "deaths": 2.28,
+    "damage": 8010.87,
+    "healing": 0,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T14:05:09.093Z"
+}
