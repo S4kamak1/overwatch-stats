@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-d1942fcd392c8a08e4bc7fd2",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T12:44:52.4898150Z",
+  "result": "loss",
+  "map": "Para�so",
+  "mode": "Hybrid",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 346435,
+  "duration_seconds": 346.44,
+  "role": "support",
+  "primary_hero": "juno",
+  "heroes": [
+    "juno"
+  ],
+  "stats": {
+    "eliminations": 7,
+    "assists": 4,
+    "deaths": 4,
+    "damage": 1707,
+    "healing": 3402,
+    "mitigation": 0
+  },
+  "kda": 2.75,
+  "per_10_minutes": {
+    "eliminations": 12.12,
+    "assists": 6.93,
+    "deaths": 6.93,
+    "damage": 2957.7,
+    "healing": 5892.59,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T12:44:52.375Z"
+}
