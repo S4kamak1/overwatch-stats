@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-10-13T13:54:26.510872+00:00",
-  "matches": 55,
+  "generated_at": "2026-10-13T14:05:19.397639+00:00",
+  "matches": 56,
   "results": {
-    "win": 31,
+    "win": 32,
     "loss": 24
   },
   "match_types": {
     "competitive": 42,
-    "unranked": 13
+    "unranked": 14
   },
   "heroes": {
     "illari": 18,
     "zarya": 8,
     "moira": 6,
     "ashe": 5,
+    "widowmaker": 4,
     "ramattra": 3,
     "soldier: 76": 3,
-    "widowmaker": 3,
     "kiriko": 3,
     "orisa": 2,
     "d.va": 1,
@@ -27,13 +27,13 @@
   "roles": {
     "support": 29,
     "tank": 14,
-    "damage": 12
+    "damage": 13
   },
   "maps": {
     "Dorado": 6,
+    "Rialto": 5,
     "Neon Junction": 4,
     "Nepal": 4,
-    "Rialto": 4,
     "Colosseo": 3,
     "Runasapi": 3,
     "New Queen Street": 3,
@@ -57,7 +57,7 @@
     "Ilios": 1
   },
   "modes": {
-    "Escort": 17,
+    "Escort": 18,
     "Hybrid": 14,
     "Control": 10,
     "Push": 10,
@@ -65,7 +65,7 @@
     "escort": 1
   },
   "data_quality": {
-    "total_matches": 55,
+    "total_matches": 56,
     "unknown_result": 0,
     "unknown_match_type": 0,
     "unknown_hero": 0,
@@ -76,26 +76,26 @@
   "win_loss_comparison": {
     "all": {
       "wins": {
-        "games": 31,
-        "games_with_stats": 31,
-        "duration_seconds": 23269.52,
+        "games": 32,
+        "games_with_stats": 32,
+        "duration_seconds": 23794.96,
         "totals": {
-          "eliminations": 629,
-          "assists": 263,
-          "deaths": 159,
-          "damage": 275037,
+          "eliminations": 650,
+          "assists": 271,
+          "deaths": 161,
+          "damage": 282052,
           "healing": 141272,
           "mitigation": 58782
         },
         "per_10_minutes": {
-          "eliminations": 16.22,
-          "assists": 6.78,
-          "deaths": 4.1,
-          "damage": 7091.77,
-          "healing": 3642.67,
-          "mitigation": 1515.68
+          "eliminations": 16.39,
+          "assists": 6.83,
+          "deaths": 4.06,
+          "damage": 7112.06,
+          "healing": 3562.23,
+          "mitigation": 1482.21
         },
-        "kda": 5.61
+        "kda": 5.72
       },
       "losses": {
         "games": 24,
@@ -120,12 +120,12 @@
         "kda": 2.38
       },
       "win_minus_loss_per_10_minutes": {
-        "eliminations": 6.69,
-        "assists": 2.78,
-        "deaths": -1.59,
-        "damage": 1878.78,
-        "healing": 475.33,
-        "mitigation": 44.89
+        "eliminations": 6.86,
+        "assists": 2.83,
+        "deaths": -1.63,
+        "damage": 1899.07,
+        "healing": 394.89,
+        "mitigation": 11.42
       }
     },
     "competitive": {
@@ -513,6 +513,88 @@
           "mitigation": 0.0
         }
       },
+      "widowmaker": {
+        "games": 4,
+        "results": {
+          "win": 3,
+          "loss": 1
+        },
+        "decided_winrate_percent": 75.0,
+        "overall": {
+          "games": 4,
+          "games_with_stats": 4,
+          "duration_seconds": 2544.34,
+          "totals": {
+            "eliminations": 53,
+            "assists": 10,
+            "deaths": 28,
+            "damage": 26286,
+            "healing": 1289,
+            "mitigation": 0
+          },
+          "per_10_minutes": {
+            "eliminations": 12.5,
+            "assists": 2.36,
+            "deaths": 6.6,
+            "damage": 6198.7,
+            "healing": 303.97,
+            "mitigation": 0.0
+          },
+          "kda": 2.25
+        },
+        "wins": {
+          "games": 3,
+          "games_with_stats": 3,
+          "duration_seconds": 1986.45,
+          "totals": {
+            "eliminations": 48,
+            "assists": 9,
+            "deaths": 15,
+            "damage": 22796,
+            "healing": 1289,
+            "mitigation": 0
+          },
+          "per_10_minutes": {
+            "eliminations": 14.5,
+            "assists": 2.72,
+            "deaths": 4.53,
+            "damage": 6885.45,
+            "healing": 389.34,
+            "mitigation": 0.0
+          },
+          "kda": 3.8
+        },
+        "losses": {
+          "games": 1,
+          "games_with_stats": 1,
+          "duration_seconds": 557.89,
+          "totals": {
+            "eliminations": 5,
+            "assists": 1,
+            "deaths": 13,
+            "damage": 3490,
+            "healing": 0,
+            "mitigation": 0
+          },
+          "per_10_minutes": {
+            "eliminations": 5.38,
+            "assists": 1.08,
+            "deaths": 13.98,
+            "damage": 3753.43,
+            "healing": 0.0,
+            "mitigation": 0.0
+          },
+          "kda": 0.46
+        },
+        "win_minus_loss_per_10_minutes": {
+          "eliminations": 9.12,
+          "assists": 1.64,
+          "deaths": -9.45,
+          "damage": 3132.02,
+          "healing": 389.34,
+          "mitigation": 0.0
+        }
+      },
       "kiriko": {
         "games": 3,
         "results": {
@@ -741,88 +823,6 @@
           "deaths": -1.75,
           "damage": 760.58,
           "healing": -206.92,
-          "mitigation": 0.0
-        }
-      },
-      "widowmaker": {
-        "games": 3,
-        "results": {
-          "win": 2,
-          "loss": 1
-        },
-        "decided_winrate_percent": 66.7,
-        "overall": {
-          "games": 3,
-          "games_with_stats": 3,
-          "duration_seconds": 2018.9,
-          "totals": {
-            "eliminations": 32,
-            "assists": 2,
-            "deaths": 26,
-            "damage": 19271,
-            "healing": 1289,
-            "mitigation": 0
-          },
-          "per_10_minutes": {
-            "eliminations": 9.51,
-            "assists": 0.59,
-            "deaths": 7.73,
-            "damage": 5727.18,
-            "healing": 383.08,
-            "mitigation": 0.0
-          },
-          "kda": 1.31
-        },
-        "wins": {
-          "games": 2,
-          "games_with_stats": 2,
-          "duration_seconds": 1461.01,
-          "totals": {
-            "eliminations": 27,
-            "assists": 1,
-            "deaths": 13,
-            "damage": 15781,
-            "healing": 1289,
-            "mitigation": 0
-          },
-          "per_10_minutes": {
-            "eliminations": 11.09,
-            "assists": 0.41,
-            "deaths": 5.34,
-            "damage": 6480.86,
-            "healing": 529.36,
-            "mitigation": 0.0
-          },
-          "kda": 2.15
-        },
-        "losses": {
-          "games": 1,
-          "games_with_stats": 1,
-          "duration_seconds": 557.89,
-          "totals": {
-            "eliminations": 5,
-            "assists": 1,
-            "deaths": 13,
-            "damage": 3490,
-            "healing": 0,
-            "mitigation": 0
-          },
-          "per_10_minutes": {
-            "eliminations": 5.38,
-            "assists": 1.08,
-            "deaths": 13.98,
-            "damage": 3753.43,
-            "healing": 0.0,
-            "mitigation": 0.0
-          },
-          "kda": 0.46
-        },
-        "win_minus_loss_per_10_minutes": {
-          "eliminations": 5.71,
-          "assists": -0.67,
-          "deaths": -8.64,
-          "damage": 2727.43,
-          "healing": 529.36,
           "mitigation": 0.0
         }
       },
@@ -2024,6 +2024,88 @@
           "mitigation": -4413.46
         }
       },
+      "Rialto": {
+        "games": 5,
+        "results": {
+          "win": 3,
+          "loss": 2
+        },
+        "decided_winrate_percent": 60.0,
+        "overall": {
+          "games": 5,
+          "games_with_stats": 5,
+          "duration_seconds": 3130.05,
+          "totals": {
+            "eliminations": 79,
+            "assists": 27,
+            "deaths": 14,
+            "damage": 36077,
+            "healing": 8091,
+            "mitigation": 6404
+          },
+          "per_10_minutes": {
+            "eliminations": 15.14,
+            "assists": 5.18,
+            "deaths": 2.68,
+            "damage": 6915.61,
+            "healing": 1550.97,
+            "mitigation": 1227.58
+          },
+          "kda": 7.57
+        },
+        "wins": {
+          "games": 3,
+          "games_with_stats": 3,
+          "duration_seconds": 1839.08,
+          "totals": {
+            "eliminations": 57,
+            "assists": 25,
+            "deaths": 7,
+            "damage": 22611,
+            "healing": 8091,
+            "mitigation": 6361
+          },
+          "per_10_minutes": {
+            "eliminations": 18.6,
+            "assists": 8.16,
+            "deaths": 2.28,
+            "damage": 7376.84,
+            "healing": 2639.69,
+            "mitigation": 2075.28
+          },
+          "kda": 11.71
+        },
+        "losses": {
+          "games": 2,
+          "games_with_stats": 2,
+          "duration_seconds": 1290.97,
+          "totals": {
+            "eliminations": 22,
+            "assists": 2,
+            "deaths": 7,
+            "damage": 13466,
+            "healing": 0,
+            "mitigation": 43
+          },
+          "per_10_minutes": {
+            "eliminations": 10.22,
+            "assists": 0.93,
+            "deaths": 3.25,
+            "damage": 6258.55,
+            "healing": 0.0,
+            "mitigation": 19.98
+          },
+          "kda": 3.43
+        },
+        "win_minus_loss_per_10_minutes": {
+          "eliminations": 8.38,
+          "assists": 7.23,
+          "deaths": -0.97,
+          "damage": 1118.29,
+          "healing": 2639.69,
+          "mitigation": 2055.3
+        }
+      },
       "Neon Junction": {
         "games": 4,
         "results": {
@@ -2186,88 +2268,6 @@
           "damage": 5956.49,
           "healing": -6669.98,
           "mitigation": 5218.91
-        }
-      },
-      "Rialto": {
-        "games": 4,
-        "results": {
-          "win": 2,
-          "loss": 2
-        },
-        "decided_winrate_percent": 50.0,
-        "overall": {
-          "games": 4,
-          "games_with_stats": 4,
-          "duration_seconds": 2604.61,
-          "totals": {
-            "eliminations": 58,
-            "assists": 19,
-            "deaths": 12,
-            "damage": 29062,
-            "healing": 8091,
-            "mitigation": 6404
-          },
-          "per_10_minutes": {
-            "eliminations": 13.36,
-            "assists": 4.38,
-            "deaths": 2.76,
-            "damage": 6694.75,
-            "healing": 1863.85,
-            "mitigation": 1475.23
-          },
-          "kda": 6.42
-        },
-        "wins": {
-          "games": 2,
-          "games_with_stats": 2,
-          "duration_seconds": 1313.64,
-          "totals": {
-            "eliminations": 36,
-            "assists": 17,
-            "deaths": 5,
-            "damage": 15596,
-            "healing": 8091,
-            "mitigation": 6361
-          },
-          "per_10_minutes": {
-            "eliminations": 16.44,
-            "assists": 7.76,
-            "deaths": 2.28,
-            "damage": 7123.41,
-            "healing": 3695.53,
-            "mitigation": 2905.36
-          },
-          "kda": 10.6
-        },
-        "losses": {
-          "games": 2,
-          "games_with_stats": 2,
-          "duration_seconds": 1290.97,
-          "totals": {
-            "eliminations": 22,
-            "assists": 2,
-            "deaths": 7,
-            "damage": 13466,
-            "healing": 0,
-            "mitigation": 43
-          },
-          "per_10_minutes": {
-            "eliminations": 10.22,
-            "assists": 0.93,
-            "deaths": 3.25,
-            "damage": 6258.55,
-            "healing": 0.0,
-            "mitigation": 19.98
-          },
-          "kda": 3.43
-        },
-        "win_minus_loss_per_10_minutes": {
-          "eliminations": 6.22,
-          "assists": 6.83,
-          "deaths": -0.97,
-          "damage": 864.86,
-          "healing": 3695.53,
-          "mitigation": 2885.38
         }
       },
       "Colosseo": {
@@ -5234,55 +5234,55 @@
   "mode_win_loss_comparison": {
     "all": {
       "Escort": {
-        "games": 17,
+        "games": 18,
         "results": {
           "loss": 6,
-          "win": 11
+          "win": 12
         },
-        "decided_winrate_percent": 64.7,
+        "decided_winrate_percent": 66.7,
         "overall": {
-          "games": 17,
-          "games_with_stats": 17,
-          "duration_seconds": 13118.29,
+          "games": 18,
+          "games_with_stats": 18,
+          "duration_seconds": 13643.73,
           "totals": {
-            "eliminations": 306,
-            "assists": 130,
-            "deaths": 98,
-            "damage": 138794,
+            "eliminations": 327,
+            "assists": 138,
+            "deaths": 100,
+            "damage": 145809,
             "healing": 77809,
             "mitigation": 28845
           },
           "per_10_minutes": {
-            "eliminations": 14.0,
-            "assists": 5.95,
-            "deaths": 4.48,
-            "damage": 6348.11,
-            "healing": 3558.8,
-            "mitigation": 1319.3
+            "eliminations": 14.38,
+            "assists": 6.07,
+            "deaths": 4.4,
+            "damage": 6412.13,
+            "healing": 3421.75,
+            "mitigation": 1268.49
           },
-          "kda": 4.45
+          "kda": 4.65
         },
         "wins": {
-          "games": 11,
-          "games_with_stats": 11,
-          "duration_seconds": 9174.36,
+          "games": 12,
+          "games_with_stats": 12,
+          "duration_seconds": 9699.8,
           "totals": {
-            "eliminations": 241,
-            "assists": 116,
-            "deaths": 68,
-            "damage": 97248,
+            "eliminations": 262,
+            "assists": 124,
+            "deaths": 70,
+            "damage": 104263,
             "healing": 65172,
             "mitigation": 10110
           },
           "per_10_minutes": {
-            "eliminations": 15.76,
-            "assists": 7.59,
-            "deaths": 4.45,
-            "damage": 6359.99,
-            "healing": 4262.23,
-            "mitigation": 661.19
+            "eliminations": 16.21,
+            "assists": 7.67,
+            "deaths": 4.33,
+            "damage": 6449.39,
+            "healing": 4031.34,
+            "mitigation": 625.37
           },
-          "kda": 5.25
+          "kda": 5.51
         },
         "losses": {
           "games": 6,
@@ -5307,12 +5307,12 @@
           "kda": 2.63
         },
         "win_minus_loss_per_10_minutes": {
-          "eliminations": 5.87,
-          "assists": 5.46,
-          "deaths": -0.11,
-          "damage": 39.49,
-          "healing": 2339.73,
-          "mitigation": -2189.01
+          "eliminations": 6.32,
+          "assists": 5.54,
+          "deaths": -0.23,
+          "damage": 128.89,
+          "healing": 2108.84,
+          "mitigation": -2224.83
         }
       },
       "Hybrid": {
@@ -8375,6 +8375,224 @@
           "win_minus_loss_per_10_minutes": {}
         }
       },
+      "widowmaker": {
+        "King's Row": {
+          "games": 2,
+          "results": {
+            "win": 1,
+            "loss": 1
+          },
+          "decided_winrate_percent": 50.0,
+          "overall": {
+            "games": 2,
+            "games_with_stats": 2,
+            "duration_seconds": 1371.66,
+            "totals": {
+              "eliminations": 15,
+              "assists": 1,
+              "deaths": 20,
+              "damage": 10725,
+              "healing": 1289,
+              "mitigation": 0
+            },
+            "per_10_minutes": {
+              "eliminations": 6.56,
+              "assists": 0.44,
+              "deaths": 8.75,
+              "damage": 4691.4,
+              "healing": 563.84,
+              "mitigation": 0.0
+            },
+            "kda": 0.8
+          },
+          "wins": {
+            "games": 1,
+            "games_with_stats": 1,
+            "duration_seconds": 813.77,
+            "totals": {
+              "eliminations": 10,
+              "assists": 0,
+              "deaths": 7,
+              "damage": 7235,
+              "healing": 1289,
+              "mitigation": 0
+            },
+            "per_10_minutes": {
+              "eliminations": 7.37,
+              "assists": 0.0,
+              "deaths": 5.16,
+              "damage": 5334.43,
+              "healing": 950.39,
+              "mitigation": 0.0
+            },
+            "kda": 1.43
+          },
+          "losses": {
+            "games": 1,
+            "games_with_stats": 1,
+            "duration_seconds": 557.89,
+            "totals": {
+              "eliminations": 5,
+              "assists": 1,
+              "deaths": 13,
+              "damage": 3490,
+              "healing": 0,
+              "mitigation": 0
+            },
+            "per_10_minutes": {
+              "eliminations": 5.38,
+              "assists": 1.08,
+              "deaths": 13.98,
+              "damage": 3753.43,
+              "healing": 0.0,
+              "mitigation": 0.0
+            },
+            "kda": 0.46
+          },
+          "win_minus_loss_per_10_minutes": {
+            "eliminations": 1.99,
+            "assists": -1.08,
+            "deaths": -8.82,
+            "damage": 1581.0,
+            "healing": 950.39,
+            "mitigation": 0.0
+          }
+        },
+        "Midtown": {
+          "games": 1,
+          "results": {
+            "win": 1
+          },
+          "decided_winrate_percent": 100.0,
+          "overall": {
+            "games": 1,
+            "games_with_stats": 1,
+            "duration_seconds": 647.24,
+            "totals": {
+              "eliminations": 17,
+              "assists": 1,
+              "deaths": 6,
+              "damage": 8546,
+              "healing": 0,
+              "mitigation": 0
+            },
+            "per_10_minutes": {
+              "eliminations": 15.76,
+              "assists": 0.93,
+              "deaths": 5.56,
+              "damage": 7922.25,
+              "healing": 0.0,
+              "mitigation": 0.0
+            },
+            "kda": 3.0
+          },
+          "wins": {
+            "games": 1,
+            "games_with_stats": 1,
+            "duration_seconds": 647.24,
+            "totals": {
+              "eliminations": 17,
+              "assists": 1,
+              "deaths": 6,
+              "damage": 8546,
+              "healing": 0,
+              "mitigation": 0
+            },
+            "per_10_minutes": {
+              "eliminations": 15.76,
+              "assists": 0.93,
+              "deaths": 5.56,
+              "damage": 7922.25,
+              "healing": 0.0,
+              "mitigation": 0.0
+            },
+            "kda": 3.0
+          },
+          "losses": {
+            "games": 0,
+            "games_with_stats": 0,
+            "duration_seconds": 0,
+            "totals": {
+              "eliminations": 0,
+              "assists": 0,
+              "deaths": 0,
+              "damage": 0,
+              "healing": 0,
+              "mitigation": 0
+            },
+            "per_10_minutes": {},
+            "kda": null
+          },
+          "win_minus_loss_per_10_minutes": {}
+        },
+        "Rialto": {
+          "games": 1,
+          "results": {
+            "win": 1
+          },
+          "decided_winrate_percent": 100.0,
+          "overall": {
+            "games": 1,
+            "games_with_stats": 1,
+            "duration_seconds": 525.44,
+            "totals": {
+              "eliminations": 21,
+              "assists": 8,
+              "deaths": 2,
+              "damage": 7015,
+              "healing": 0,
+              "mitigation": 0
+            },
+            "per_10_minutes": {
+              "eliminations": 23.98,
+              "assists": 9.14,
+              "deaths": 2.28,
+              "damage": 8010.43,
+              "healing": 0.0,
+              "mitigation": 0.0
+            },
+            "kda": 14.5
+          },
+          "wins": {
+            "games": 1,
+            "games_with_stats": 1,
+            "duration_seconds": 525.44,
+            "totals": {
+              "eliminations": 21,
+              "assists": 8,
+              "deaths": 2,
+              "damage": 7015,
+              "healing": 0,
+              "mitigation": 0
+            },
+            "per_10_minutes": {
+              "eliminations": 23.98,
+              "assists": 9.14,
+              "deaths": 2.28,
+              "damage": 8010.43,
+              "healing": 0.0,
+              "mitigation": 0.0
+            },
+            "kda": 14.5
+          },
+          "losses": {
+            "games": 0,
+            "games_with_stats": 0,
+            "duration_seconds": 0,
+            "totals": {
+              "eliminations": 0,
+              "assists": 0,
+              "deaths": 0,
+              "damage": 0,
+              "healing": 0,
+              "mitigation": 0
+            },
+            "per_10_minutes": {},
+            "kda": null
+          },
+          "win_minus_loss_per_10_minutes": {}
+        }
+      },
       "kiriko": {
         "Hollywood Halloween": {
           "games": 1,
@@ -8965,157 +9183,6 @@
               "mitigation": 0.0
             },
             "kda": 2.91
-          },
-          "losses": {
-            "games": 0,
-            "games_with_stats": 0,
-            "duration_seconds": 0,
-            "totals": {
-              "eliminations": 0,
-              "assists": 0,
-              "deaths": 0,
-              "damage": 0,
-              "healing": 0,
-              "mitigation": 0
-            },
-            "per_10_minutes": {},
-            "kda": null
-          },
-          "win_minus_loss_per_10_minutes": {}
-        }
-      },
-      "widowmaker": {
-        "King's Row": {
-          "games": 2,
-          "results": {
-            "win": 1,
-            "loss": 1
-          },
-          "decided_winrate_percent": 50.0,
-          "overall": {
-            "games": 2,
-            "games_with_stats": 2,
-            "duration_seconds": 1371.66,
-            "totals": {
-              "eliminations": 15,
-              "assists": 1,
-              "deaths": 20,
-              "damage": 10725,
-              "healing": 1289,
-              "mitigation": 0
-            },
-            "per_10_minutes": {
-              "eliminations": 6.56,
-              "assists": 0.44,
-              "deaths": 8.75,
-              "damage": 4691.4,
-              "healing": 563.84,
-              "mitigation": 0.0
-            },
-            "kda": 0.8
-          },
-          "wins": {
-            "games": 1,
-            "games_with_stats": 1,
-            "duration_seconds": 813.77,
-            "totals": {
-              "eliminations": 10,
-              "assists": 0,
-              "deaths": 7,
-              "damage": 7235,
-              "healing": 1289,
-              "mitigation": 0
-            },
-            "per_10_minutes": {
-              "eliminations": 7.37,
-              "assists": 0.0,
-              "deaths": 5.16,
-              "damage": 5334.43,
-              "healing": 950.39,
-              "mitigation": 0.0
-            },
-            "kda": 1.43
-          },
-          "losses": {
-            "games": 1,
-            "games_with_stats": 1,
-            "duration_seconds": 557.89,
-            "totals": {
-              "eliminations": 5,
-              "assists": 1,
-              "deaths": 13,
-              "damage": 3490,
-              "healing": 0,
-              "mitigation": 0
-            },
-            "per_10_minutes": {
-              "eliminations": 5.38,
-              "assists": 1.08,
-              "deaths": 13.98,
-              "damage": 3753.43,
-              "healing": 0.0,
-              "mitigation": 0.0
-            },
-            "kda": 0.46
-          },
-          "win_minus_loss_per_10_minutes": {
-            "eliminations": 1.99,
-            "assists": -1.08,
-            "deaths": -8.82,
-            "damage": 1581.0,
-            "healing": 950.39,
-            "mitigation": 0.0
-          }
-        },
-        "Midtown": {
-          "games": 1,
-          "results": {
-            "win": 1
-          },
-          "decided_winrate_percent": 100.0,
-          "overall": {
-            "games": 1,
-            "games_with_stats": 1,
-            "duration_seconds": 647.24,
-            "totals": {
-              "eliminations": 17,
-              "assists": 1,
-              "deaths": 6,
-              "damage": 8546,
-              "healing": 0,
-              "mitigation": 0
-            },
-            "per_10_minutes": {
-              "eliminations": 15.76,
-              "assists": 0.93,
-              "deaths": 5.56,
-              "damage": 7922.25,
-              "healing": 0.0,
-              "mitigation": 0.0
-            },
-            "kda": 3.0
-          },
-          "wins": {
-            "games": 1,
-            "games_with_stats": 1,
-            "duration_seconds": 647.24,
-            "totals": {
-              "eliminations": 17,
-              "assists": 1,
-              "deaths": 6,
-              "damage": 8546,
-              "healing": 0,
-              "mitigation": 0
-            },
-            "per_10_minutes": {
-              "eliminations": 15.76,
-              "assists": 0.93,
-              "deaths": 5.56,
-              "damage": 7922.25,
-              "healing": 0.0,
-              "mitigation": 0.0
-            },
-            "kda": 3.0
           },
           "losses": {
             "games": 0,
@@ -12490,45 +12557,6 @@
   },
   "latest": [
     {
-      "match_id": "ol-9a6b20b051de14a0e0cf3190",
-      "source": "overlooker-local-log",
-      "captured_at": "2026-10-11T21:47:12.5352380Z",
-      "result": "win",
-      "map": "King's Row",
-      "mode": "Hybrid",
-      "game_type": "RANKED",
-      "match_type": "competitive",
-      "queue_type": "ROLE_QUEUE",
-      "side": "ally",
-      "duration_ms": 813768,
-      "duration_seconds": 813.77,
-      "role": "damage",
-      "primary_hero": "widowmaker",
-      "heroes": [
-        "widowmaker"
-      ],
-      "stats": {
-        "eliminations": 10,
-        "assists": 0,
-        "deaths": 7,
-        "damage": 7235,
-        "healing": 1289,
-        "mitigation": 0
-      },
-      "kda": 1.43,
-      "per_10_minutes": {
-        "eliminations": 7.37,
-        "assists": 0,
-        "deaths": 5.16,
-        "damage": 5335.13,
-        "healing": 950.65,
-        "mitigation": 0
-      },
-      "privacy": "local-player-only",
-      "cloud_received_at": "2026-10-11T21:47:12.201Z",
-      "_file": "ol-9a6b20b051de14a0e0cf3190.json"
-    },
-    {
       "match_id": "ol-5d4046d26fce9abd49e424d2",
       "source": "overlooker-local-log",
       "captured_at": "2026-10-11T21:58:48.9593396Z",
@@ -13268,6 +13296,45 @@
       "privacy": "local-player-only",
       "cloud_received_at": "2026-10-13T13:54:16.608Z",
       "_file": "ol-59d0ce4b1c7fbc8d24b75039.json"
+    },
+    {
+      "match_id": "ol-5fe5bf92e8aea9fe683969f2",
+      "source": "overlooker-local-log",
+      "captured_at": "2026-10-13T14:05:09.1813260Z",
+      "result": "win",
+      "map": "Rialto",
+      "mode": "Escort",
+      "game_type": "UNRANKED",
+      "match_type": "unranked",
+      "queue_type": "ROLE_QUEUE",
+      "side": "ally",
+      "duration_ms": 525441,
+      "duration_seconds": 525.44,
+      "role": "damage",
+      "primary_hero": "widowmaker",
+      "heroes": [
+        "widowmaker"
+      ],
+      "stats": {
+        "eliminations": 21,
+        "assists": 8,
+        "deaths": 2,
+        "damage": 7015,
+        "healing": 0,
+        "mitigation": 0
+      },
+      "kda": 14.5,
+      "per_10_minutes": {
+        "eliminations": 23.98,
+        "assists": 9.14,
+        "deaths": 2.28,
+        "damage": 8010.87,
+        "healing": 0,
+        "mitigation": 0
+      },
+      "privacy": "local-player-only",
+      "cloud_received_at": "2026-10-13T14:05:09.093Z",
+      "_file": "ol-5fe5bf92e8aea9fe683969f2.json"
     }
   ],
   "note": "Matches are sorted chronologically using captured_at/cloud_received_at/imported_at before recent-form analysis. match_type separates competitive and unranked when available; unknown values are not guessed from queue_type. All performance comparisons use duration-weighted per-10-minute rates. Hero, map, mode, hero-by-map, recent competitive form, and data-quality summaries are regenerated automatically whenever a match is added."
