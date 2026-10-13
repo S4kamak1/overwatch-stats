@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-669153cf813ed722b0122d54",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-13T13:22:04.6005403Z",
+  "result": "loss",
+  "map": "Dorado",
+  "mode": "Escort",
+  "game_type": "UNRANKED",
+  "match_type": "unranked",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 669204,
+  "duration_seconds": 669.2,
+  "role": "support",
+  "primary_hero": "moira",
+  "heroes": [
+    "moira"
+  ],
+  "stats": {
+    "eliminations": 10,
+    "assists": 3,
+    "deaths": 5,
+    "damage": 5364,
+    "healing": 7796,
+    "mitigation": 0
+  },
+  "kda": 2.6,
+  "per_10_minutes": {
+    "eliminations": 8.97,
+    "assists": 2.69,
+    "deaths": 4.48,
+    "damage": 4809.74,
+    "healing": 6990.42,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-13T13:22:04.844Z"
+}
