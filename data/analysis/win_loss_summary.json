@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-10-16T10:56:10.309207+00:00",
+  "generated_at": "2026-10-16T15:05:00.363345+00:00",
   "current_season": 25,
-  "single_games_tracked": 1,
+  "single_games_tracked": 2,
   "wins": {
-    "games": 1,
+    "games": 2,
     "average": {
-      "duration_seconds": 334.0,
-      "eliminations": 13.0,
-      "assists": 2.0,
-      "deaths": 1.0,
-      "damage": 6795.0,
-      "healing": 0.0,
-      "kda": 15.0,
+      "duration_seconds": 478.5,
+      "eliminations": 9.5,
+      "assists": 1.0,
+      "deaths": 3.0,
+      "damage": 5124.0,
+      "healing": 3539.0,
+      "kda": 8.1,
       "per_10_minutes": {
-        "eliminations": 23.35,
-        "assists": 3.59,
-        "deaths": 1.8,
-        "damage": 12206.59,
-        "healing": 0.0
+        "eliminations": 14.57,
+        "assists": 1.79,
+        "deaths": 3.31,
+        "damage": 7766.06,
+        "healing": 3408.34
       }
     }
   },
@@ -31,10 +31,22 @@
       "wins": 1,
       "losses": 0,
       "winrate": 100.0
+    },
+    "doctrine": {
+      "games": 1,
+      "wins": 1,
+      "losses": 0,
+      "winrate": 100.0
     }
   },
   "primary_roles": {
     "tank": {
+      "games": 1,
+      "wins": 1,
+      "losses": 0,
+      "winrate": 100.0
+    },
+    "support": {
       "games": 1,
       "wins": 1,
       "losses": 0,
