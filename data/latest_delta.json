@@ -1,29 +1,85 @@
 {
-  "event_id": "s25-25:g99-99:w43-43:l56-56",
-  "from_fetched_at": "2026-10-19T06:09:35.895856+00:00",
-  "to_fetched_at": "2026-10-19T13:02:56.447277+00:00",
+  "event_id": "s25-25:g99-101:w43-43:l56-58",
+  "from_fetched_at": "2026-10-19T13:02:56.447277+00:00",
+  "to_fetched_at": "2026-10-19T19:17:27.509000+00:00",
   "season_from": 25,
   "season_to": 25,
-  "status": "no_change",
-  "result": "no_game",
-  "primary_role": null,
-  "primary_hero": null,
-  "heroes_used": [],
+  "status": "multi_game",
+  "result": "all_losses",
+  "primary_role": "damage",
+  "primary_hero": "cassidy",
+  "heroes_used": [
+    {
+      "hero": "cassidy",
+      "time_played": 1581,
+      "share_percent": 100.0
+    }
+  ],
   "general": {
-    "games_played": 0,
+    "games_played": 2,
     "games_won": 0,
-    "games_lost": 0,
-    "time_played": 0,
+    "games_lost": 2,
+    "time_played": 1581,
     "total": {
-      "eliminations": 0,
+      "eliminations": 28,
       "assists": 0,
-      "deaths": 0,
-      "damage": 0,
+      "deaths": 23,
+      "damage": 21682,
       "healing": 0
     },
-    "kda": null,
-    "per_10_minutes": {}
+    "kda": 1.22,
+    "per_10_minutes": {
+      "eliminations": 10.63,
+      "assists": 0.0,
+      "deaths": 8.73,
+      "damage": 8228.46,
+      "healing": 0.0
+    }
   },
-  "roles": {},
-  "heroes": {}
+  "roles": {
+    "damage": {
+      "games_played": 2,
+      "games_won": 0,
+      "games_lost": 2,
+      "time_played": 1581,
+      "total": {
+        "eliminations": 28,
+        "assists": 0,
+        "deaths": 23,
+        "damage": 21682,
+        "healing": 0
+      },
+      "kda": 1.22,
+      "per_10_minutes": {
+        "eliminations": 10.63,
+        "assists": 0.0,
+        "deaths": 8.73,
+        "damage": 8228.46,
+        "healing": 0.0
+      }
+    }
+  },
+  "heroes": {
+    "cassidy": {
+      "games_played": 2,
+      "games_won": 0,
+      "games_lost": 2,
+      "time_played": 1581,
+      "total": {
+        "eliminations": 28,
+        "assists": 0,
+        "deaths": 23,
+        "damage": 21682,
+        "healing": 0
+      },
+      "kda": 1.22,
+      "per_10_minutes": {
+        "eliminations": 10.63,
+        "assists": 0.0,
+        "deaths": 8.73,
+        "damage": 8228.46,
+        "healing": 0.0
+      }
+    }
+  }
 }
