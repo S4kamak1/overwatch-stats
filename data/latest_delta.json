@@ -1,29 +1,267 @@
 {
-  "event_id": "s25-25:g118-118:w52-52:l66-66",
-  "from_fetched_at": "2026-10-22T07:47:19.576365+00:00",
-  "to_fetched_at": "2026-10-22T13:16:59.133758+00:00",
+  "event_id": "s25-25:g118-124:w52-54:l66-70",
+  "from_fetched_at": "2026-10-22T13:16:59.133758+00:00",
+  "to_fetched_at": "2026-10-22T18:03:45.152811+00:00",
   "season_from": 25,
   "season_to": 25,
-  "status": "no_change",
-  "result": "no_game",
-  "primary_role": null,
-  "primary_hero": null,
-  "heroes_used": [],
-  "general": {
-    "games_played": 0,
-    "games_won": 0,
-    "games_lost": 0,
-    "time_played": 0,
-    "total": {
-      "eliminations": 0,
-      "assists": 0,
-      "deaths": 0,
-      "damage": 0,
-      "healing": 0
+  "status": "multi_game",
+  "result": "mixed",
+  "primary_role": "damage",
+  "primary_hero": "reaper",
+  "heroes_used": [
+    {
+      "hero": "reaper",
+      "time_played": 680,
+      "share_percent": 18.3
     },
-    "kda": null,
-    "per_10_minutes": {}
+    {
+      "hero": "bastion",
+      "time_played": 676,
+      "share_percent": 18.2
+    },
+    {
+      "hero": "cassidy",
+      "time_played": 600,
+      "share_percent": 16.1
+    },
+    {
+      "hero": "ashe",
+      "time_played": 553,
+      "share_percent": 14.9
+    },
+    {
+      "hero": "widowmaker",
+      "time_played": 407,
+      "share_percent": 11.0
+    },
+    {
+      "hero": "soldier-76",
+      "time_played": 379,
+      "share_percent": 10.2
+    },
+    {
+      "hero": "symmetra",
+      "time_played": 307,
+      "share_percent": 8.3
+    },
+    {
+      "hero": "hanzo",
+      "time_played": 114,
+      "share_percent": 3.1
+    }
+  ],
+  "general": {
+    "games_played": 6,
+    "games_won": 2,
+    "games_lost": 4,
+    "time_played": 3716,
+    "total": {
+      "eliminations": 107,
+      "assists": 0,
+      "deaths": 37,
+      "damage": 55979,
+      "healing": 1708
+    },
+    "kda": 2.89,
+    "per_10_minutes": {
+      "eliminations": 17.28,
+      "assists": 0.0,
+      "deaths": 5.97,
+      "damage": 9038.59,
+      "healing": 275.78
+    }
   },
-  "roles": {},
-  "heroes": {}
+  "roles": {
+    "damage": {
+      "games_played": 6,
+      "games_won": 2,
+      "games_lost": 4,
+      "time_played": 3716,
+      "total": {
+        "eliminations": 107,
+        "assists": 0,
+        "deaths": 37,
+        "damage": 55979,
+        "healing": 1708
+      },
+      "kda": 2.89,
+      "per_10_minutes": {
+        "eliminations": 17.28,
+        "assists": 0.0,
+        "deaths": 5.97,
+        "damage": 9038.59,
+        "healing": 275.78
+      }
+    }
+  },
+  "heroes": {
+    "reaper": {
+      "games_played": 1,
+      "games_won": 0,
+      "games_lost": 1,
+      "time_played": 680,
+      "total": {
+        "eliminations": 17,
+        "assists": 0,
+        "deaths": 8,
+        "damage": 9057,
+        "healing": 1239
+      },
+      "kda": 2.12,
+      "per_10_minutes": {
+        "eliminations": 15.0,
+        "assists": 0.0,
+        "deaths": 7.06,
+        "damage": 7991.47,
+        "healing": 1093.24
+      }
+    },
+    "bastion": {
+      "games_played": 1,
+      "games_won": 1,
+      "games_lost": 0,
+      "time_played": 676,
+      "total": {
+        "eliminations": 26,
+        "assists": 0,
+        "deaths": 3,
+        "damage": 14590,
+        "healing": 0
+      },
+      "kda": 8.67,
+      "per_10_minutes": {
+        "eliminations": 23.08,
+        "assists": 0.0,
+        "deaths": 2.66,
+        "damage": 12949.7,
+        "healing": 0.0
+      }
+    },
+    "cassidy": {
+      "games_played": 1,
+      "games_won": 0,
+      "games_lost": 1,
+      "time_played": 600,
+      "total": {
+        "eliminations": 10,
+        "assists": 0,
+        "deaths": 8,
+        "damage": 9151,
+        "healing": 0
+      },
+      "kda": 1.25,
+      "per_10_minutes": {
+        "eliminations": 10.0,
+        "assists": 0.0,
+        "deaths": 8.0,
+        "damage": 9151.0,
+        "healing": 0.0
+      }
+    },
+    "ashe": {
+      "games_played": 1,
+      "games_won": 0,
+      "games_lost": 1,
+      "time_played": 553,
+      "total": {
+        "eliminations": 22,
+        "assists": 0,
+        "deaths": 4,
+        "damage": 7525,
+        "healing": 0
+      },
+      "kda": 5.5,
+      "per_10_minutes": {
+        "eliminations": 23.87,
+        "assists": 0.0,
+        "deaths": 4.34,
+        "damage": 8164.56,
+        "healing": 0.0
+      }
+    },
+    "widowmaker": {
+      "games_played": 1,
+      "games_won": 1,
+      "games_lost": 0,
+      "time_played": 407,
+      "total": {
+        "eliminations": 6,
+        "assists": 0,
+        "deaths": 2,
+        "damage": 4112,
+        "healing": 0
+      },
+      "kda": 3.0,
+      "per_10_minutes": {
+        "eliminations": 8.85,
+        "assists": 0.0,
+        "deaths": 2.95,
+        "damage": 6061.92,
+        "healing": 0.0
+      }
+    },
+    "soldier-76": {
+      "games_played": 1,
+      "games_won": 0,
+      "games_lost": 1,
+      "time_played": 379,
+      "total": {
+        "eliminations": 18,
+        "assists": 0,
+        "deaths": 5,
+        "damage": 6502,
+        "healing": 428
+      },
+      "kda": 3.6,
+      "per_10_minutes": {
+        "eliminations": 28.5,
+        "assists": 0.0,
+        "deaths": 7.92,
+        "damage": 10293.4,
+        "healing": 677.57
+      }
+    },
+    "symmetra": {
+      "games_played": 0,
+      "games_won": 0,
+      "games_lost": 0,
+      "time_played": 307,
+      "total": {
+        "eliminations": 7,
+        "assists": 0,
+        "deaths": 5,
+        "damage": 3998,
+        "healing": 41
+      },
+      "kda": 1.4,
+      "per_10_minutes": {
+        "eliminations": 13.68,
+        "assists": 0.0,
+        "deaths": 9.77,
+        "damage": 7813.68,
+        "healing": 80.13
+      }
+    },
+    "hanzo": {
+      "games_played": 0,
+      "games_won": 0,
+      "games_lost": 0,
+      "time_played": 114,
+      "total": {
+        "eliminations": 1,
+        "assists": 0,
+        "deaths": 2,
+        "damage": 1044,
+        "healing": 0
+      },
+      "kda": 0.5,
+      "per_10_minutes": {
+        "eliminations": 5.26,
+        "assists": 0.0,
+        "deaths": 10.53,
+        "damage": 5494.74,
+        "healing": 0.0
+      }
+    }
+  }
 }
