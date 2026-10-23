@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-d0f8e0047da118832e8a00ff",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-23T18:20:58.6755720Z",
+  "result": "win",
+  "map": "Suravasa",
+  "mode": "Flashpoint",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 685121,
+  "duration_seconds": 685.12,
+  "role": "damage",
+  "primary_hero": "cassidy",
+  "heroes": [
+    "cassidy"
+  ],
+  "stats": {
+    "eliminations": 19,
+    "assists": 0,
+    "deaths": 6,
+    "damage": 7241,
+    "healing": 356,
+    "mitigation": 31
+  },
+  "kda": 3.17,
+  "per_10_minutes": {
+    "eliminations": 16.64,
+    "assists": 0,
+    "deaths": 5.25,
+    "damage": 6342.07,
+    "healing": 311.91,
+    "mitigation": 27.47
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-23T18:21:01.722Z"
+}
