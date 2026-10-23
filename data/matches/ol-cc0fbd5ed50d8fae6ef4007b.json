@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-cc0fbd5ed50d8fae6ef4007b",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-23T19:23:53.1758859Z",
+  "result": "loss",
+  "map": "Antarctic Peninsula",
+  "mode": "Control",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 896467,
+  "duration_seconds": 896.47,
+  "role": "damage",
+  "primary_hero": "cassidy",
+  "heroes": [
+    "cassidy"
+  ],
+  "stats": {
+    "eliminations": 17,
+    "assists": 0,
+    "deaths": 9,
+    "damage": 9869,
+    "healing": 180,
+    "mitigation": 514
+  },
+  "kda": 1.89,
+  "per_10_minutes": {
+    "eliminations": 11.38,
+    "assists": 0,
+    "deaths": 6.02,
+    "damage": 6605.88,
+    "healing": 120.72,
+    "mitigation": 344.47
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-23T19:23:55.450Z"
+}
