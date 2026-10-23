@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-23048ccb92cfa01001d33a79",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-23T19:05:46.2412155Z",
+  "result": "loss",
+  "map": "Lijiang Tower",
+  "mode": "Control",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 751944,
+  "duration_seconds": 751.94,
+  "role": "support",
+  "primary_hero": "doctrine",
+  "heroes": [
+    "doctrine"
+  ],
+  "stats": {
+    "eliminations": 12,
+    "assists": 11,
+    "deaths": 12,
+    "damage": 3988,
+    "healing": 9430,
+    "mitigation": 48
+  },
+  "kda": 1.92,
+  "per_10_minutes": {
+    "eliminations": 9.58,
+    "assists": 8.78,
+    "deaths": 9.58,
+    "damage": 3182.81,
+    "healing": 7525.09,
+    "mitigation": 38.45
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-23T19:05:48.603Z"
+}
