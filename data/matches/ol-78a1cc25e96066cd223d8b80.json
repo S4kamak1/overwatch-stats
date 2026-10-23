@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-78a1cc25e96066cd223d8b80",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-23T18:41:52.8549765Z",
+  "result": "loss",
+  "map": "New Junk City",
+  "mode": "Flashpoint",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 758968,
+  "duration_seconds": 758.97,
+  "role": "damage",
+  "primary_hero": "soldier: 76",
+  "heroes": [
+    "soldier: 76"
+  ],
+  "stats": {
+    "eliminations": 12,
+    "assists": 0,
+    "deaths": 9,
+    "damage": 9411,
+    "healing": 1069,
+    "mitigation": 0
+  },
+  "kda": 1.33,
+  "per_10_minutes": {
+    "eliminations": 9.49,
+    "assists": 0,
+    "deaths": 7.11,
+    "damage": 7440.5,
+    "healing": 845.42,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-23T18:41:54.946Z"
+}
