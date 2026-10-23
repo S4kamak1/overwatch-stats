@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-f1eca79435a414fda8a62c6b",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-23T19:43:19.0860538Z",
+  "result": "loss",
+  "map": "King's Row",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 1016027,
+  "duration_seconds": 1016.03,
+  "role": "damage",
+  "primary_hero": "cassidy",
+  "heroes": [
+    "cassidy"
+  ],
+  "stats": {
+    "eliminations": 11,
+    "assists": 0,
+    "deaths": 12,
+    "damage": 8220,
+    "healing": 611,
+    "mitigation": 0
+  },
+  "kda": 0.92,
+  "per_10_minutes": {
+    "eliminations": 6.5,
+    "assists": 0,
+    "deaths": 7.09,
+    "damage": 4854.49,
+    "healing": 361.18,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-23T19:43:21.218Z"
+}
