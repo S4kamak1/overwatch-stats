@@ -1,0 +1,38 @@
+{
+  "match_id": "ol-f065f5f0c9a30ec35547bf17",
+  "source": "overlooker-local-log",
+  "captured_at": "2026-10-23T19:59:17.5072124Z",
+  "result": "win",
+  "map": "Para�so",
+  "mode": "Hybrid",
+  "game_type": "RANKED",
+  "match_type": "competitive",
+  "queue_type": "ROLE_QUEUE",
+  "side": "ally",
+  "duration_ms": 815291,
+  "duration_seconds": 815.29,
+  "role": "damage",
+  "primary_hero": "reaper",
+  "heroes": [
+    "reaper"
+  ],
+  "stats": {
+    "eliminations": 32,
+    "assists": 2,
+    "deaths": 5,
+    "damage": 8780,
+    "healing": 1051,
+    "mitigation": 0
+  },
+  "kda": 6.8,
+  "per_10_minutes": {
+    "eliminations": 23.55,
+    "assists": 1.47,
+    "deaths": 3.68,
+    "damage": 6462.02,
+    "healing": 774.16,
+    "mitigation": 0
+  },
+  "privacy": "local-player-only",
+  "cloud_received_at": "2026-10-23T19:59:19.420Z"
+}
