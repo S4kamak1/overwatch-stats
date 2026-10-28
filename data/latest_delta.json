@@ -1,29 +1,288 @@
 {
-  "event_id": "s25-25:g145-145:w67-67:l78-78",
-  "from_fetched_at": "2026-10-28T07:23:47.451759+00:00",
-  "to_fetched_at": "2026-10-28T14:11:43.135832+00:00",
+  "event_id": "s25-25:g145-157:w67-75:l78-82",
+  "from_fetched_at": "2026-10-28T14:11:43.135832+00:00",
+  "to_fetched_at": "2026-10-28T19:32:28.033903+00:00",
   "season_from": 25,
   "season_to": 25,
-  "status": "no_change",
-  "result": "no_game",
-  "primary_role": null,
-  "primary_hero": null,
-  "heroes_used": [],
-  "general": {
-    "games_played": 0,
-    "games_won": 0,
-    "games_lost": 0,
-    "time_played": 0,
-    "total": {
-      "eliminations": 0,
-      "assists": 0,
-      "deaths": 0,
-      "damage": 0,
-      "healing": 0
+  "status": "multi_game",
+  "result": "mixed",
+  "primary_role": "damage",
+  "primary_hero": "moira",
+  "heroes_used": [
+    {
+      "hero": "moira",
+      "time_played": 2071,
+      "share_percent": 29.1
     },
-    "kda": null,
-    "per_10_minutes": {}
+    {
+      "hero": "cassidy",
+      "time_played": 1926,
+      "share_percent": 27.1
+    },
+    {
+      "hero": "ashe",
+      "time_played": 1254,
+      "share_percent": 17.6
+    },
+    {
+      "hero": "kiriko",
+      "time_played": 924,
+      "share_percent": 13.0
+    },
+    {
+      "hero": "reaper",
+      "time_played": 316,
+      "share_percent": 4.4
+    },
+    {
+      "hero": "symmetra",
+      "time_played": 299,
+      "share_percent": 4.2
+    },
+    {
+      "hero": "shion",
+      "time_played": 274,
+      "share_percent": 3.9
+    },
+    {
+      "hero": "bastion",
+      "time_played": 48,
+      "share_percent": 0.7
+    }
+  ],
+  "general": {
+    "games_played": 12,
+    "games_won": 8,
+    "games_lost": 4,
+    "time_played": 7112,
+    "total": {
+      "eliminations": 216,
+      "assists": 5,
+      "deaths": 57,
+      "damage": 106227,
+      "healing": 58568
+    },
+    "kda": 3.88,
+    "per_10_minutes": {
+      "eliminations": 18.22,
+      "assists": 0.42,
+      "deaths": 4.81,
+      "damage": 8961.78,
+      "healing": 4941.06
+    }
   },
-  "roles": {},
-  "heroes": {}
+  "roles": {
+    "damage": {
+      "games_played": 6,
+      "games_won": 5,
+      "games_lost": 1,
+      "time_played": 4117,
+      "total": {
+        "eliminations": 127,
+        "assists": 0,
+        "deaths": 34,
+        "damage": 75625,
+        "healing": 950
+      },
+      "kda": 3.74,
+      "per_10_minutes": {
+        "eliminations": 18.51,
+        "assists": 0.0,
+        "deaths": 4.96,
+        "damage": 11021.37,
+        "healing": 138.45
+      }
+    },
+    "support": {
+      "games_played": 6,
+      "games_won": 3,
+      "games_lost": 3,
+      "time_played": 2995,
+      "total": {
+        "eliminations": 89,
+        "assists": 5,
+        "deaths": 23,
+        "damage": 30602,
+        "healing": 57618
+      },
+      "kda": 4.09,
+      "per_10_minutes": {
+        "eliminations": 17.83,
+        "assists": 1.0,
+        "deaths": 4.61,
+        "damage": 6130.62,
+        "healing": 11542.84
+      }
+    }
+  },
+  "heroes": {
+    "moira": {
+      "games_played": 5,
+      "games_won": 3,
+      "games_lost": 2,
+      "time_played": 2071,
+      "total": {
+        "eliminations": 77,
+        "assists": 0,
+        "deaths": 15,
+        "damage": 24953,
+        "healing": 43957
+      },
+      "kda": 5.13,
+      "per_10_minutes": {
+        "eliminations": 22.31,
+        "assists": 0.0,
+        "deaths": 4.35,
+        "damage": 7229.26,
+        "healing": 12735.01
+      }
+    },
+    "cassidy": {
+      "games_played": 3,
+      "games_won": 3,
+      "games_lost": 0,
+      "time_played": 1926,
+      "total": {
+        "eliminations": 74,
+        "assists": 0,
+        "deaths": 15,
+        "damage": 37894,
+        "healing": 0
+      },
+      "kda": 4.93,
+      "per_10_minutes": {
+        "eliminations": 23.05,
+        "assists": 0.0,
+        "deaths": 4.67,
+        "damage": 11804.98,
+        "healing": 0.0
+      }
+    },
+    "ashe": {
+      "games_played": 2,
+      "games_won": 1,
+      "games_lost": 1,
+      "time_played": 1254,
+      "total": {
+        "eliminations": 36,
+        "assists": 0,
+        "deaths": 8,
+        "damage": 23413,
+        "healing": 0
+      },
+      "kda": 4.5,
+      "per_10_minutes": {
+        "eliminations": 17.22,
+        "assists": 0.0,
+        "deaths": 3.83,
+        "damage": 11202.39,
+        "healing": 0.0
+      }
+    },
+    "kiriko": {
+      "games_played": 1,
+      "games_won": 0,
+      "games_lost": 1,
+      "time_played": 924,
+      "total": {
+        "eliminations": 12,
+        "assists": 5,
+        "deaths": 8,
+        "damage": 5649,
+        "healing": 13661
+      },
+      "kda": 2.12,
+      "per_10_minutes": {
+        "eliminations": 7.79,
+        "assists": 3.25,
+        "deaths": 5.19,
+        "damage": 3668.18,
+        "healing": 8870.78
+      }
+    },
+    "reaper": {
+      "games_played": 0,
+      "games_won": 0,
+      "games_lost": 0,
+      "time_played": 316,
+      "total": {
+        "eliminations": 4,
+        "assists": 0,
+        "deaths": 5,
+        "damage": 4264,
+        "healing": 689
+      },
+      "kda": 0.8,
+      "per_10_minutes": {
+        "eliminations": 7.59,
+        "assists": 0.0,
+        "deaths": 9.49,
+        "damage": 8096.2,
+        "healing": 1308.23
+      }
+    },
+    "symmetra": {
+      "games_played": 1,
+      "games_won": 1,
+      "games_lost": 0,
+      "time_played": 299,
+      "total": {
+        "eliminations": 9,
+        "assists": 0,
+        "deaths": 1,
+        "damage": 4532,
+        "healing": 228
+      },
+      "kda": 9.0,
+      "per_10_minutes": {
+        "eliminations": 18.06,
+        "assists": 0.0,
+        "deaths": 2.01,
+        "damage": 9094.31,
+        "healing": 457.53
+      }
+    },
+    "shion": {
+      "games_played": 0,
+      "games_won": 0,
+      "games_lost": 0,
+      "time_played": 274,
+      "total": {
+        "eliminations": 4,
+        "assists": 0,
+        "deaths": 4,
+        "damage": 5028,
+        "healing": 33
+      },
+      "kda": 1.0,
+      "per_10_minutes": {
+        "eliminations": 8.76,
+        "assists": 0.0,
+        "deaths": 8.76,
+        "damage": 11010.22,
+        "healing": 72.26
+      }
+    },
+    "bastion": {
+      "games_played": 0,
+      "games_won": 0,
+      "games_lost": 0,
+      "time_played": 48,
+      "total": {
+        "eliminations": 0,
+        "assists": 0,
+        "deaths": 1,
+        "damage": 494,
+        "healing": 0
+      },
+      "kda": 0.0,
+      "per_10_minutes": {
+        "eliminations": 0.0,
+        "assists": 0.0,
+        "deaths": 12.5,
+        "damage": 6175.0,
+        "healing": 0.0
+      }
+    }
+  }
 }
