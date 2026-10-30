@@ -6,24 +6,24 @@
   "is_public": true,
   "platform": "pc",
   "gamemode": "competitive",
-  "fetched_at": "2026-10-30T13:32:26.453932+00:00",
+  "fetched_at": "2026-10-30T18:50:41.050588+00:00",
   "refresh_retry_used": false,
   "blizzard_probe": {
     "name": "S4kamak1",
     "is_public": true,
-    "last_updated_at": 1793286189
+    "last_updated_at": 1793382856
   },
   "blizzard_upstream_newer": false,
   "overfast_response_headers": {
     "summary": {
       "server": "nginx",
-      "date": "Fri, 30 Oct 2026 13:32:25 GMT",
+      "date": "Fri, 30 Oct 2026 18:50:40 GMT",
       "content-type": "application/json",
       "content-length": "1900",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "24911",
+      "age": "19092",
       "cache-control": "public, max-age=600, stale-while-revalidate=300",
       "x-cache-status": "stale",
       "access-control-allow-origin": "*",
@@ -31,15 +31,14 @@
     },
     "stats": {
       "server": "nginx",
-      "date": "Fri, 30 Oct 2026 13:32:26 GMT",
+      "date": "Fri, 30 Oct 2026 18:50:41 GMT",
       "content-type": "application/json",
       "content-length": "6472",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "24913",
-      "cache-control": "public, max-age=600, stale-while-revalidate=300",
-      "x-cache-status": "stale",
+      "cache-control": "public, max-age=600",
+      "x-cache-status": "hit",
       "access-control-allow-origin": "*",
       "strict-transport-security": "max-age=63072000"
     }
@@ -52,7 +51,7 @@
     "title": "Data Broker",
     "career_url": "https://overfast-api.tekrop.fr/players/S4kamak1-1198",
     "blizzard_id": "c10aa78bbe7090fca4a126a9dc%7C767070bb727f16005745b4aeb6300857",
-    "last_updated_at": 1793286189,
+    "last_updated_at": 1793382856,
     "is_public": true
   },
   "summary": {
@@ -92,7 +91,7 @@
       },
       "console": null
     },
-    "last_updated_at": 1793286189
+    "last_updated_at": 1793382856
   },
   "stats": {
     "general": {
