@@ -1,184 +1,29 @@
 {
-  "event_id": "s25-25:g195-202:w97-102:l98-100",
-  "from_fetched_at": "2026-11-04T07:40:18.866156+00:00",
-  "to_fetched_at": "2026-11-04T15:45:16.149528+00:00",
+  "event_id": "s25-25:g202-202:w102-102:l100-100",
+  "from_fetched_at": "2026-11-04T15:45:16.149528+00:00",
+  "to_fetched_at": "2026-11-04T21:37:01.150178+00:00",
   "season_from": 25,
   "season_to": 25,
-  "status": "multi_game",
-  "result": "mixed",
-  "primary_role": "damage",
-  "primary_hero": "ashe",
-  "heroes_used": [
-    {
-      "hero": "ashe",
-      "time_played": 1852,
-      "share_percent": 44.2
-    },
-    {
-      "hero": "moira",
-      "time_played": 1250,
-      "share_percent": 29.8
-    },
-    {
-      "hero": "soldier-76",
-      "time_played": 1067,
-      "share_percent": 25.5
-    },
-    {
-      "hero": "widowmaker",
-      "time_played": 21,
-      "share_percent": 0.5
-    }
-  ],
+  "status": "no_change",
+  "result": "no_game",
+  "primary_role": null,
+  "primary_hero": null,
+  "heroes_used": [],
   "general": {
-    "games_played": 7,
-    "games_won": 5,
-    "games_lost": 2,
-    "time_played": 4190,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "time_played": 0,
     "total": {
-      "eliminations": 140,
+      "eliminations": 0,
       "assists": 0,
-      "deaths": 44,
-      "damage": 71441,
-      "healing": 25609
+      "deaths": 0,
+      "damage": 0,
+      "healing": 0
     },
-    "kda": 3.18,
-    "per_10_minutes": {
-      "eliminations": 20.05,
-      "assists": 0.0,
-      "deaths": 6.3,
-      "damage": 10230.21,
-      "healing": 3667.16
-    }
+    "kda": null,
+    "per_10_minutes": {}
   },
-  "roles": {
-    "damage": {
-      "games_played": 5,
-      "games_won": 5,
-      "games_lost": 0,
-      "time_played": 2940,
-      "total": {
-        "eliminations": 111,
-        "assists": 0,
-        "deaths": 31,
-        "damage": 59319,
-        "healing": 1085
-      },
-      "kda": 3.58,
-      "per_10_minutes": {
-        "eliminations": 22.65,
-        "assists": 0.0,
-        "deaths": 6.33,
-        "damage": 12105.92,
-        "healing": 221.43
-      }
-    },
-    "support": {
-      "games_played": 2,
-      "games_won": 0,
-      "games_lost": 2,
-      "time_played": 1250,
-      "total": {
-        "eliminations": 29,
-        "assists": 0,
-        "deaths": 13,
-        "damage": 12122,
-        "healing": 24524
-      },
-      "kda": 2.23,
-      "per_10_minutes": {
-        "eliminations": 13.92,
-        "assists": 0.0,
-        "deaths": 6.24,
-        "damage": 5818.56,
-        "healing": 11771.52
-      }
-    }
-  },
-  "heroes": {
-    "ashe": {
-      "games_played": 3,
-      "games_won": 3,
-      "games_lost": 0,
-      "time_played": 1852,
-      "total": {
-        "eliminations": 69,
-        "assists": 0,
-        "deaths": 17,
-        "damage": 33251,
-        "healing": 0
-      },
-      "kda": 4.06,
-      "per_10_minutes": {
-        "eliminations": 22.35,
-        "assists": 0.0,
-        "deaths": 5.51,
-        "damage": 10772.46,
-        "healing": 0.0
-      }
-    },
-    "moira": {
-      "games_played": 2,
-      "games_won": 0,
-      "games_lost": 2,
-      "time_played": 1250,
-      "total": {
-        "eliminations": 29,
-        "assists": 0,
-        "deaths": 13,
-        "damage": 12122,
-        "healing": 24524
-      },
-      "kda": 2.23,
-      "per_10_minutes": {
-        "eliminations": 13.92,
-        "assists": 0.0,
-        "deaths": 6.24,
-        "damage": 5818.56,
-        "healing": 11771.52
-      }
-    },
-    "soldier-76": {
-      "games_played": 2,
-      "games_won": 2,
-      "games_lost": 0,
-      "time_played": 1067,
-      "total": {
-        "eliminations": 42,
-        "assists": 0,
-        "deaths": 14,
-        "damage": 26068,
-        "healing": 1085
-      },
-      "kda": 3.0,
-      "per_10_minutes": {
-        "eliminations": 23.62,
-        "assists": 0.0,
-        "deaths": 7.87,
-        "damage": 14658.67,
-        "healing": 610.12
-      }
-    },
-    "widowmaker": {
-      "games_played": 0,
-      "games_won": 0,
-      "games_lost": 0,
-      "time_played": 21,
-      "total": {
-        "eliminations": 0,
-        "assists": 0,
-        "deaths": 0,
-        "damage": 0,
-        "healing": 0
-      },
-      "kda": null,
-      "per_10_minutes": {
-        "eliminations": 0.0,
-        "assists": 0.0,
-        "deaths": 0.0,
-        "damage": 0.0,
-        "healing": 0.0
-      }
-    }
-  }
+  "roles": {},
+  "heroes": {}
 }
