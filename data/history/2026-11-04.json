@@ -6,24 +6,24 @@
   "is_public": true,
   "platform": "pc",
   "gamemode": "competitive",
-  "fetched_at": "2026-11-04T07:40:18.866156+00:00",
+  "fetched_at": "2026-11-04T15:45:16.149528+00:00",
   "refresh_retry_used": false,
   "blizzard_probe": {
     "name": "S4kamak1",
     "is_public": true,
-    "last_updated_at": 1793721357
+    "last_updated_at": 1793805610
   },
   "blizzard_upstream_newer": false,
   "overfast_response_headers": {
     "summary": {
       "server": "nginx",
-      "date": "Wed, 04 Nov 2026 07:40:16 GMT",
+      "date": "Wed, 04 Nov 2026 15:45:15 GMT",
       "content-type": "application/json",
       "content-length": "1900",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "22626",
+      "age": "29096",
       "cache-control": "public, max-age=600, stale-while-revalidate=300",
       "x-cache-status": "stale",
       "access-control-allow-origin": "*",
@@ -31,15 +31,14 @@
     },
     "stats": {
       "server": "nginx",
-      "date": "Wed, 04 Nov 2026 07:40:18 GMT",
+      "date": "Wed, 04 Nov 2026 15:45:16 GMT",
       "content-type": "application/json",
-      "content-length": "6482",
+      "content-length": "6481",
       "connection": "close",
       "vary": "Accept-Encoding",
       "x-cache-ttl": "600",
-      "age": "22628",
-      "cache-control": "public, max-age=600, stale-while-revalidate=300",
-      "x-cache-status": "stale",
+      "cache-control": "public, max-age=600",
+      "x-cache-status": "hit",
       "access-control-allow-origin": "*",
       "strict-transport-security": "max-age=63072000"
     }
@@ -52,7 +51,7 @@
     "title": "Data Broker",
     "career_url": "https://overfast-api.tekrop.fr/players/S4kamak1-1198",
     "blizzard_id": "c10aa78bbe7090fca4a126a9dc%7C767070bb727f16005745b4aeb6300857",
-    "last_updated_at": 1793721357,
+    "last_updated_at": 1793805610,
     "is_public": true
   },
   "summary": {
@@ -76,10 +75,10 @@
         },
         "damage": {
           "division": "silver",
-          "tier": 2,
+          "tier": 1,
           "role_icon": "https://static.playoverwatch.com/images/pages/career/icons/role/offense.0f3b26f08388747909719cb6f8940d0b4683039e.svg#icon",
           "rank_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_SilverTier.305e60dca5e95356ced59825426844cc7cdb4948.png",
-          "tier_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/TierDivision_2.0e5d1cfda796f7b4362ef2ffa8a1053c20afa5af.png"
+          "tier_icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/TierDivision_1.10f427bf8f2f16171ce550a90c29626b438f6efd.png"
         },
         "support": {
           "division": "gold",
@@ -92,74 +91,74 @@
       },
       "console": null
     },
-    "last_updated_at": 1793721357
+    "last_updated_at": 1793805610
   },
   "stats": {
     "general": {
-      "games_played": 195,
-      "games_won": 97,
-      "games_lost": 98,
-      "time_played": 123793,
-      "winrate": 49.74,
-      "kda": 2.47,
+      "games_played": 202,
+      "games_won": 102,
+      "games_lost": 100,
+      "time_played": 127983,
+      "winrate": 50.5,
+      "kda": 2.49,
       "total": {
-        "eliminations": 3062,
+        "eliminations": 3202,
         "assists": 45,
-        "deaths": 1258,
-        "damage": 1657611,
-        "healing": 831384
+        "deaths": 1302,
+        "damage": 1729052,
+        "healing": 856993
       },
       "average": {
-        "eliminations": 14.84,
-        "assists": 0.22,
+        "eliminations": 15.01,
+        "assists": 0.21,
         "deaths": 6.1,
-        "damage": 8034.11,
-        "healing": 4029.55
+        "damage": 8106.01,
+        "healing": 4017.69
       }
     },
     "roles": {
       "damage": {
-        "games_played": 116,
-        "games_won": 52,
+        "games_played": 121,
+        "games_won": 57,
         "games_lost": 64,
-        "time_played": 74458,
-        "winrate": 44.83,
-        "kda": 2.41,
+        "time_played": 77398,
+        "winrate": 47.11,
+        "kda": 2.45,
         "total": {
-          "eliminations": 1980,
+          "eliminations": 2091,
           "assists": 0,
-          "deaths": 821,
-          "damage": 1234894,
-          "healing": 43780
+          "deaths": 852,
+          "damage": 1294213,
+          "healing": 44865
         },
         "average": {
-          "eliminations": 15.96,
+          "eliminations": 16.21,
           "assists": 0.0,
-          "deaths": 6.62,
-          "damage": 9951.07,
-          "healing": 352.79
+          "deaths": 6.6,
+          "damage": 10032.92,
+          "healing": 347.8
         }
       },
       "support": {
-        "games_played": 79,
+        "games_played": 81,
         "games_won": 45,
-        "games_lost": 34,
-        "time_played": 49335,
-        "winrate": 56.96,
-        "kda": 2.58,
+        "games_lost": 36,
+        "time_played": 50585,
+        "winrate": 55.56,
+        "kda": 2.57,
         "total": {
-          "eliminations": 1082,
+          "eliminations": 1111,
           "assists": 45,
-          "deaths": 437,
-          "damage": 422717,
-          "healing": 787604
+          "deaths": 450,
+          "damage": 434839,
+          "healing": 812128
         },
         "average": {
-          "eliminations": 13.16,
-          "assists": 0.55,
-          "deaths": 5.31,
-          "damage": 5140.98,
-          "healing": 9578.64
+          "eliminations": 13.18,
+          "assists": 0.53,
+          "deaths": 5.34,
+          "damage": 5157.72,
+          "healing": 9632.83
         }
       }
     },
@@ -187,24 +186,24 @@
         }
       },
       "ashe": {
-        "games_played": 25,
-        "games_won": 13,
+        "games_played": 28,
+        "games_won": 16,
         "games_lost": 12,
-        "time_played": 15403,
-        "winrate": 52.0,
-        "kda": 2.76,
+        "time_played": 17255,
+        "winrate": 57.14,
+        "kda": 2.91,
         "total": {
-          "eliminations": 359,
+          "eliminations": 428,
           "assists": 0,
-          "deaths": 130,
-          "damage": 265757,
+          "deaths": 147,
+          "damage": 299008,
           "healing": 0
         },
         "average": {
-          "eliminations": 13.98,
+          "eliminations": 14.88,
           "assists": 0.0,
-          "deaths": 5.06,
-          "damage": 10352.15,
+          "deaths": 5.11,
+          "damage": 10397.26,
           "healing": 0.0
         }
       },
@@ -407,25 +406,25 @@
         }
       },
       "moira": {
-        "games_played": 48,
+        "games_played": 50,
         "games_won": 31,
-        "games_lost": 17,
-        "time_played": 27363,
-        "winrate": 64.58,
-        "kda": 3.34,
+        "games_lost": 19,
+        "time_played": 28613,
+        "winrate": 62.0,
+        "kda": 3.28,
         "total": {
-          "eliminations": 758,
+          "eliminations": 787,
           "assists": 0,
-          "deaths": 227,
-          "damage": 279873,
-          "healing": 477799
+          "deaths": 240,
+          "damage": 291995,
+          "healing": 502323
         },
         "average": {
-          "eliminations": 16.62,
+          "eliminations": 16.5,
           "assists": 0.0,
-          "deaths": 4.98,
-          "damage": 6136.89,
-          "healing": 10476.9
+          "deaths": 5.03,
+          "damage": 6122.99,
+          "healing": 10533.46
         }
       },
       "reaper": {
@@ -495,25 +494,25 @@
         }
       },
       "soldier-76": {
-        "games_played": 14,
-        "games_won": 3,
+        "games_played": 16,
+        "games_won": 5,
         "games_lost": 11,
-        "time_played": 8196,
-        "winrate": 21.43,
-        "kda": 1.97,
+        "time_played": 9263,
+        "winrate": 31.25,
+        "kda": 2.08,
         "total": {
-          "eliminations": 230,
+          "eliminations": 272,
           "assists": 0,
-          "deaths": 117,
-          "damage": 159403,
-          "healing": 10476
+          "deaths": 131,
+          "damage": 185471,
+          "healing": 11561
         },
         "average": {
-          "eliminations": 16.84,
+          "eliminations": 17.62,
           "assists": 0.0,
-          "deaths": 8.57,
-          "damage": 11669.33,
-          "healing": 766.91
+          "deaths": 8.49,
+          "damage": 12013.67,
+          "healing": 748.85
         }
       },
       "symmetra": {
@@ -564,7 +563,7 @@
         "games_played": 10,
         "games_won": 5,
         "games_lost": 5,
-        "time_played": 6582,
+        "time_played": 6603,
         "winrate": 50.0,
         "kda": 2.56,
         "total": {
@@ -575,10 +574,10 @@
           "healing": 0
         },
         "average": {
-          "eliminations": 14.95,
+          "eliminations": 14.9,
           "assists": 0.0,
-          "deaths": 5.83,
-          "damage": 6788.33,
+          "deaths": 5.82,
+          "damage": 6766.74,
           "healing": 0.0
         }
       },
