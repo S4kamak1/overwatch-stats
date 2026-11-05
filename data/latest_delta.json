@@ -1,158 +1,29 @@
 {
-  "event_id": "s25-25:g202-209:w102-107:l100-102",
-  "from_fetched_at": "2026-11-05T08:41:51.109887+00:00",
-  "to_fetched_at": "2026-11-05T16:50:47.884851+00:00",
+  "event_id": "s25-25:g209-209:w107-107:l102-102",
+  "from_fetched_at": "2026-11-05T16:50:47.884851+00:00",
+  "to_fetched_at": "2026-11-05T22:26:49.506380+00:00",
   "season_from": 25,
   "season_to": 25,
-  "status": "multi_game",
-  "result": "mixed",
-  "primary_role": "damage",
-  "primary_hero": "moira",
-  "heroes_used": [
-    {
-      "hero": "moira",
-      "time_played": 2098,
-      "share_percent": 49.9
-    },
-    {
-      "hero": "ashe",
-      "time_played": 1287,
-      "share_percent": 30.6
-    },
-    {
-      "hero": "soldier-76",
-      "time_played": 817,
-      "share_percent": 19.4
-    }
-  ],
+  "status": "no_change",
+  "result": "no_game",
+  "primary_role": null,
+  "primary_hero": null,
+  "heroes_used": [],
   "general": {
-    "games_played": 7,
-    "games_won": 5,
-    "games_lost": 2,
-    "time_played": 4202,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "time_played": 0,
     "total": {
-      "eliminations": 115,
+      "eliminations": 0,
       "assists": 0,
-      "deaths": 27,
-      "damage": 59810,
-      "healing": 42002
+      "deaths": 0,
+      "damage": 0,
+      "healing": 0
     },
-    "kda": 4.26,
-    "per_10_minutes": {
-      "eliminations": 16.42,
-      "assists": 0.0,
-      "deaths": 3.86,
-      "damage": 8540.22,
-      "healing": 5997.43
-    }
+    "kda": null,
+    "per_10_minutes": {}
   },
-  "roles": {
-    "damage": {
-      "games_played": 3,
-      "games_won": 2,
-      "games_lost": 1,
-      "time_played": 2104,
-      "total": {
-        "eliminations": 55,
-        "assists": 0,
-        "deaths": 16,
-        "damage": 36603,
-        "healing": 1192
-      },
-      "kda": 3.44,
-      "per_10_minutes": {
-        "eliminations": 15.68,
-        "assists": 0.0,
-        "deaths": 4.56,
-        "damage": 10438.12,
-        "healing": 339.92
-      }
-    },
-    "support": {
-      "games_played": 4,
-      "games_won": 3,
-      "games_lost": 1,
-      "time_played": 2098,
-      "total": {
-        "eliminations": 60,
-        "assists": 0,
-        "deaths": 11,
-        "damage": 23207,
-        "healing": 40810
-      },
-      "kda": 5.45,
-      "per_10_minutes": {
-        "eliminations": 17.16,
-        "assists": 0.0,
-        "deaths": 3.15,
-        "damage": 6636.89,
-        "healing": 11671.12
-      }
-    }
-  },
-  "heroes": {
-    "moira": {
-      "games_played": 4,
-      "games_won": 3,
-      "games_lost": 1,
-      "time_played": 2098,
-      "total": {
-        "eliminations": 60,
-        "assists": 0,
-        "deaths": 11,
-        "damage": 23207,
-        "healing": 40810
-      },
-      "kda": 5.45,
-      "per_10_minutes": {
-        "eliminations": 17.16,
-        "assists": 0.0,
-        "deaths": 3.15,
-        "damage": 6636.89,
-        "healing": 11671.12
-      }
-    },
-    "ashe": {
-      "games_played": 2,
-      "games_won": 1,
-      "games_lost": 1,
-      "time_played": 1287,
-      "total": {
-        "eliminations": 31,
-        "assists": 0,
-        "deaths": 9,
-        "damage": 22723,
-        "healing": 0
-      },
-      "kda": 3.44,
-      "per_10_minutes": {
-        "eliminations": 14.45,
-        "assists": 0.0,
-        "deaths": 4.2,
-        "damage": 10593.47,
-        "healing": 0.0
-      }
-    },
-    "soldier-76": {
-      "games_played": 1,
-      "games_won": 1,
-      "games_lost": 0,
-      "time_played": 817,
-      "total": {
-        "eliminations": 24,
-        "assists": 0,
-        "deaths": 7,
-        "damage": 13880,
-        "healing": 1192
-      },
-      "kda": 3.43,
-      "per_10_minutes": {
-        "eliminations": 17.63,
-        "assists": 0.0,
-        "deaths": 5.14,
-        "damage": 10193.39,
-        "healing": 875.4
-      }
-    }
-  }
+  "roles": {},
+  "heroes": {}
 }
