@@ -1,29 +1,137 @@
 {
-  "event_id": "s25-25:g259-259:w129-129:l130-130",
-  "from_fetched_at": "2026-11-13T01:28:16.125010+00:00",
-  "to_fetched_at": "2026-11-13T08:29:16.389765+00:00",
+  "event_id": "s25-25:g259-264:w129-130:l130-134",
+  "from_fetched_at": "2026-11-13T08:29:16.389765+00:00",
+  "to_fetched_at": "2026-11-13T16:40:11.792886+00:00",
   "season_from": 25,
   "season_to": 25,
-  "status": "no_change",
-  "result": "no_game",
-  "primary_role": null,
-  "primary_hero": null,
-  "heroes_used": [],
-  "general": {
-    "games_played": 0,
-    "games_won": 0,
-    "games_lost": 0,
-    "time_played": 0,
-    "total": {
-      "eliminations": 0,
-      "assists": 0,
-      "deaths": 0,
-      "damage": 0,
-      "healing": 0
+  "status": "multi_game",
+  "result": "mixed",
+  "primary_role": "support",
+  "primary_hero": "moira",
+  "heroes_used": [
+    {
+      "hero": "moira",
+      "time_played": 2979,
+      "share_percent": 75.2
     },
-    "kda": null,
-    "per_10_minutes": {}
+    {
+      "hero": "kiriko",
+      "time_played": 605,
+      "share_percent": 15.3
+    },
+    {
+      "hero": "doctrine",
+      "time_played": 379,
+      "share_percent": 9.6
+    }
+  ],
+  "general": {
+    "games_played": 5,
+    "games_won": 1,
+    "games_lost": 4,
+    "time_played": 3963,
+    "total": {
+      "eliminations": 77,
+      "assists": 4,
+      "deaths": 42,
+      "damage": 29882,
+      "healing": 67426
+    },
+    "kda": 1.93,
+    "per_10_minutes": {
+      "eliminations": 11.66,
+      "assists": 0.61,
+      "deaths": 6.36,
+      "damage": 4524.15,
+      "healing": 10208.33
+    }
   },
-  "roles": {},
-  "heroes": {}
+  "roles": {
+    "support": {
+      "games_played": 5,
+      "games_won": 1,
+      "games_lost": 4,
+      "time_played": 3963,
+      "total": {
+        "eliminations": 77,
+        "assists": 4,
+        "deaths": 42,
+        "damage": 29882,
+        "healing": 67426
+      },
+      "kda": 1.93,
+      "per_10_minutes": {
+        "eliminations": 11.66,
+        "assists": 0.61,
+        "deaths": 6.36,
+        "damage": 4524.15,
+        "healing": 10208.33
+      }
+    }
+  },
+  "heroes": {
+    "moira": {
+      "games_played": 4,
+      "games_won": 1,
+      "games_lost": 3,
+      "time_played": 2979,
+      "total": {
+        "eliminations": 61,
+        "assists": 0,
+        "deaths": 32,
+        "damage": 24438,
+        "healing": 53011
+      },
+      "kda": 1.91,
+      "per_10_minutes": {
+        "eliminations": 12.29,
+        "assists": 0.0,
+        "deaths": 6.45,
+        "damage": 4922.05,
+        "healing": 10676.94
+      }
+    },
+    "kiriko": {
+      "games_played": 1,
+      "games_won": 0,
+      "games_lost": 1,
+      "time_played": 605,
+      "total": {
+        "eliminations": 9,
+        "assists": 4,
+        "deaths": 6,
+        "damage": 3146,
+        "healing": 9693
+      },
+      "kda": 2.17,
+      "per_10_minutes": {
+        "eliminations": 8.93,
+        "assists": 3.97,
+        "deaths": 5.95,
+        "damage": 3120.0,
+        "healing": 9612.89
+      }
+    },
+    "doctrine": {
+      "games_played": 0,
+      "games_won": 0,
+      "games_lost": 0,
+      "time_played": 379,
+      "total": {
+        "eliminations": 7,
+        "assists": 0,
+        "deaths": 4,
+        "damage": 2298,
+        "healing": 4722
+      },
+      "kda": 1.75,
+      "per_10_minutes": {
+        "eliminations": 11.08,
+        "assists": 0.0,
+        "deaths": 6.33,
+        "damage": 3637.99,
+        "healing": 7475.46
+      }
+    }
+  }
 }
